@@ -1,0 +1,9 @@
+{
+  "name": "wedding-javiman",
+  "author": "Javi Manzano <javi.manzano.oller@gmail.com>",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

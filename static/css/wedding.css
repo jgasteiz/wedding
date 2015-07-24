@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 18px;
+  padding: 0 20px; }
+
+body {
+  font-family: 'PT Sans Narrow', sans-serif;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 1000px; }
+
+img {
+  max-width: 100%; }
+
+div[role="main"] {
+  margin: 80px 0; }
+
+h1,
+h2,
+h3 {
+  margin: 0 0 20px; }
+
+.main-header {
+  height: 280px;
+  padding: 20px 300px;
+  position: relative;
+  text-align: center; }
+  .main-header:after, .main-header:before {
+    background-image: url("/static/img/flowers-header.jpg");
+    background-size: contain;
+    content: "";
+    height: 281px;
+    position: absolute;
+    top: 0;
+    width: 300px; }
+  .main-header:before {
+    left: 0; }
+  .main-header:after {
+    right: 0; }
+
+.main-header__title {
+  font-family: cursive;
+  font-size: 60px; }
+
+.main-header__subtitle {
+  color: #3A3AC7;
+  font-size: 80px;
+  font-weight: 400; }
+
+.main-nav {
+  margin: 40px 0;
+  text-align: center; }
+
+.main-nav__item-list {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0; }
+
+.main-nav__item {
+  display: inline-block;
+  font-size: 32px;
+  margin: 0 20px; }
+  .main-nav__item a {
+    color: #696969;
+    text-decoration: none; }
+    .main-nav__item a:hover {
+      color: #CF043E; }
+  .main-nav__item--is-active a {
+    color: #CF043E; }
+
+.main-content {
+  padding: 0 160px;
+  text-align: center; }
+
+.main-footer {
+  text-align: center; }
+
+.home-content--dark, .home-content--light {
+  font-size: 32px; }
+
+.home-content--dark {
+  color: #696969; }
+
+.home-content--light {
+  color: #A9A9A9; }
+
+/*# sourceMappingURL=wedding.css.map */
