@@ -1,6 +1,5 @@
 // Variables
 $site-width: 1000px;
-$header-height: 280px;
 
 $red: #CF043E;
 $dark-grey: #696969;
@@ -9,9 +8,27 @@ $indigo: #3A3AC7;
 
 $base-font-size: 18px;
 $title-font-size: 60px;
+$title-font-size-sm: 45px;
 $subtitle-font-size: 80px;
+$subtitle-font-size-sm: 50px;
 $nav-font-size: 32px;
 $home-content-size: 32px;
+
+$break-palm: 480px;
+$break-lap: 768px;
+$break-desk: 980px;
+
+@mixin respond-to($media) {
+    @if $media == 'palm' {
+        @media only screen and (max-width: $break-palm) { @content; }
+    }
+    @else if $media == 'lap' {
+        @media only screen and (max-width: $break-lap) { @content; }
+    }
+    @else if $media == 'desk' {
+        @media only screen and (max-width: $break-desk) { @content; }
+    }
+}
 
 
 * {
@@ -36,6 +53,10 @@ img {
 
 div[role="main"] {
     margin: 80px 0;
+
+    @include respond-to('lap') {
+        margin: 20px 0;
+    }
 }
 
 h1,
@@ -45,10 +66,13 @@ h3 {
 }
 
 .main-header {
-    height: $header-height;
     padding: 20px 300px;
     position: relative;
     text-align: center;
+
+    @include respond-to('lap') {
+        padding: 0;
+    }
 
     &:after,
     &:before {
@@ -59,6 +83,14 @@ h3 {
         position: absolute;
         top: 0;
         width: 300px;
+
+        @include respond-to('desk') {
+            height: 234px;
+            width: 250px;
+        }
+        @include respond-to('lap') {
+            display: none;
+        }
     }
     &:before {
         left: 0;
@@ -71,22 +103,34 @@ h3 {
 .main-header__title {
     font-family: cursive;
     font-size: $title-font-size;
+
+    @include respond-to('desk') {
+        font-size: $title-font-size-sm;
+    }
 }
 
 .main-header__subtitle {
     color: $indigo;
     font-size: $subtitle-font-size;
     font-weight: 400;
+
+    @include respond-to('desk') {
+        font-size: $subtitle-font-size-sm;
+    }
 }
 
 .main-nav {
     margin: 40px 0;
     text-align: center;
+
+    @include respond-to('palm') {
+        margin: 20px 0;
+    }
 }
 
 .main-nav__item-list {
     list-style: none;
-    margin: 20px 0;
+    margin: 0;
     padding: 0;
 }
 
@@ -94,6 +138,10 @@ h3 {
     display: inline-block;
     font-size: $nav-font-size;
     margin: 0 20px;
+
+    @include respond-to('lap') {
+        margin: 5px 15px;
+    }
 
     a {
         color: $dark-grey;
@@ -111,6 +159,10 @@ h3 {
 .main-content {
     padding: 0 160px;
     text-align: center;
+
+    @include respond-to('lap') {
+        padding: 0;
+    }
 }
 
 .main-footer {

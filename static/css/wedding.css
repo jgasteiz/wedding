@@ -16,6 +16,9 @@ img {
 
 div[role="main"] {
   margin: 80px 0; }
+  @media only screen and (max-width: 768px) {
+    div[role="main"] {
+      margin: 20px 0; } }
 
 h1,
 h2,
@@ -23,10 +26,12 @@ h3 {
   margin: 0 0 20px; }
 
 .main-header {
-  height: 280px;
   padding: 20px 300px;
   position: relative;
   text-align: center; }
+  @media only screen and (max-width: 768px) {
+    .main-header {
+      padding: 0; } }
   .main-header:after, .main-header:before {
     background-image: url("/static/img/flowers-header.jpg");
     background-size: contain;
@@ -35,6 +40,13 @@ h3 {
     position: absolute;
     top: 0;
     width: 300px; }
+    @media only screen and (max-width: 980px) {
+      .main-header:after, .main-header:before {
+        height: 234px;
+        width: 250px; } }
+    @media only screen and (max-width: 768px) {
+      .main-header:after, .main-header:before {
+        display: none; } }
   .main-header:before {
     left: 0; }
   .main-header:after {
@@ -43,25 +55,37 @@ h3 {
 .main-header__title {
   font-family: cursive;
   font-size: 60px; }
+  @media only screen and (max-width: 980px) {
+    .main-header__title {
+      font-size: 45px; } }
 
 .main-header__subtitle {
   color: #3A3AC7;
   font-size: 80px;
   font-weight: 400; }
+  @media only screen and (max-width: 980px) {
+    .main-header__subtitle {
+      font-size: 50px; } }
 
 .main-nav {
   margin: 40px 0;
   text-align: center; }
+  @media only screen and (max-width: 480px) {
+    .main-nav {
+      margin: 20px 0; } }
 
 .main-nav__item-list {
   list-style: none;
-  margin: 20px 0;
+  margin: 0;
   padding: 0; }
 
 .main-nav__item {
   display: inline-block;
   font-size: 32px;
   margin: 0 20px; }
+  @media only screen and (max-width: 768px) {
+    .main-nav__item {
+      margin: 5px 15px; } }
   .main-nav__item a {
     color: #696969;
     text-decoration: none; }
@@ -73,6 +97,9 @@ h3 {
 .main-content {
   padding: 0 160px;
   text-align: center; }
+  @media only screen and (max-width: 768px) {
+    .main-content {
+      padding: 0; } }
 
 .main-footer {
   text-align: center; }
