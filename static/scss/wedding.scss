@@ -1,5 +1,5 @@
 // Variables
-$site-width: 1000px;
+$site-width: 800px;
 
 $red: #CF043E;
 $dark-grey: #696969;
@@ -15,8 +15,7 @@ $nav-font-size: 32px;
 $home-content-size: 32px;
 
 $break-palm: 480px;
-$break-lap: 768px;
-$break-desk: 980px;
+$break-lap: 800px;
 
 @mixin respond-to($media) {
     @if $media == 'palm' {
@@ -24,9 +23,6 @@ $break-desk: 980px;
     }
     @else if $media == 'lap' {
         @media only screen and (max-width: $break-lap) { @content; }
-    }
-    @else if $media == 'desk' {
-        @media only screen and (max-width: $break-desk) { @content; }
     }
 }
 
@@ -52,11 +48,7 @@ img {
 }
 
 div[role="main"] {
-    margin: 80px 0;
-
-    @include respond-to('lap') {
-        margin: 20px 0;
-    }
+    margin: 20px 0 0;
 }
 
 h1,
@@ -66,45 +58,15 @@ h3 {
 }
 
 .main-header {
-    padding: 20px 300px;
     position: relative;
     text-align: center;
-
-    @include respond-to('lap') {
-        padding: 0;
-    }
-
-    &:after,
-    &:before {
-        background-image: url('/static/img/flowers-header.jpg');
-        background-size: contain;
-        content: "";
-        height: 281px;
-        position: absolute;
-        top: 0;
-        width: 300px;
-
-        @include respond-to('desk') {
-            height: 234px;
-            width: 250px;
-        }
-        @include respond-to('lap') {
-            display: none;
-        }
-    }
-    &:before {
-        left: 0;
-    }
-    &:after {
-        right: 0;
-    }
 }
 
 .main-header__title {
     font-family: cursive;
     font-size: $title-font-size;
 
-    @include respond-to('desk') {
+    @include respond-to('lap') {
         font-size: $title-font-size-sm;
     }
 }
@@ -114,7 +76,7 @@ h3 {
     font-size: $subtitle-font-size;
     font-weight: 400;
 
-    @include respond-to('desk') {
+    @include respond-to('lap') {
         font-size: $subtitle-font-size-sm;
     }
 }
@@ -157,16 +119,19 @@ h3 {
 }
 
 .main-content {
-    padding: 0 160px;
     text-align: center;
-
-    @include respond-to('lap') {
-        padding: 0;
-    }
 }
 
 .main-footer {
     text-align: center;
+
+    img {
+        display: block;
+    }
+
+    @include respond-to('lap') {
+        margin: 0 -20px;
+    }
 }
 
 // Home
