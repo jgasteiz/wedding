@@ -7,10 +7,10 @@ $grey: #A9A9A9;
 $indigo: #3A3AC7;
 
 $base-font-size: 18px;
-$title-font-size: 60px;
-$title-font-size-sm: 45px;
-$subtitle-font-size: 80px;
-$subtitle-font-size-sm: 50px;
+$title-font-size: 50px;
+$title-font-size-sm: 40px;
+$subtitle-font-size: 60px;
+$subtitle-font-size-sm: 40px;
 $nav-font-size: 32px;
 $home-content-size: 32px;
 
@@ -55,11 +55,33 @@ h1,
 h2,
 h3 {
     margin: 0 0 20px;
+
+    @include respond-to('lap') {
+        margin: 0;
+    }
 }
 
 .main-header {
+    background-image: url('/static/img/header.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-top: 280px;
     position: relative;
     text-align: center;
+
+    @include respond-to('lap') {
+        padding: 0;
+        background: none;
+    }
+}
+
+.maia-header__image {
+    display: none;
+
+    @include respond-to('lap') {
+        display: block;
+        margin: 0 0 20px;
+    }
 }
 
 .main-header__title {
@@ -91,9 +113,10 @@ h3 {
 }
 
 .main-nav__item-list {
+    border-bottom: 1px solid #696969;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 0 40px;
+    padding: 0 0 10px;
 }
 
 .main-nav__item {
