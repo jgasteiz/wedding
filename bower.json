@@ -1,0 +1,6 @@
+{
+  "name": "wedding",
+  "dependencies": {
+    "picturefill": "~2.3.1"
+  }
+}
