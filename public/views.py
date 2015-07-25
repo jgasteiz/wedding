@@ -1,6 +1,8 @@
+from datetime import date
+
+from google.appengine.api import users
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import TemplateView, FormView
-from datetime import date
 
 from wedding import mixins
 from wedding.forms import SongForm
@@ -31,6 +33,15 @@ class SongWishlistView(mixins.ViewNameMixin, FormView):
     template_name = 'public/song-wishlist.html'
     form_class = SongForm
     success_url = reverse_lazy('public:song_wishlist_thanks')
+
+    def get_context_data(self, **kwargs):
+        ctx = super(SongWishlistView, self).get_context_data(**kwargs)
+        if users.get_current_user():
+            ctx['is_user_logged_in'] = True
+            ctx['user_email'] = users.get_current_user().email()
+        else:
+            ctx['is_user_logged_in'] = False
+        return ctx
 
     def form_valid(self, form):
         form.save()

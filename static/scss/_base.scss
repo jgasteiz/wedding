@@ -61,9 +61,14 @@ h3 {
     font-size: 18px;
     font-weight: 300;
     padding: 8px 20px;
+    text-decoration: none;
     text-transform: uppercase;
 
     &:hover {
         background-color: darken($red, 10%);
     }
+}
+
+.btn {
+    @extend %button;
 }

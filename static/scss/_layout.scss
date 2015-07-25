@@ -76,18 +76,12 @@
     font-size: $h3-font-size;
     margin: 0 15px;
 
-    &:first-child {
-        margin-left: 0;
-    }
-    &:last-child {
-        margin-right: 0;
-    }
-
     @include respond-to('lap') {
         margin: 5px 15px;
     }
     @include respond-to('palm') {
-        font-size: $h3-font-size;
+        font-size: $base-font-size;
+        margin: 5px 10px;
     }
 
     a {
