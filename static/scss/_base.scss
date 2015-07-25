@@ -18,6 +18,18 @@ body {
     }
 }
 
+a {
+    color: $red;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $red;
+        text-decoration: underline;
+    }
+}
+
 img {
     max-width: 100%;
 }
