@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: $base-font-family;
     font-size: $base-font-size;
     margin: 0 auto;
     max-width: 100%;
@@ -48,4 +48,22 @@ h2 {
 }
 h3 {
     font-size: $h3-font-size;
+}
+
+%button {
+    background-color: $red;
+    border: none;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 4px #888;
+    box-shadow: 0 1px 4px #888;
+    color: white;
+    font-family: $base-font-family;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 8px 20px;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: darken($red, 10%);
+    }
 }
