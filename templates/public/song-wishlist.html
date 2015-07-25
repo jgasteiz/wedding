@@ -27,8 +27,10 @@
                 {% endif %}
             </div>
             {% endfor %}
-            <p><em>Submitted by {{ user_email }}</em></p>
-            <input class="form__submit" type="submit" value="Submit">
+            <p><em>Submitting as {{ user_email }}</em></p>
+            <p class="text-center">
+                <input class="form__submit" type="submit" value="Submit">
+            </p>
         </form>
     {% else %}
         <h2>Log in with your Google account and help us picking music for the after party.</h2>
