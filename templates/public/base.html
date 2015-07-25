@@ -16,7 +16,7 @@
 <body>
     <div role="main">
         <header class="main-header">
-            <img class="maia-header__image" src="{% static 'img/header-flowers-lap.jpg' %}" alt="Some flowers"/>
+            {% include 'public/partials/picture.html' with src1='img/header-flowers-lap.jpg' src2='img/header-flowers-lap@2x.jpg' src1sm='img/header-flowers-palm.jpg' src2sm='img/header-flowers-palm@2x.jpg' alt='Some flowers' title='Some flowers' class='maia-header__image' %}
             <span class="main-header__title">Magda & Javi</span>
             <span class="main-header__subtitle">25.06.2016</span>
         </header>
@@ -40,7 +40,7 @@
             {% block content %}{% endblock content %}
         </div>
         <footer class="main-footer">
-            <img src="{% static 'img/footer-pattern.jpg' %}" alt="Some flowers"/>
+            {% include 'public/partials/picture.html' with src1='img/footer-pattern.jpg' src2='img/footer-pattern@2x.jpg' src1sm='img/footer-pattern-palm.jpg' src2sm='img/footer-pattern-palm@2x.jpg' alt='Some flowers' title='Some flowers' %}
         </footer>
     </div>
 </body>

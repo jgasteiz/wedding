@@ -1,0 +1,11 @@
+{% load static %}
+
+<picture>
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+    <source srcset="{% static src1 %}, {% static src2 %} 2x" media="(min-width: 480px)">
+    <!--[if IE 9]></video><![endif]-->
+    <img class="{{ class }}"
+         srcset="{% static src1sm %}, {% static src2sm %} 2x"
+         alt="{{ alt }}"
+         title="{{ title }}">
+</picture>
