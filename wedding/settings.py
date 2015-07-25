@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'djangae.contrib.uniquetool',
 
     'public',
+    'cms',
 )
 
 MIDDLEWARE_CLASSES = (
