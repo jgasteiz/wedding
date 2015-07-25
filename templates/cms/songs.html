@@ -7,5 +7,56 @@
 
 {% block content %}
 
-    <h1>This is the Songs page</h1>
+    <h1>Submitted songs</h1>
+
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Song name</th>
+                <th>Artist</th>
+                <th>Submitted by</th>
+                <th>Added</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for song in song_list %}
+            <tr {% if song.is_approved %}class="success"{% endif %}>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ song.name }}</td>
+                <td>{{ song.artist }}</td>
+                <td>{{ song.submitted_by }}</td>
+                <td>{{ song.added }}</td>
+                <td>
+                    <form action="{% url 'cms:approve_song' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="song_id" value="{{ song.id }}">
+                        {% if song.is_approved %}
+                            <input type="hidden" name="is_approved" value="False">
+                            <input type="submit" value="Reject song" class="btn btn-default btn-sm">
+                        {% else %}
+                            <input type="hidden" name="is_approved" value="True">
+                            <input type="submit" value="Approve song" class="btn btn-default btn-sm">
+                        {% endif %}
+                    </form>
+                    <p>
+                        <a href="{% url 'cms:delete_song' song.id %}" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="{% url 'cms:update_song' song.id %}" class="btn btn-default btn-sm">Update</a>
+                    </p>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td>0</td>
+                <td>No songs yet</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
 {% endblock content %}
