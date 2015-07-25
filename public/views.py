@@ -1,17 +1,10 @@
 from django.views.generic import TemplateView
 from datetime import date
 
-
-class ViewNameMixin(object):
-    page_name = None
-
-    def get_context_data(self, **kwargs):
-        ctx = super(ViewNameMixin, self).get_context_data(**kwargs)
-        ctx['page_name'] = self.page_name
-        return ctx
+from wedding import mixins
 
 
-class HomeView(ViewNameMixin, TemplateView):
+class HomeView(mixins.ViewNameMixin, TemplateView):
     page_name = 'home'
     template_name = 'public/home.html'
 
@@ -24,28 +17,28 @@ class HomeView(ViewNameMixin, TemplateView):
 home = HomeView.as_view()
 
 
-class WeddingDetailsView(ViewNameMixin, TemplateView):
+class WeddingDetailsView(mixins.ViewNameMixin, TemplateView):
     page_name = 'details'
     template_name = 'public/details.html'
 
 details = WeddingDetailsView.as_view()
 
 
-class SongWishlistView(ViewNameMixin, TemplateView):
+class SongWishlistView(mixins.ViewNameMixin, TemplateView):
     page_name = 'song_wishlist'
     template_name = 'public/song-wishlist.html'
 
 song_wishlist = SongWishlistView.as_view()
 
 
-class RSVPView(ViewNameMixin, TemplateView):
+class RSVPView(mixins.ViewNameMixin, TemplateView):
     page_name = 'rsvp'
     template_name = 'public/rsvp.html'
 
 rsvp = RSVPView.as_view()
 
 
-class ContactView(ViewNameMixin, TemplateView):
+class ContactView(mixins.ViewNameMixin, TemplateView):
     page_name = 'contact'
     template_name = 'public/contact.html'
 
