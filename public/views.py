@@ -1,7 +1,9 @@
-from django.views.generic import TemplateView
+from django.core.urlresolvers import reverse_lazy
+from django.views.generic import TemplateView, FormView
 from datetime import date
 
 from wedding import mixins
+from wedding.forms import SongForm
 
 
 class HomeView(mixins.ViewNameMixin, TemplateView):
@@ -24,9 +26,15 @@ class WeddingDetailsView(mixins.ViewNameMixin, TemplateView):
 details = WeddingDetailsView.as_view()
 
 
-class SongWishlistView(mixins.ViewNameMixin, TemplateView):
+class SongWishlistView(mixins.ViewNameMixin, FormView):
     page_name = 'song_wishlist'
     template_name = 'public/song-wishlist.html'
+    form_class = SongForm
+    success_url = reverse_lazy('public:song_wishlist_thanks')
+
+    def form_valid(self, form):
+        form.save()
+        return super(SongWishlistView, self).form_valid(form)
 
 song_wishlist = SongWishlistView.as_view()
 

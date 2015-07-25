@@ -1,0 +1,33 @@
+.form {
+    margin: 40px auto;
+    max-width: 400px;
+    text-align: left;
+}
+
+.form__row {
+    margin: 20px 0;
+}
+
+.form__errors {
+    color: $red;
+    list-style: none;
+    margin: 5px 0 0 25%;
+    padding: 0;
+}
+
+.form__label {
+    display: inline-block;
+    width: 25%;
+}
+
+input[type="text"] {
+    border: 1px solid #ddd;
+    display: inline-block;
+    font-size: 14px;
+    padding: 10px 10px;
+    width: 75%;
+}
+
+.form__submit {
+    @extend %button;
+}

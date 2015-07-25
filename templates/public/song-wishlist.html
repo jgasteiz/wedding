@@ -6,5 +6,26 @@
 {% endblock page_title %}
 
 {% block content %}
-    <h1>Song wish list</h1>
+
+    <h1>Help us organising our wedding.</h1>
+
+    <h2>Enter the name of a song you would like to hear in the after party.</h2>
+
+    <form class="form" action="" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form__row">
+            <label class="form__label" for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %}<span class="asterisk">*</span>{% endif %}</label><!--
+            -->{{ field }}
+            {% if field.errors %}
+            <ul class="form__errors">
+                {% for error in field.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        {% endfor %}
+        <input class="form__submit" type="submit" value="Submit">
+    </form>
 {% endblock content %}
