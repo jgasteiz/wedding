@@ -1,23 +1,13 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 
 import session_csrf
 session_csrf.monkeypatch()
 
-from django.contrib import admin
-admin.autodiscover()
-
-urlpatterns = patterns('',
-    url(r'^$', 'public.views.home', name='home'),
-    url(r'^details/$', 'public.views.details', name='details'),
-    url(r'^song-wishlist/$', 'public.views.song_wishlist', name='song_wishlist'),
-    url(r'^contact/$', 'public.views.contact', name='contact'),
-
+urlpatterns = [
     url(r'^_ah/', include('djangae.urls')),
-
-    # Note that by default this is also locked down with login:admin in app.yaml
-    url(r'^admin/', include(admin.site.urls)),
-
     url(r'^csp/', include('cspreports.urls')),
-
     url(r'^auth/', include('djangae.contrib.gauth.urls')),
-)
+
+    url(r'^cms/', include('cms.urls', namespace='cms')),
+    url(r'', include('public.urls', namespace='public')),
+]
