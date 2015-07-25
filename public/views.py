@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView
+from datetime import date
 
 
 class ViewNameMixin(object):
@@ -13,6 +14,12 @@ class ViewNameMixin(object):
 class HomeView(ViewNameMixin, TemplateView):
     page_name = 'home'
     template_name = 'public/home.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(HomeView, self).get_context_data(**kwargs)
+        delta = date(2016, 6, 25) - date.today()
+        ctx['days_until_wedding'] = delta.days
+        return ctx
 
 home = HomeView.as_view()
 

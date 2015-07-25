@@ -6,13 +6,11 @@ $dark-grey: #696969;
 $grey: #A9A9A9;
 $indigo: #3A3AC7;
 
-$base-font-size: 18px;
-$title-font-size: 50px;
-$title-font-size-sm: 40px;
-$subtitle-font-size: 60px;
-$subtitle-font-size-sm: 40px;
-$nav-font-size: 32px;
-$home-content-size: 32px;
+$base-font-size: 22px;
+$base-font-size-sm: 16px;
+$h1-font-size: 48px;
+$h2-font-size: 32px;
+$h3-font-size: 26px;
 
 $break-palm: 480px;
 $break-lap: 800px;
@@ -32,19 +30,27 @@ $break-lap: 800px;
 }
 
 html {
-    font-size: $base-font-size;
     padding: 0 20px;
 }
 
 body {
     font-family: 'PT Sans Narrow', sans-serif;
+    font-size: $base-font-size;
     margin: 0 auto;
     max-width: 100%;
     width: $site-width;
+
+    @include respond-to('palm') {
+        font-size: $base-font-size-sm;
+    }
 }
 
 img {
     max-width: 100%;
+}
+
+p {
+    margin: 20px 0;
 }
 
 div[role="main"] {
@@ -54,24 +60,37 @@ div[role="main"] {
 h1,
 h2,
 h3 {
+    font-weight: 400;
     margin: 0 0 20px;
 
     @include respond-to('lap') {
         margin: 0;
     }
 }
+h1 {
+    font-size: $h1-font-size;
+}
+h2 {
+    font-size: $h2-font-size;
+}
+h3 {
+    font-size: $h3-font-size;
+}
+
 
 .main-header {
     background-image: url('/static/img/header.png');
     background-repeat: no-repeat;
     background-size: 100% auto;
+    margin-bottom: 40px;
     padding-top: 280px;
     position: relative;
     text-align: center;
 
     @include respond-to('lap') {
-        padding: 0;
         background: none;
+        margin-bottom: 20px;
+        padding: 0;
     }
 }
 
@@ -86,29 +105,32 @@ h3 {
 
 .main-header__title {
     font-family: cursive;
-    font-size: $title-font-size;
+    display: block;
+    font-size: $h1-font-size;
+    margin-bottom: 0;
 
     @include respond-to('lap') {
-        font-size: $title-font-size-sm;
+        font-size: $h2-font-size;
     }
 }
 
 .main-header__subtitle {
     color: $indigo;
-    font-size: $subtitle-font-size;
+    display: block;
+    font-size: $h1-font-size;
     font-weight: 400;
 
     @include respond-to('lap') {
-        font-size: $subtitle-font-size-sm;
+        font-size: $h2-font-size;
     }
 }
 
 .main-nav {
-    margin: 40px 0;
+    margin-bottom: 40px;
     text-align: center;
 
     @include respond-to('palm') {
-        margin: 20px 0;
+        margin-bottom: 20px;
     }
 }
 
@@ -117,15 +139,22 @@ h3 {
     list-style: none;
     margin: 0 40px;
     padding: 0 0 10px;
+
+    @include respond-to('palm') {
+        margin: 0 0 20px;
+    }
 }
 
 .main-nav__item {
     display: inline-block;
-    font-size: $nav-font-size;
+    font-size: $h2-font-size;
     margin: 0 20px;
 
     @include respond-to('lap') {
         margin: 5px 15px;
+    }
+    @include respond-to('palm') {
+        font-size: $h3-font-size;
     }
 
     a {
@@ -142,7 +171,12 @@ h3 {
 }
 
 .main-content {
+    margin-bottom: 40px;
     text-align: center;
+
+    @include respond-to('palm') {
+        margin-bottom: 20px;
+    }
 }
 
 .main-footer {
@@ -159,7 +193,11 @@ h3 {
 
 // Home
 %home-content {
-    font-size: $home-content-size;
+    font-size: $h2-font-size;
+
+    @include respond-to('palm') {
+        font-size: $h3-font-size;
+    }
 }
 .home-content--dark {
     @extend %home-content;
