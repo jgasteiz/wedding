@@ -1,0 +1,129 @@
+.main-header {
+    background-image: url('/static/img/header.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    margin-bottom: 40px;
+    padding-top: 280px;
+    position: relative;
+    text-align: center;
+
+    @include respond-to('lap') {
+        background: none;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+}
+
+.maia-header__image {
+    display: none;
+
+    @include respond-to('lap') {
+        display: block;
+        margin: 0 0 20px;
+    }
+}
+
+.main-header__title {
+    font-family: cursive;
+    display: block;
+    font-size: $h1-font-size;
+    margin-bottom: 0;
+
+    @include respond-to('lap') {
+        font-size: $h2-font-size;
+    }
+}
+
+.main-header__subtitle {
+    color: $indigo;
+    display: block;
+    font-size: $h1-font-size;
+    font-weight: 400;
+
+    @include respond-to('lap') {
+        font-size: $h2-font-size;
+    }
+}
+
+.main-nav {
+    margin-bottom: 40px;
+    text-align: center;
+
+    @include respond-to('palm') {
+        margin-bottom: 20px;
+    }
+}
+
+.main-nav__item-list {
+    border-bottom: 1px solid #696969;
+    list-style: none;
+    margin: 0 40px;
+    padding: 0 0 10px;
+
+    @include respond-to('palm') {
+        margin: 0 0 20px;
+    }
+}
+
+.main-nav__item {
+    display: inline-block;
+    font-size: $h2-font-size;
+    margin: 0 20px;
+
+    @include respond-to('lap') {
+        margin: 5px 15px;
+    }
+    @include respond-to('palm') {
+        font-size: $h3-font-size;
+    }
+
+    a {
+        color: $dark-grey;
+        text-decoration: none;
+
+        &:hover {
+            color: $red;
+        }
+    }
+    &--is-active a {
+        color: $red;
+    }
+}
+
+.main-content {
+    margin-bottom: 40px;
+    text-align: center;
+
+    @include respond-to('palm') {
+        margin-bottom: 20px;
+    }
+}
+
+.main-footer {
+    text-align: center;
+
+    img {
+        display: block;
+    }
+
+    @include respond-to('lap') {
+        margin: 0 -20px;
+    }
+}
+
+// Home
+%home-content {
+    font-size: $h2-font-size;
+
+    @include respond-to('palm') {
+        font-size: $h3-font-size;
+    }
+}
+.home-content--dark {
+    @extend %home-content;
+    color: $dark-grey;
+}
+.home-content--light {
+    @extend %home-content;
+    color: $grey;
+}

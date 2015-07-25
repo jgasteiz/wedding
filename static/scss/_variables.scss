@@ -1,0 +1,24 @@
+$site-width: 800px;
+
+$red: #CF043E;
+$dark-grey: #696969;
+$grey: #A9A9A9;
+$indigo: #3A3AC7;
+
+$base-font-size: 22px;
+$base-font-size-sm: 16px;
+$h1-font-size: 48px;
+$h2-font-size: 32px;
+$h3-font-size: 26px;
+
+$break-palm: 480px;
+$break-lap: 800px;
+
+@mixin respond-to($media) {
+    @if $media == 'palm' {
+        @media only screen and (max-width: $break-palm) { @content; }
+    }
+    @else if $media == 'lap' {
+        @media only screen and (max-width: $break-lap) { @content; }
+    }
+}

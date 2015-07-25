@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    padding: 0 20px;
+}
+
+body {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: $base-font-size;
+    margin: 0 auto;
+    max-width: 100%;
+    width: $site-width;
+
+    @include respond-to('palm') {
+        font-size: $base-font-size-sm;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    margin: 20px 0;
+}
+
+div[role="main"] {
+    margin: 20px 0 0;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 400;
+    margin: 0 0 20px;
+
+    @include respond-to('lap') {
+        margin: 0;
+    }
+}
+h1 {
+    font-size: $h1-font-size;
+}
+h2 {
+    font-size: $h2-font-size;
+}
+h3 {
+    font-size: $h3-font-size;
+}
