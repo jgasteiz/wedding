@@ -1,6 +1,7 @@
 {
   "name": "wedding",
   "dependencies": {
-    "picturefill": "~2.3.1"
+    "picturefill": "~2.3.1",
+    "bootstrap": "~3.3.5"
   }
 }
