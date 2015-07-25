@@ -31,11 +31,18 @@ class WeddingDetailsView(ViewNameMixin, TemplateView):
 details = WeddingDetailsView.as_view()
 
 
-class SongWishlist(ViewNameMixin, TemplateView):
+class SongWishlistView(ViewNameMixin, TemplateView):
     page_name = 'song_wishlist'
     template_name = 'public/song-wishlist.html'
 
-song_wishlist = SongWishlist.as_view()
+song_wishlist = SongWishlistView.as_view()
+
+
+class RSVPView(ViewNameMixin, TemplateView):
+    page_name = 'rsvp'
+    template_name = 'public/rsvp.html'
+
+rsvp = RSVPView.as_view()
 
 
 class ContactView(ViewNameMixin, TemplateView):
