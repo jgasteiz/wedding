@@ -44,7 +44,9 @@ class SongWishlistView(mixins.ViewNameMixin, FormView):
         return ctx
 
     def form_valid(self, form):
-        form.save()
+        song = form.save()
+        song.submitted_by = users.get_current_user().email()
+        song.save()
         return super(SongWishlistView, self).form_valid(form)
 
 song_wishlist = SongWishlistView.as_view()
