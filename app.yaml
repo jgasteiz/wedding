@@ -25,6 +25,11 @@ handlers:
   secure: always
   login: admin
 
+- url: /cms.*
+  script: wedding.wsgi.application
+  secure: always
+  login: admin
+
 - url: /.*
   script: wedding.wsgi.application
   secure: always
