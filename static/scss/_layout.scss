@@ -1,5 +1,10 @@
+/**
+ *
+ * Header
+ *
+ */
 .main-header {
-    background-image: url('/static/img/header.png');
+    @include background-image-retina('/static/img/header-flowers', 'png', 800px, 368px);
     background-repeat: no-repeat;
     background-size: 100% auto;
     margin-bottom: 40px;
@@ -29,7 +34,7 @@
     font-size: $h1-font-size;
     margin-bottom: 0;
 
-    @include respond-to('lap') {
+    @include respond-to('palm') {
         font-size: $h2-font-size;
     }
 }
@@ -40,11 +45,16 @@
     font-size: $h1-font-size;
     font-weight: 400;
 
-    @include respond-to('lap') {
+    @include respond-to('palm') {
         font-size: $h2-font-size;
     }
 }
 
+/**
+ *
+ * Navigation
+ *
+ */
 .main-nav {
     margin-bottom: 40px;
     text-align: center;
@@ -90,6 +100,11 @@
     }
 }
 
+/**
+ *
+ * Content
+ *
+ */
 .main-content {
     margin-bottom: 40px;
     text-align: center;
@@ -99,6 +114,11 @@
     }
 }
 
+/**
+ *
+ * Footer
+ *
+ */
 .main-footer {
     text-align: center;
 
@@ -111,7 +131,11 @@
     }
 }
 
-// Home
+/**
+ *
+ * Home page
+ *
+ */
 %home-content {
     font-size: $h2-font-size;
 

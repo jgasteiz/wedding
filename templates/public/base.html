@@ -3,7 +3,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Javi & Magda - June 2016</title>
+    <title>Magda & Javi - {% block page_title %}{% endblock page_title %}</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
@@ -13,7 +13,7 @@
 <body>
     <div role="main">
         <header class="main-header">
-            <img class="maia-header__image" src="{% static 'img/header.jpg' %}" alt="Some flowers"/>
+            <img class="maia-header__image" src="{% static 'img/header-flowers-lap.jpg' %}" alt="Some flowers"/>
             <span class="main-header__title">Magda & Javi</span>
             <span class="main-header__subtitle">25.06.2016</span>
         </header>
@@ -26,7 +26,7 @@
                     <a href="{% url 'details' %}">Wedding Details</a>
                 </li>
                 <li class="main-nav__item {% ifequal page_name 'song_wishlist' %}main-nav__item--is-active{% endifequal %}">
-                    <a href="{% url 'song_wishlist' %}">Song wishlist</a>
+                    <a href="{% url 'song_wishlist' %}">Song wish list</a>
                 </li>
                 <li class="main-nav__item {% ifequal page_name 'contact' %}main-nav__item--is-active{% endifequal %}">
                     <a href="{% url 'contact' %}">Contact</a>
@@ -37,7 +37,7 @@
             {% block content %}{% endblock content %}
         </div>
         <footer class="main-footer">
-            <img src="{% static 'img/footer.jpg' %}" alt="Some flowers"/>
+            <img src="{% static 'img/footer-pattern.jpg' %}" alt="Some flowers"/>
         </footer>
     </div>
 </body>
