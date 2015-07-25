@@ -107,7 +107,6 @@
  */
 .main-content {
     margin-bottom: 40px;
-    text-align: center;
 
     @include respond-to('palm') {
         margin-bottom: 20px;

@@ -7,36 +7,38 @@
 
 {% block content %}
 
-    <h1>Help us organising our wedding.</h1>
+    <div class="text-center">
 
-    {% if is_user_logged_in %}
-        <h2>Enter the name of a song you would like to hear in the after party.</h2>
+        <h1>Help us organising our wedding.</h1>
 
-        <form class="form" action="" method="post">
-            {% csrf_token %}
-            {% for field in form %}
-            <div class="form__row">
-                <label class="form__label" for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %}<span class="asterisk">*</span>{% endif %}</label><!--
-                -->{{ field }}
-                {% if field.errors %}
-                <ul class="form__errors">
-                    {% for error in field.errors %}
-                    <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-            </div>
-            {% endfor %}
-            <p><em>Submitting as {{ user_email }}</em></p>
-            <p class="text-center">
-                <input class="form__submit" type="submit" value="Submit">
+        {% if is_user_logged_in %}
+            <h2>Enter the name of a song you would like to hear in the after party.</h2>
+
+            <form class="form" action="" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="form__row">
+                    <label class="form__label" for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %}<span class="asterisk">*</span>{% endif %}</label><!--
+                    -->{{ field }}
+                    {% if field.errors %}
+                    <ul class="form__errors">
+                        {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <p><em>Submitting as {{ user_email }}</em></p>
+                <p class="text-center">
+                    <input class="form__submit" type="submit" value="Submit">
+                </p>
+            </form>
+        {% else %}
+            <h2>Log in with your Google account and help us picking music for the after party.</h2>
+            <p>
+                <a href="{% url 'login:djangae_login_redirect' %}?next={% url 'public:song_wishlist' %}" class="btn">Log in</a>
             </p>
-        </form>
-    {% else %}
-        <h2>Log in with your Google account and help us picking music for the after party.</h2>
-        <p>
-            <a href="{% url 'login:djangae_login_redirect' %}?next={% url 'public:song_wishlist' %}" class="btn">Log in</a>
-        </p>
-
-    {% endif %}
+        {% endif %}
+    </div>
 {% endblock content %}

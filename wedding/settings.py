@@ -163,12 +163,42 @@ else:
     CSP_STYLE_SRC = ("'self'", "fonts.googleapis.com", "*.gstatic.com")
 
 # sensible default CPS settings, feel free to modify them
-CSP_DEFAULT_SRC = ("'self'", "*.gstatic.com")
-CSP_FONT_SRC = ("'self'", "themes.googleusercontent.com", "*.gstatic.com")
-CSP_FRAME_SRC = ("'self'", "www.google.com", "www.youtube.com", "accounts.google.com", "apis.google.com", "plus.google.com")
-CSP_SCRIPT_SRC = ("'self'", "*.googleanalytics.com", "*.google-analytics.com", "ajax.googleapis.com")
-CSP_IMG_SRC = ("'self'", "data:", "s.ytimg.com", "*.googleusercontent.com", "*.gstatic.com")
-CSP_CONNECT_SRC = ("'self'", "plus.google.com", "www.google-analytics.com")
+CSP_DEFAULT_SRC = (
+    "'self'",
+    "*.gstatic.com"
+)
+CSP_FONT_SRC = (
+    "'self'",
+    "themes.googleusercontent.com",
+    "*.gstatic.com"
+)
+CSP_FRAME_SRC = (
+    "'self'",
+    "www.google.com",
+    "www.youtube.com",
+    "accounts.google.com",
+    "apis.google.com",
+    "plus.google.com"
+)
+CSP_SCRIPT_SRC = (
+    "'self'",
+    "*.googleanalytics.com",
+    "*.google-analytics.com",
+    "ajax.googleapis.com"
+)
+CSP_IMG_SRC = (
+    "'self'",
+    "data:",
+    "s.ytimg.com",
+    "maps.googleapis.com",
+    "*.googleusercontent.com",
+    "*.gstatic.com"
+)
+CSP_CONNECT_SRC = (
+    "'self'",
+    "plus.google.com",
+    "www.google-analytics.com"
+)
 
 
 from djangae.contrib.gauth.settings import *
