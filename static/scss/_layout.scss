@@ -26,6 +26,9 @@
         display: block;
         margin: 0 0 20px;
     }
+    @include respond-to('palm') {
+        margin: 0;
+    }
 }
 
 .main-header__title {
@@ -117,6 +120,7 @@
  *
  */
 .main-footer {
+    margin: 40px 0 0;
     text-align: center;
 
     img {
@@ -124,7 +128,7 @@
     }
 
     @include respond-to('lap') {
-        margin: 0 -20px;
+        margin: 40px -20px 0;
     }
 }
 

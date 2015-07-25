@@ -26,28 +26,32 @@ p {
     margin: 20px 0;
 }
 
-div[role="main"] {
-    margin: 20px 0 0;
-}
-
 h1,
 h2,
 h3 {
     font-weight: 400;
     margin: 0 0 20px;
-
-    @include respond-to('lap') {
-        margin: 0;
-    }
 }
 h1 {
     font-size: $h1-font-size;
+
+    @include respond-to('palm') {
+        font-size: $h2-font-size;
+    }
 }
 h2 {
     font-size: $h2-font-size;
+
+    @include respond-to('palm') {
+        font-size: $h3-font-size;
+    }
 }
 h3 {
     font-size: $h3-font-size;
+
+    @include respond-to('palm') {
+        font-size: $base-font-family;
+    }
 }
 
 %button {
@@ -57,10 +61,14 @@ h3 {
     -webkit-box-shadow: 0 1px 4px #888;
     box-shadow: 0 1px 4px #888;
     color: white;
+    cursor: default;
+    display: inline-block;
     font-family: $base-font-family;
     font-size: 18px;
     font-weight: 300;
-    padding: 8px 20px;
+    height: 37px;
+    line-height: 37px;
+    padding: 0 20px;
     text-decoration: none;
     text-transform: uppercase;
 
