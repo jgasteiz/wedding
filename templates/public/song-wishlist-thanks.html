@@ -1,0 +1,13 @@
+{% extends 'public/base.html' %}
+{% load static %}
+
+{% block page_title %}
+    Song wish list
+{% endblock page_title %}
+
+{% block content %}
+
+    <h1>Thanks for your help!</h1>
+    <h2>Do you want to submit another song? <a href="{% url 'public:song_wishlist' %}">Go ahead</a>.</h2>
+
+{% endblock content %}

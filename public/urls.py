@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^details/$', views.details, name='details'),
     url(r'^song-wishlist/$', views.song_wishlist, name='song_wishlist'),
+    url(r'^song-wishlist-thanks/$', views.song_wishlist_thanks, name='song_wishlist_thanks'),
     url(r'^rsvp/$', views.rsvp, name='rsvp'),
     url(r'^contact/$', views.contact, name='contact'),
 ]

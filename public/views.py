@@ -39,6 +39,13 @@ class SongWishlistView(mixins.ViewNameMixin, FormView):
 song_wishlist = SongWishlistView.as_view()
 
 
+class SongSubmissionThanks(mixins.ViewNameMixin, TemplateView):
+    page_name = 'song_wishlist'
+    template_name = 'public/song-wishlist-thanks.html'
+
+song_wishlist_thanks = SongSubmissionThanks.as_view()
+
+
 class RSVPView(mixins.ViewNameMixin, TemplateView):
     page_name = 'rsvp'
     template_name = 'public/rsvp.html'
