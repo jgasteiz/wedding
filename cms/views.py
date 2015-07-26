@@ -42,7 +42,11 @@ class DownloadSongsView(View):
 
         approved_songs = Song.objects.filter(is_approved=True)
         for song in approved_songs:
-            writer.writerow([song.name, song.artist, song.submitted_by])
+            writer.writerow([
+                unicode(song.name).encode('utf-8'),
+                unicode(song.artist).encode('utf-8'),
+                unicode(song.submitted_by).encode('utf-8'),
+            ])
 
         return response
 
