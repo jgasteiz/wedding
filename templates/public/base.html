@@ -17,9 +17,15 @@
     <div role="main">
         <header class="main-header">
             <ul class="language-selector">
-                <li><a href="{% url 'public:change_language' 'en' %}">English</a></li>
-                <li><a href="{% url 'public:change_language' 'es' %}">Español</a></li>
-                <li><a href="{% url 'public:change_language' 'pl' %}">Polski</a></li>
+                <li class="language-selector__lang {% ifequal request.LANGUAGE_CODE 'en' %}language-selector__lang--active{% endifequal %}">
+                    <a href="{% url 'public:change_language' 'en' %}">English</a>
+                </li>
+                <li class="language-selector__lang {% ifequal request.LANGUAGE_CODE 'es' %}language-selector__lang--active{% endifequal %}">
+                    <a href="{% url 'public:change_language' 'es' %}">Español</a>
+                </li>
+                <li class="language-selector__lang {% ifequal request.LANGUAGE_CODE 'pl' %}language-selector__lang--active{% endifequal %}">
+                    <a href="{% url 'public:change_language' 'pl' %}">Polski</a>
+                </li>
             </ul>
             {% include 'public/partials/picture.html' with src1='img/header-flowers-lap.jpg' src2='img/header-flowers-lap@2x.jpg' src1sm='img/header-flowers-palm.jpg' src2sm='img/header-flowers-palm@2x.jpg' alt='Some flowers' title='Some flowers' class='maia-header__image' %}
             <span class="main-header__title">Magda & Javi</span>
