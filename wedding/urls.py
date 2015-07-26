@@ -17,11 +17,12 @@ public_patterns = [
     url(r'^change_language/(?P<lang_code>.*)/$', public_views.change_language, name='change_language'),
 ]
 
-urlpatterns = i18n_patterns(
+urlpatterns = [
+    url(r'^cms/', include('cms.urls', namespace='cms'))
+] + i18n_patterns(
     url(r'^_ah/', include('djangae.urls')),
     url(r'^csp/', include('cspreports.urls')),
     url(r'^auth/', include('djangae.contrib.gauth.urls', namespace='login')),
 
-    url(r'^cms/', include('cms.urls', namespace='cms')),
-    url(r'^', include(public_patterns, namespace='public')),
+    url(r'', include(public_patterns, namespace='public')),
 )
