@@ -38,3 +38,8 @@ indexes:
   - name: is_approved
   - name: added
     direction: desc
+
+- kind: wedding_song
+  properties:
+  - name: is_approved
+  - name: artist

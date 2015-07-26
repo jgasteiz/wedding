@@ -40,20 +40,31 @@ songs = SongsView.as_view()
 
 class DownloadSongsView(View):
     def get(self, request, *args, **kwargs):
-        response = HttpResponse(content_type='text/csv')
-        file_name = 'approved-songs-{}.csv'.format(str(datetime.now()))
-        response['Content-Disposition'] = 'attachment; filename="{}"'.format(file_name)
+        file_type = kwargs.get('file_type')
+        response = HttpResponse(content_type='text/{}'.format(file_type))
 
-        writer = csv.writer(response)
-        writer.writerow(['Song title', 'Artist name', 'Submitted by'])
+        approved_songs = Song.objects.filter(is_approved=True).order_by('artist')
+        date_now = str(datetime.now())
 
-        approved_songs = Song.objects.filter(is_approved=True)
-        for song in approved_songs:
-            writer.writerow([
-                unicode(song.name).encode('utf-8'),
-                unicode(song.artist).encode('utf-8'),
-                unicode(song.submitted_by).encode('utf-8'),
-            ])
+        if file_type == 'csv':
+            file_name = 'approved-songs-{}.csv'.format(date_now)
+            response['Content-Disposition'] = 'attachment; filename="{}"'.format(file_name)
+
+            writer = csv.writer(response)
+            writer.writerow(['Song title', 'Artist name', 'Submitted by'])
+
+            for song in approved_songs:
+                writer.writerow([
+                    unicode(song.name).encode('utf-8'),
+                    unicode(song.artist).encode('utf-8'),
+                    unicode(song.submitted_by).encode('utf-8'),
+                ])
+        elif file_type == 'plain':
+            file_name = 'approved-songs-{}.txt'.format(date_now)
+            response['Content-Disposition'] = 'attachment; filename="{}"'.format(file_name)
+            for song in approved_songs:
+                line = '{}, {}\n'.format(song.name, song.artist)
+                response.write(unicode(line).encode('utf-8'))
 
         return response
 

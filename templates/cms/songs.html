@@ -10,7 +10,8 @@
     <h1>Submitted songs</h1>
 
     <p class="text-right">
-        <a class="btn btn-default" href="{% url 'cms:download_songs' %}">Download songs</a>
+        <a class="btn btn-default" href="{% url 'cms:download_songs' 'plain' %}">Download as Text file</a>
+        <a class="btn btn-default" href="{% url 'cms:download_songs' 'csv' %}">Download as CSV</a>
     </p>
 
     <table class="table table-bordered table-responsive">
