@@ -32,3 +32,9 @@ indexes:
   properties:
   - name: app
   - name: name
+
+- kind: wedding_song
+  properties:
+  - name: is_approved
+  - name: added
+    direction: desc

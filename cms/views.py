@@ -1,4 +1,8 @@
+import csv
+from datetime import datetime
+
 from django.core.urlresolvers import reverse_lazy
+from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views.generic import (
     TemplateView,
@@ -27,6 +31,24 @@ class SongsView(mixins.ViewNameMixin, ListView):
 songs = SongsView.as_view()
 
 
+class DownloadSongsView(View):
+    def get(self, request, *args, **kwargs):
+        response = HttpResponse(content_type='text/csv')
+        file_name = 'approved-songs-{}.csv'.format(str(datetime.now()))
+        response['Content-Disposition'] = 'attachment; filename="{}"'.format(file_name)
+
+        writer = csv.writer(response)
+        writer.writerow(['Song title', 'Artist name', 'Submitted by'])
+
+        approved_songs = Song.objects.filter(is_approved=True)
+        for song in approved_songs:
+            writer.writerow([song.name, song.artist, song.submitted_by])
+
+        return response
+
+download_songs = DownloadSongsView.as_view()
+
+download_songs
 class UpdateSongView(mixins.ViewNameMixin, UpdateView):
     page_name = 'songs'
     template_name = 'cms/song_form.html'
