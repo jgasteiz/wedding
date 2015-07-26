@@ -1,8 +1,10 @@
 from datetime import date
 
 from google.appengine.api import users
-from django.core.urlresolvers import reverse_lazy
-from django.views.generic import TemplateView, FormView
+from django.core.urlresolvers import reverse_lazy, reverse
+from django.shortcuts import redirect
+from django.utils.translation import activate
+from django.views.generic import TemplateView, FormView, View
 
 from wedding import mixins
 from wedding.forms import SongForm
@@ -71,3 +73,12 @@ class ContactView(mixins.ViewNameMixin, TemplateView):
     template_name = 'public/contact.html'
 
 contact = ContactView.as_view()
+
+
+class ChangeLanguageView(View):
+    def dispatch(self, request, *args, **kwargs):
+        lang_code = kwargs.get('lang_code')
+        activate(lang_code)
+        return redirect(reverse('public:home'))
+
+change_language = ChangeLanguageView.as_view()
