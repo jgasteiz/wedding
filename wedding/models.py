@@ -13,3 +13,7 @@ class Song(models.Model):
 
     def __unicode__(self):
         return '{}, by {} - submitted by {}'.format(self.name, self.artist, self.submitted_by)
+
+    def save(self, *args, **kwars):
+        self.artist = self.artist.capitalize()
+        super(Song, self).save()
