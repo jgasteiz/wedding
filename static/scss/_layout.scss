@@ -185,6 +185,43 @@
     color: $grey;
 }
 
+.home-faces {
+    margin: 0 auto;
+    position: relative;
+    width: 620px;
+}
+%home-faces__face {
+    background-position: top;
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+}
+.home-faces__javi {
+    @extend %home-faces__face;
+    background-image: url('/static/img/home-faces-javi.jpg');
+    margin-right: 10px;
+
+    &:hover + .home-faces__magda {
+        background-position: bottom;
+    }
+}
+.home-faces__magda {
+    @extend %home-faces__face;
+    background-image: url('/static/img/home-faces-magda.jpg');
+    margin-left: 10px;
+}
+.home-faces__magda-mask {
+    height: 300px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 300px;
+
+    &:hover + .home-faces__javi {
+        background-position: bottom;
+    }
+}
+
 /**
  *
  * Other content
