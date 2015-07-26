@@ -61,6 +61,7 @@
                         <a href="{% url 'cms:delete_song' song.id %}" class="btn btn-danger btn-sm">Delete</a>
                         <a href="{% url 'cms:update_song' song.id %}" class="btn btn-default btn-sm">Update</a>
                     </p>
+                    <p><a target="_blank" href="https://www.youtube.com/results?search_query={{ song.name }} {{ song.artist }}">Listen on youtube</a></p>
                 </td>
             </tr>
         {% empty %}
