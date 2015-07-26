@@ -1,5 +1,5 @@
 {% extends 'public/base.html' %}
-{% load static %}
+{% load static i18n %}
 
 {% block page_title %}
     Home
@@ -7,7 +7,7 @@
 
 {% block content %}
     <div class="text-center">
-        <p class="home-content--dark">In <strong>{{ days_until_wedding }}</strong> days<br/>we're getting married!</p>
-        <p class="home-content--light">Celebrate with us, bla bla bla<br/>bla bla bla bla</p>
+        <p class="home-content--dark">{% trans "In" %} <strong>{{ days_until_wedding }}</strong> {% trans "days we're getting married!" %}</p>
+        <p class="home-content--light">{% trans "Celebrate with us, bla bla bla bla bla bla bla" %}</p>
     </div>
 {% endblock content %}
