@@ -17,10 +17,22 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Song title</th>
-                <th>Artist name</th>
-                <th>Submitted by</th>
-                <th>Added</th>
+                <th>Song title
+                    <a href="{% url 'cms:songs' %}?order_by=name"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:songs' %}?order_by=-name"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                </th>
+                <th>Artist name
+                    <a href="{% url 'cms:songs' %}?order_by=artist"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:songs' %}?order_by=-artist"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                </th>
+                <th>Submitted by
+                    <a href="{% url 'cms:songs' %}?order_by=submitted_by"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:songs' %}?order_by=-submitted_by"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                </th>
+                <th>Added
+                    <a href="{% url 'cms:songs' %}?order_by=added"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:songs' %}?order_by=-added"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                </th>
                 <th>Actions</th>
             </tr>
         </thead>

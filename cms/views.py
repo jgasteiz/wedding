@@ -28,6 +28,13 @@ class SongsView(mixins.ViewNameMixin, ListView):
     template_name = 'cms/songs.html'
     model = Song
 
+    def get_queryset(self):
+        order_by = self.request.GET.get('order_by')
+        if order_by:
+            return self.model.objects.all().order_by(order_by)
+        else:
+            return self.model.objects.all()
+
 songs = SongsView.as_view()
 
 
@@ -52,7 +59,7 @@ class DownloadSongsView(View):
 
 download_songs = DownloadSongsView.as_view()
 
-download_songs
+
 class UpdateSongView(mixins.ViewNameMixin, UpdateView):
     page_name = 'songs'
     template_name = 'cms/song_form.html'
