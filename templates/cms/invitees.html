@@ -1,0 +1,85 @@
+{% extends 'cms/base.html' %}
+{% load static %}
+
+{% block page_title %}
+    RSVPs
+{% endblock page_title %}
+
+{% block content %}
+
+    <h1>Invitees</h1>
+
+    <p class="text-right">
+        <a class="btn btn-primary" href="{% url 'cms:invitee_create' %}">Create invitee</a>
+        <a class="btn btn-default" href="#to-be-implemented">Download as Text file</a>
+        <a class="btn btn-default" href="#to-be-implemented">Download as CSV</a>
+    </p>
+
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First name
+                    <a href="{% url 'cms:invitees' %}?order_by=first_name"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:invitees' %}?order_by=-first_name"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                </th>
+                <th>Last name
+                    <a href="{% url 'cms:invitees' %}?order_by=last_name"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:invitees' %}?order_by=-last_name"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                </th>
+                <th>Email
+                    <a href="{% url 'cms:invitees' %}?order_by=email"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:invitees' %}?order_by=-email"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                </th>
+                <th>Country
+                    <a href="{% url 'cms:invitees' %}?order_by=invitation_sent"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:invitees' %}?order_by=-invitation_sent"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                </th>
+                <th>Invitation sent
+                    <a href="{% url 'cms:invitees' %}?order_by=invitation_sent"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:invitees' %}?order_by=-invitation_sent"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                </th>
+                <th>Invitation status
+                    <a href="{% url 'cms:invitees' %}?order_by=invitation_status"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:invitees' %}?order_by=-invitation_status"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                </th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for invitee in invitee_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ invitee.first_name }}</td>
+                <td>{{ invitee.last_name }}</td>
+                <td>{{ invitee.email }}</td>
+                <td>{{ invitee.country }}</td>
+                <td>{{ invitee.invitation_sent|yesno:"Yes,No" }}</td>
+                <td>{{ invitee.invitation_status }}</td>
+                <td>{{ invitee.added }}</td>
+                <td>{{ invitee.updated }}</td>
+                <td>
+                    <a href="{% url 'cms:delete_invitee' invitee.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="{% url 'cms:update_invitee' invitee.id %}" class="btn btn-default btn-sm">Update</a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td>0</td>
+                <td>No invitees yet</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock content %}

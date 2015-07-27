@@ -5,35 +5,32 @@ from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views.generic import (
+    CreateView,
+    DeleteView,
+    ListView,
+    RedirectView,
     TemplateView,
     UpdateView,
-    DeleteView,
     View,
-    ListView,
 )
 
 from wedding import mixins
-from wedding.models import Song
+from wedding.forms import InviteeForm
+from wedding.models import Invitee, Song
 
 
-class HomeView(mixins.ViewNameMixin, TemplateView):
-    page_name = 'home'
-    template_name = 'cms/home.html'
+class HomeView(RedirectView):
+
+    def get_redirect_url(self, *args, **kwargs):
+        return reverse_lazy("cms:songs")
 
 home = HomeView.as_view()
 
 
-class SongsView(mixins.ViewNameMixin, ListView):
+class SongsView(mixins.OrderByMixin, mixins.ViewNameMixin, ListView):
     page_name = 'songs'
     template_name = 'cms/songs.html'
     model = Song
-
-    def get_queryset(self):
-        order_by = self.request.GET.get('order_by')
-        if order_by:
-            return self.model.objects.all().order_by(order_by)
-        else:
-            return self.model.objects.all()
 
 songs = SongsView.as_view()
 
@@ -106,8 +103,38 @@ class ApproveSong(View):
 approve_song = ApproveSong.as_view()
 
 
-class RsvpView(mixins.ViewNameMixin, TemplateView):
-    page_name = 'rsvps'
-    template_name = 'cms/rsvp.html'
+class InviteesView(mixins.OrderByMixin, mixins.ViewNameMixin, ListView):
+    model = Invitee
+    page_name = 'invitees'
+    template_name = 'cms/invitees.html'
 
-rsvp = RsvpView.as_view()
+invitees = InviteesView.as_view()
+
+
+class InviteeCreateView(mixins.ViewNameMixin, CreateView):
+    form_class = InviteeForm
+    model = Invitee
+    page_name = 'invitees'
+    success_url = reverse_lazy('cms:invitees')
+    template_name = 'cms/invitee_form.html'
+
+create_invitee = InviteeCreateView.as_view()
+
+
+class InviteeUpdateView(mixins.ViewNameMixin, UpdateView):
+    form_class = InviteeForm
+    model = Invitee
+    page_name = 'invitees'
+    success_url = reverse_lazy('cms:invitees')
+    template_name = 'cms/invitee_form.html'
+
+update_invitee = InviteeUpdateView.as_view()
+
+
+class InviteeDeleteView(mixins.ViewNameMixin, DeleteView):
+    model = Invitee
+    page_name = 'invitees'
+    success_url = reverse_lazy('cms:invitees')
+    template_name = 'cms/invitee_delete_confirmation.html'
+
+delete_invitee = InviteeDeleteView.as_view()

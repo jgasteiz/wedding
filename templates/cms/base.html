@@ -33,9 +33,8 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li {% ifequal page_name 'home' %}class="active"{% endifequal %}><a href="{% url 'cms:home' %}">Home</a></li>
                     <li {% ifequal page_name 'songs' %}class="active"{% endifequal %}><a href="{% url 'cms:songs' %}">Songs</a></li>
-                    <li {% ifequal page_name 'rsvps' %}class="active"{% endifequal %}><a href="{% url 'cms:rsvp' %}">RSVPs</a></li>
+                    <li {% ifequal page_name 'invitees' %}class="active"{% endifequal %}><a href="{% url 'cms:invitees' %}">Invitees</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
