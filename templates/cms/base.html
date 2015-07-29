@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Magda and Javi CMS</a>
+                <a class="navbar-brand" href="{% url 'cms:home' %}">Magda and Javi CMS</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -41,7 +41,7 @@
     </nav>
 
     <div class="container">
-      {% block content %}{% endblock content %}
+        {% block content %}{% endblock content %}
     </div><!-- /.container -->
 
 
