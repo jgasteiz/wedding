@@ -28,6 +28,7 @@ class Invitee(models.Model):
     invitation_status = models.CharField(max_length=256)
     added = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    inviter = models.CharField(max_length=256, blank=True)
 
     def __unicode__(self):
         return '{} {}'.format(self.first_name, self.last_name)

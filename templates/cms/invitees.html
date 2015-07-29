@@ -31,6 +31,10 @@
                     <a href="{% url 'cms:invitees' %}?order_by=email"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
                     <a href="{% url 'cms:invitees' %}?order_by=-email"><i class="glyphicon glyphicon-triangle-top"></i></a>
                 </th>
+                <th>Inviter
+                    <a href="{% url 'cms:invitees' %}?order_by=inviter"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:invitees' %}?order_by=-inviter"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                </th>
                 <th>Country
                     <a href="{% url 'cms:invitees' %}?order_by=invitation_sent"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
                     <a href="{% url 'cms:invitees' %}?order_by=-invitation_sent"><i class="glyphicon glyphicon-triangle-top"></i></a>
@@ -55,6 +59,7 @@
                 <td>{{ invitee.first_name }}</td>
                 <td>{{ invitee.last_name }}</td>
                 <td>{{ invitee.email }}</td>
+                <td>{{ invitee.inviter }}</td>
                 <td>{{ invitee.country }}</td>
                 <td>{{ invitee.invitation_sent|yesno:"Yes,No" }}</td>
                 <td>{{ invitee.invitation_status }}</td>

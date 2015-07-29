@@ -12,13 +12,20 @@ INVITATION_STATUSES = (
     ('no_rsvp', 'No RSVP'),
 )
 
+INVITER_CHOICES = (
+    ('both', 'Both'),
+    ('javi', 'Javi'),
+    ('magda', 'Magda'),
+)
+
 
 class InviteeForm(forms.ModelForm):
     country = forms.ChoiceField(choices=COUNTRIES, required=False)
     invitation_status = forms.ChoiceField(choices=INVITATION_STATUSES, required=False)
+    inviter = forms.ChoiceField(choices=INVITER_CHOICES, required=False)
 
     class Meta:
-        fields = ('first_name', 'last_name', 'email', 'invitation_sent', 'country', 'invitation_status')
+        fields = ('first_name', 'last_name', 'email', 'invitation_sent', 'country', 'invitation_status', 'inviter')
         model = Invitee
 
 
