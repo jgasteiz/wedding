@@ -19,6 +19,8 @@ urlpatterns = [
 
     url(r'^email-credentials/$', views.email_credentials, name='email_credentials'),
     url(r'^email-credentials-update/$', views.email_credentials_update, name='email_credentials_update'),
+
+    url(r'^send-invitation/(?P<pk>\d+)/$', views.send_invitation, name='send_invitation'),
 ]
 
 # handler403 = views.cms_forbidden

@@ -66,14 +66,18 @@
                 <td>{{ invitee.added }}</td>
                 <td>{{ invitee.updated }}</td>
                 <td>
-                    <a href="{% url 'cms:delete_invitee' invitee.id %}" class="btn btn-danger btn-sm">Delete</a>
                     <a href="{% url 'cms:update_invitee' invitee.id %}" class="btn btn-default btn-sm">Update</a>
+                    <a href="{% url 'cms:delete_invitee' invitee.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    <p>
+                        <a href="{% url 'cms:send_invitation' invitee.id %}" class="btn btn-default btn-sm">Send invitation</a>
+                    </p>
                 </td>
             </tr>
         {% empty %}
             <tr>
                 <td>0</td>
                 <td>No invitees yet</td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
