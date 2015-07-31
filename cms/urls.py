@@ -18,8 +18,9 @@ urlpatterns = [
     url(r'^invitees/delete/(?P<pk>\d+)/$', views.delete_invitee, name='delete_invitee'),
 
     url(r'^invitation-emails/$', views.invitation_email, name='invitation_emails'),
-    url(r'^invittaion-emails/create/$', views.invitation_email_create, name='invitation_email_create'),
-    url(r'^invitation-emails/update/$', views.invitation_email_update, name='invitation_email_update'),
+    url(r'^invittaion-emails/create/$', views.create_invitation_email, name='create_invitation_email'),
+    url(r'^invitation-emails/update/(?P<pk>\d+)/$', views.update_invitation_email, name='update_invitation_email'),
+    url(r'^invitation-emails/delete/(?P<pk>\d+)/$', views.delete_invitation_email, name='delete_invitation_email'),
 
     url(r'^send-invitation/(?P<pk>\d+)/$', views.send_invitation, name='send_invitation'),
 ]

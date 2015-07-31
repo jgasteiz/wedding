@@ -39,7 +39,7 @@ class SongForm(forms.ModelForm):
 
 
 class InvitationEmailForm(forms.ModelForm):
-    email_language = forms.CharField()
+    email_language = forms.ChoiceField(choices=LANGUAGES)
 
     class Meta:
         fields = ('email_language', 'html',)

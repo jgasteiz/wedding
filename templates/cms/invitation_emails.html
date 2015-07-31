@@ -7,10 +7,41 @@
 
 {% block content %}
 
-    <a href="{% url 'cms:invitation_email_create' %}">Create Invitation email</a>
+    <h1>Invitation emails</h1>
 
-    {% for email in invitationemail_list %}
-        <p>{{ email }}</p>
-    {% endfor %}
+    <p class="text-right">
+        <a class="btn btn-primary" href="{% url 'cms:create_invitation_email' %}">Create Invitation email</a>
+    </p>
+
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Email language</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for email in invitationemail_list %}
+            <tr {% if song.is_approved %}class="success"{% endif %}>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ email.email_language }}</td>
+                <td>
+                    <p>
+                        <a href="{% url 'cms:update_invitation_email' email.pk %}" class="btn btn-default btn-sm">Update</a>
+                        <a href="{% url 'cms:delete_invitation_email' email.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                    </p>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td>0</td>
+                <td>No emails yet</td>
+                <td></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
 
 {% endblock content %}

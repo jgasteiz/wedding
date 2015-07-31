@@ -1,0 +1,21 @@
+{% extends 'cms/base.html' %}
+{% load static %}
+
+{% block page_title %}
+    Invitation emails
+{% endblock page_title %}
+
+{% block content %}
+
+    <h1>Delete email {{ invitationemail }}</h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <p>Are you sure you want to delete this email?</p>
+
+        <a href="{% url 'cms:invitation_emails' %}" class="btn btn-default">Cancel</a>
+        <input type="submit" value="Yes, delete it" class="btn btn-danger">
+    </form>
+
+{% endblock content %}

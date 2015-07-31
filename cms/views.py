@@ -177,7 +177,7 @@ class InvitationEmailCreateView(mixins.ViewNameMixin, CreateView):
     success_url = reverse_lazy('cms:invitation_emails')
     template_name = 'cms/invitation_email_form.html'
 
-invitation_email_create = InvitationEmailCreateView.as_view()
+create_invitation_email = InvitationEmailCreateView.as_view()
 
 
 class InvitationEmailUpdateView(mixins.ViewNameMixin, UpdateView):
@@ -187,4 +187,14 @@ class InvitationEmailUpdateView(mixins.ViewNameMixin, UpdateView):
     success_url = reverse_lazy('cms:invitation_emails')
     template_name = 'cms/invitation_email_form.html'
 
-invitation_email_update = InvitationEmailUpdateView.as_view()
+update_invitation_email = InvitationEmailUpdateView.as_view()
+
+
+class InvitationEmailDeleteView(mixins.ViewNameMixin, DeleteView):
+    model = InvitationEmail
+    page_name = 'invitation_emails'
+    success_url = reverse_lazy('cms:invitation_emails')
+    template_name = 'cms/invitation_email_delete_confirmation.html'
+
+delete_invitation_email = InvitationEmailDeleteView.as_view()
+
