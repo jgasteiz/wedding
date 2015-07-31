@@ -3,7 +3,6 @@ from datetime import datetime
 
 import smtplib
 
-
 from google.appengine.api import mail
 from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
@@ -155,23 +154,23 @@ class SendInvitationView(View):
         subject = "You're invited to our wedding"
         body = """Hey! You are invited to our wedding. Check this out: https://magdaandjavi.appspot.com/en/"""
 
-        session = smtplib.SMTP('smtp.gmail.com', 587)
-        session.ehlo()
-        session.starttls()
-        session.login(credentials.email_address, credentials.get_password())
-        headers = "\r\n".join([
-            "from: " + sender_address,
-            "subject: " + subject,
-            "to: " + invitee.email,
-            "mime-version: 1.0",
-            "content-type: text/html",
-        ])
+        # session = smtplib.SMTP('smtp.gmail.com', 587)
+        # session.ehlo()
+        # session.starttls()
+        # session.login(credentials.email_address, credentials.get_password())
+        # headers = "\r\n".join([
+        #     "from: " + sender_address,
+        #     "subject: " + subject,
+        #     "to: " + invitee.email,
+        #     "mime-version: 1.0",
+        #     "content-type: text/html",
+        # ])
+        #
+        # content = headers + "\r\n\r\n" + body
+        #
+        # session.sendmail(credentials.email_address, invitee.email, content)
 
-        content = headers + "\r\n\r\n" + body
-
-        session.sendmail(credentials.email_address, invitee.email, content)
-
-        # mail.send_mail(sender_address, invitee.email, subject, body)
+        mail.send_mail(sender_address, invitee.email, subject, body)
         return redirect(self.success_url)
 
 send_invitation = SendInvitationView.as_view()
