@@ -2,10 +2,10 @@ from django import forms
 
 from .models import InvitationEmail, Invitee, Song
 
-COUNTRIES = (
-    ('spain', 'Spain'),
-    ('uk', 'United Kingdom'),
-    ('poland', 'Poland'),
+LANGUAGES = (
+    ('en', 'English'),
+    ('es', 'Spanish'),
+    ('pl', 'Polish'),
 )
 
 INVITATION_STATUSES = (
@@ -20,12 +20,12 @@ INVITER_CHOICES = (
 
 
 class InviteeForm(forms.ModelForm):
-    country = forms.ChoiceField(choices=COUNTRIES, required=False)
+    language = forms.ChoiceField(choices=LANGUAGES, required=False)
     invitation_status = forms.ChoiceField(choices=INVITATION_STATUSES, required=False)
     inviter = forms.ChoiceField(choices=INVITER_CHOICES, required=False)
 
     class Meta:
-        fields = ('first_name', 'last_name', 'email', 'invitation_sent', 'country', 'invitation_status', 'inviter')
+        fields = ('first_name', 'last_name', 'email', 'invitation_sent', 'language', 'invitation_status', 'inviter')
         model = Invitee
 
 
