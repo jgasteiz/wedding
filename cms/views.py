@@ -2,7 +2,6 @@ import csv
 from datetime import datetime
 
 from google.appengine.api import mail
-from django.conf import settings
 from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
 from django.shortcuts import redirect
@@ -16,8 +15,8 @@ from django.views.generic import (
 )
 
 from wedding import mixins
-from wedding.forms import InviteeForm
-from wedding.models import Invitee, Song
+from wedding.forms import InvitationEmailForm, InviteeForm
+from wedding.models import InvitationEmail, Invitee, Song
 
 
 class HomeView(RedirectView):
@@ -146,12 +145,46 @@ class SendInvitationView(View):
 
     def get(self, *args, **kwargs):
         invitee = Invitee.objects.get(pk=kwargs.get('pk'))
+        credentials = InvitationEmail.get_instance()
 
-        sender_address = "Javi Manzano <{}>".format(settings.EMAIL_FROM)
+        sender_address = "Javi Manzano <{}>".format(settings.email_address)
         subject = "You're invited to our wedding"
         body = """Hey! You are invited to our wedding. Check this out: https://magdaandjavi.appspot.com/en/"""
+
 
         mail.send_mail(sender_address, invitee.email, subject, body)
         return redirect(self.success_url)
 
 send_invitation = SendInvitationView.as_view()
+
+
+class InvitationEmailView(mixins.ViewNameMixin, ListView):
+    model = InvitationEmail
+    page_name = 'invitation_emails'
+    template_name = 'cms/invitation_emails.html'
+
+    def get_object(self, queryset=None):
+        instance = self.model.get_instance()
+        return instance
+
+invitation_email = InvitationEmailView.as_view()
+
+
+class InvitationEmailCreateView(mixins.ViewNameMixin, CreateView):
+    form_class = InvitationEmailForm
+    model = InvitationEmail
+    page_name = 'invitation_emails'
+    success_url = reverse_lazy('cms:invitation_emails')
+    template_name = 'cms/invitation_email_form.html'
+
+invitation_email_create = InvitationEmailCreateView.as_view()
+
+
+class InvitationEmailUpdateView(mixins.ViewNameMixin, UpdateView):
+    form_class = InvitationEmailForm
+    model = InvitationEmail
+    page_name = 'invitation_emails'
+    success_url = reverse_lazy('cms:invitation_emails')
+    template_name = 'cms/invitation_email_form.html'
+
+invitation_email_update = InvitationEmailUpdateView.as_view()

@@ -32,3 +32,11 @@ class Invitee(models.Model):
 
     def __unicode__(self):
         return '{} {}'.format(self.first_name, self.last_name)
+
+
+class InvitationEmail(models.Model):
+    email_language = models.CharField(max_length=256)
+    html = models.TextField()
+
+    def __unicode__(self):
+        return 'Invitation email in {} language'.format(self.email_language)

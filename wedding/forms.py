@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Invitee, Song
+from .models import InvitationEmail, Invitee, Song
 
 COUNTRIES = (
     ('spain', 'Spain'),
@@ -36,3 +36,11 @@ class SongForm(forms.ModelForm):
     class Meta:
         fields = ('name', 'artist',)
         model = Song
+
+
+class InvitationEmailForm(forms.ModelForm):
+    email_language = forms.CharField()
+
+    class Meta:
+        fields = ('email_language', 'html',)
+        model = InvitationEmail

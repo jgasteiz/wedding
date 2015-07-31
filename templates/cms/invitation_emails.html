@@ -1,0 +1,16 @@
+{% extends 'cms/base.html' %}
+{% load static form_tags %}
+
+{% block page_title %}
+    Email credentials
+{% endblock page_title %}
+
+{% block content %}
+
+    <a href="{% url 'cms:invitation_email_create' %}">Create Invitation email</a>
+
+    {% for email in invitationemail_list %}
+        <p>{{ email }}</p>
+    {% endfor %}
+
+{% endblock content %}
