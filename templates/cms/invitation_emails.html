@@ -18,6 +18,7 @@
             <tr>
                 <th>#</th>
                 <th>Email language</th>
+                <th>Preview</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -26,6 +27,7 @@
             <tr {% if song.is_approved %}class="success"{% endif %}>
                 <td>{{ forloop.counter }}</td>
                 <td>{{ email.email_language }}</td>
+                <td class="email-preview">{{ email.html|safe }}</td>
                 <td>
                     <p>
                         <a href="{% url 'cms:update_invitation_email' email.pk %}" class="btn btn-default btn-sm">Update</a>
