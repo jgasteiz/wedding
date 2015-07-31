@@ -1,4 +1,8 @@
 from django.db import models
+from django.core.signing import Signer
+
+from settings import SECRET_KEY
+from .utils import AESCipher
 
 
 class Song(models.Model):
@@ -32,3 +36,28 @@ class Invitee(models.Model):
 
     def __unicode__(self):
         return '{} {}'.format(self.first_name, self.last_name)
+
+
+class EmailCredentials(models.Model):
+    email_address = models.EmailField()
+    password = models.CharField(max_length=256)
+
+    def __unicode__(self):
+        return self.email_address
+
+    @classmethod
+    def get_instance(cls):
+        return cls.objects.get_or_create(id=1)
+
+    def get_password(self):
+        cipher = AESCipher(SECRET_KEY)
+        return cipher.decrypt(self.password)
+
+    def delete(self, *args, **kwargs):
+        pass
+
+    def save(self, *args, **kwargs):
+        self.id = 1
+        cipher = AESCipher(SECRET_KEY)
+        self.password = cipher.encrypt(self.password)
+        super(EmailCredentials, self).save(*args, **kwargs)
