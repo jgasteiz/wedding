@@ -1,9 +1,8 @@
 import csv
 from datetime import datetime
 
-import smtplib
-
 from google.appengine.api import mail
+from django.conf import settings
 from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
 from django.shortcuts import redirect
@@ -12,14 +11,13 @@ from django.views.generic import (
     DeleteView,
     ListView,
     RedirectView,
-    DetailView,
     UpdateView,
     View,
 )
 
 from wedding import mixins
-from wedding.forms import EmailCredentialsForm, InviteeForm
-from wedding.models import EmailCredentials, Invitee, Song
+from wedding.forms import InviteeForm
+from wedding.models import Invitee, Song
 
 
 class HomeView(RedirectView):
@@ -148,55 +146,12 @@ class SendInvitationView(View):
 
     def get(self, *args, **kwargs):
         invitee = Invitee.objects.get(pk=kwargs.get('pk'))
-        credentials = EmailCredentials.get_instance()
 
-        sender_address = "Javi Manzano <{}>".format(credentials.email_address)
+        sender_address = "Javi Manzano <{}>".format(settings.EMAIL_FROM)
         subject = "You're invited to our wedding"
         body = """Hey! You are invited to our wedding. Check this out: https://magdaandjavi.appspot.com/en/"""
-
-        # session = smtplib.SMTP('smtp.gmail.com', 587)
-        # session.ehlo()
-        # session.starttls()
-        # session.login(credentials.email_address, credentials.get_password())
-        # headers = "\r\n".join([
-        #     "from: " + sender_address,
-        #     "subject: " + subject,
-        #     "to: " + invitee.email,
-        #     "mime-version: 1.0",
-        #     "content-type: text/html",
-        # ])
-        #
-        # content = headers + "\r\n\r\n" + body
-        #
-        # session.sendmail(credentials.email_address, invitee.email, content)
 
         mail.send_mail(sender_address, invitee.email, subject, body)
         return redirect(self.success_url)
 
 send_invitation = SendInvitationView.as_view()
-
-
-class EmailCredentialsView(mixins.ViewNameMixin, DetailView):
-    model = EmailCredentials
-    page_name = 'email_credentials'
-    template_name = 'cms/email_credentials_detail.html'
-
-    def get_object(self, queryset=None):
-        instance = self.model.get_instance()
-        return instance
-
-email_credentials = EmailCredentialsView.as_view()
-
-
-class EmailCredentialsUpdateView(mixins.ViewNameMixin, UpdateView):
-    form_class = EmailCredentialsForm
-    model = EmailCredentials
-    page_name = 'email_credentials'
-    success_url = reverse_lazy('cms:email_credentials')
-    template_name = 'cms/email_credentials_form.html'
-
-    def get_object(self, queryset=None):
-        instance = self.model.get_instance()
-        return instance
-
-email_credentials_update = EmailCredentialsUpdateView.as_view()

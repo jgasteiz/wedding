@@ -215,5 +215,8 @@ CSP_CONNECT_SRC = (
     "www.google-analytics.com"
 )
 
+# Invitations
+EMAIL_FROM = 'javiandmagda@gmail.com'
+
 
 from djangae.contrib.gauth.settings import *

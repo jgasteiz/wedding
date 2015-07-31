@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import EmailCredentials, Invitee, Song
+from .models import Invitee, Song
 
 COUNTRIES = (
     ('spain', 'Spain'),
@@ -36,11 +36,3 @@ class SongForm(forms.ModelForm):
     class Meta:
         fields = ('name', 'artist',)
         model = Song
-
-
-class EmailCredentialsForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput())
-
-    class Meta:
-        fields = ('email_address', 'password',)
-        model = EmailCredentials

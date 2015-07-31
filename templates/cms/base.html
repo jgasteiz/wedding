@@ -35,7 +35,6 @@
                 <ul class="nav navbar-nav">
                     <li {% ifequal page_name 'songs' %}class="active"{% endifequal %}><a href="{% url 'cms:songs' %}">Songs</a></li>
                     <li {% ifequal page_name 'invitees' %}class="active"{% endifequal %}><a href="{% url 'cms:invitees' %}">Invitees</a></li>
-                    <li {% ifequal page_name 'email_credentials' %}class="active"{% endifequal %}><a href="{% url 'cms:email_credentials' %}">Email credentials</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
