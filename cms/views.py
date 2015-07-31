@@ -9,14 +9,14 @@ from django.views.generic import (
     DeleteView,
     ListView,
     RedirectView,
-    TemplateView,
+    DetailView,
     UpdateView,
     View,
 )
 
 from wedding import mixins
-from wedding.forms import InviteeForm
-from wedding.models import Invitee, Song
+from wedding.forms import EmailCredentialsForm, InviteeForm
+from wedding.models import EmailCredentials, Invitee, Song
 
 
 class HomeView(RedirectView):
@@ -138,3 +138,29 @@ class InviteeDeleteView(mixins.ViewNameMixin, DeleteView):
     template_name = 'cms/invitee_delete_confirmation.html'
 
 delete_invitee = InviteeDeleteView.as_view()
+
+
+class EmailCredentialsView(mixins.ViewNameMixin, DetailView):
+    model = EmailCredentials
+    page_name = 'email_credentials'
+    template_name = 'cms/email_credentials_detail.html'
+
+    def get_object(self, queryset=None):
+        instance, _ = self.model.get_instance()
+        return instance
+
+email_credentials = EmailCredentialsView.as_view()
+
+
+class EmailCredentialsUpdateView(mixins.ViewNameMixin, UpdateView):
+    form_class = EmailCredentialsForm
+    model = EmailCredentials
+    page_name = 'email_credentials'
+    success_url = reverse_lazy('cms:email_credentials')
+    template_name = 'cms/email_credentials_form.html'
+
+    def get_object(self, queryset=None):
+        instance, _ = self.model.objects.get_or_create()
+        return instance
+
+email_credentials_update = EmailCredentialsUpdateView.as_view()
