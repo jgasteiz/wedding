@@ -2,6 +2,7 @@ import csv
 from datetime import datetime
 
 from google.appengine.api import mail
+from django.conf import settings
 from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
 from django.shortcuts import redirect
@@ -145,12 +146,14 @@ class SendInvitationView(View):
 
     def get(self, *args, **kwargs):
         invitee = Invitee.objects.get(pk=kwargs.get('pk'))
-        credentials = InvitationEmail.get_instance()
 
-        sender_address = "Javi Manzano <{}>".format(settings.email_address)
+        sender_address = "Javi Manzano <{}>".format(settings.EMAIL_FROM)
         subject = "You're invited to our wedding"
-        body = """Hey! You are invited to our wedding. Check this out: https://magdaandjavi.appspot.com/en/"""
-
+        email_template_qs = InvitationEmail.objects.filter(email_language=invitee.language)
+        if not email_template_qs.exists():
+            body = 'Hey! You are invited to our wedding. Check this out: https://magdaandjavi.appspot.com/en/'
+        else:
+            body = email_template_qs[0].html
 
         mail.send_mail(sender_address, invitee.email, subject, body)
         return redirect(self.success_url)
