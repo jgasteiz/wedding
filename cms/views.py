@@ -183,7 +183,7 @@ class EmailCredentialsView(mixins.ViewNameMixin, DetailView):
     template_name = 'cms/email_credentials_detail.html'
 
     def get_object(self, queryset=None):
-        instance, _ = self.model.get_instance()
+        instance = self.model.get_instance()
         return instance
 
 email_credentials = EmailCredentialsView.as_view()
@@ -197,7 +197,7 @@ class EmailCredentialsUpdateView(mixins.ViewNameMixin, UpdateView):
     template_name = 'cms/email_credentials_form.html'
 
     def get_object(self, queryset=None):
-        instance, _ = self.model.objects.get_or_create()
+        instance = self.model.get_instance()
         return instance
 
 email_credentials_update = EmailCredentialsUpdateView.as_view()

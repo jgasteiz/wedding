@@ -47,7 +47,7 @@ class EmailCredentials(models.Model):
 
     @classmethod
     def get_instance(cls):
-        instance, _ = cls.objects.get_or_create(id=1)
+        instance, _ = cls.objects.get_or_create()
         return instance
 
     def get_password(self):
