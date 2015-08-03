@@ -147,15 +147,24 @@ class SendInvitationView(View):
     def get(self, *args, **kwargs):
         invitee = Invitee.objects.get(pk=kwargs.get('pk'))
 
-        sender_address = "Javi Manzano <{}>".format(settings.EMAIL_FROM)
-        subject = "You're invited to our wedding"
         email_template_qs = InvitationEmail.objects.filter(email_language=invitee.language)
         if not email_template_qs.exists():
-            body = 'Hey! You are invited to our wedding. Check this out: https://magdaandjavi.appspot.com/en/'
+            email_html = """
+                Hey! You are invited to our wedding.
+                Check this out: https://magdaandjavi.appspot.com/en/
+                """
         else:
-            body = email_template_qs[0].html
+            email_html = email_template_qs[0].html
 
-        mail.send_mail(sender_address, invitee.email, subject, body)
+        message = mail.EmailMessage(
+            sender="Javi Manzano <{}>".format(settings.EMAIL_FROM),
+            subject="You're invited to our wedding"
+        )
+
+        message.to = "{} {} <{}>".format(invitee.first_name, invitee.last_name, invitee.email)
+        message.html = email_html
+        message.send()
+
         return redirect(self.success_url)
 
 send_invitation = SendInvitationView.as_view()
@@ -201,3 +210,10 @@ class InvitationEmailDeleteView(mixins.ViewNameMixin, DeleteView):
 
 delete_invitation_email = InvitationEmailDeleteView.as_view()
 
+
+class InvitationEmailPreviewView(View):
+    def get(self, *args, **kwargs):
+        invitation_email = InvitationEmail.objects.get(pk=kwargs.get('pk'))
+        return HttpResponse(invitation_email.html)
+
+preview_invitation_email = InvitationEmailPreviewView.as_view()
