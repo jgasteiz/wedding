@@ -189,13 +189,31 @@
     margin: 0 auto;
     position: relative;
     width: 620px;
+
+    @include respond-to('lap') {
+        width: 420px;
+    }
+
+    @include respond-to('palm') {
+        width: auto;
+    }
 }
 %home-faces__face {
     background-position: top;
-    background-size: 300px 600px;
     display: inline-block;
     height: 300px;
     width: 300px;
+
+    @include respond-to('lap') {
+        background-size: 200px 400px !important;
+        height: 200px;
+        width: 200px;
+    }
+
+    @include respond-to('palm') {
+        display: block;
+        margin: 0 auto 10px !important;
+    }
 }
 .home-faces__magda {
     @extend %home-faces__face;
@@ -204,6 +222,10 @@
 
     &:hover + .home-faces__javi {
         background-position: bottom;
+
+        @include respond-to('palm') {
+            background-position: top;
+        }
     }
 }
 .home-faces__javi {
@@ -218,8 +240,17 @@
     top: 0;
     width: 300px;
 
+    @include respond-to('lap') {
+        height: 200px;
+        width: 200px;
+    }
+
     &:hover + .home-faces__magda {
         background-position: bottom;
+
+        @include respond-to('palm') {
+            background-position: top;
+        }
     }
 }
 
