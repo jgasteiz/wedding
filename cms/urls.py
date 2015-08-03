@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^invittaion-emails/create/$', views.create_invitation_email, name='create_invitation_email'),
     url(r'^invitation-emails/update/(?P<pk>\d+)/$', views.update_invitation_email, name='update_invitation_email'),
     url(r'^invitation-emails/delete/(?P<pk>\d+)/$', views.delete_invitation_email, name='delete_invitation_email'),
+    url(r'^invitation-emails/preview/(?P<pk>\d+)/$', views.preview_invitation_email, name='preview_invitation_email'),
 
     url(r'^send-invitation/(?P<pk>\d+)/$', views.send_invitation, name='send_invitation'),
 ]

@@ -66,7 +66,10 @@ MIDDLEWARE_CLASSES = (
     'csp.middleware.CSPMiddleware',
     'session_csrf.CsrfMiddleware',
     'djangosecure.middleware.SecurityMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
