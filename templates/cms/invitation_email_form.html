@@ -15,7 +15,12 @@
         {% for field in form %}
         <div class="form-group {% if field.errors %}has-error{% endif %}">
             <label for="{{ field.id_for_label }}">{{ field.label }} {% if field.field.required %}*{% endif %} </label>
+            {% ifequal field.html_name 'html' %}
+            {{ field|add_css_class:'form-control--hidden' }}
+            <div id="html" class="form-control--editor"></div>
+            {% else %}
             {{ field|add_css_class:'form-control' }}
+            {% endifequal %}
             {% if field.errors %}
             <ul class="errors">
                 {% for error in field.errors %}
@@ -31,3 +36,8 @@
     </form>
 
 {% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'libs/ace-builds/src-min-noconflict/ace.js' %}"></script>
+    <script src="{% static 'js/editor.js' %}"></script>
+{% endblock extra_js %}

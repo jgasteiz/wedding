@@ -27,3 +27,11 @@ form {
     @extend %invitation-sent;
     background-color: #54B8FF;
 }
+
+.form-control--hidden {
+    display: none;
+}
+
+.form-control--editor {
+    height: 400px;
+}
