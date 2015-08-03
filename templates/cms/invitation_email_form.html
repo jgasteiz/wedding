@@ -5,6 +5,8 @@
     Email credentials
 {% endblock page_title %}
 
+{% block container_class %}container-fluid{% endblock container_class %}
+
 {% block content %}
 
     <h1>Edit email credentials</h1>
@@ -15,12 +17,21 @@
         {% for field in form %}
         <div class="form-group {% if field.errors %}has-error{% endif %}">
             <label for="{{ field.id_for_label }}">{{ field.label }} {% if field.field.required %}*{% endif %} </label>
+
             {% ifequal field.html_name 'html' %}
             {{ field|add_css_class:'form-control--hidden' }}
-            <div id="html" class="form-control--editor"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="html" class="form-control--editor"></div>
+                </div>
+                <div class="col-md-6">
+                    <iframe id="html-preview" class="editor-preview" width="100%" height="400" frameborder="0"></iframe>
+                </div>
+            </div>
             {% else %}
             {{ field|add_css_class:'form-control' }}
             {% endifequal %}
+
             {% if field.errors %}
             <ul class="errors">
                 {% for error in field.errors %}

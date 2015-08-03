@@ -33,5 +33,11 @@ form {
 }
 
 .form-control--editor {
-    height: 400px;
+    height: 500px;
+}
+
+.editor-preview {
+    border-radius: 2px;
+    box-shadow: 0 2px 8px #888;
+    height: 500px;
 }

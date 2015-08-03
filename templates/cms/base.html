@@ -41,7 +41,7 @@
         </div>
     </nav>
 
-    <div class="container">{% block content %}{% endblock content %}</div>
+    <div class="{% block container_class %}container{% endblock container_class %}">{% block content %}{% endblock content %}</div>
 
     <script src="{% static 'libs/jquery/dist/jquery.min.js' %}"></script>
     <script src="{% static 'libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
