@@ -165,6 +165,9 @@ class SendInvitationView(View):
         message.html = email_html
         message.send()
 
+        invitee.invitation_sent = True
+        invitee.save()
+
         return redirect(self.success_url)
 
 send_invitation = SendInvitationView.as_view()
