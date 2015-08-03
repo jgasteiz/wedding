@@ -61,7 +61,7 @@
                 <td>{{ invitee.email }}</td>
                 <td>{{ invitee.inviter }}</td>
                 <td>{{ invitee.language }}</td>
-                <td>{{ invitee.invitation_sent|yesno:"Yes,No" }}</td>
+                <td><span class="invitation-sent--{{ invitee.invitation_sent|yesno:"yes,no" }}">{{ invitee.invitation_sent|yesno:"Yes,No" }}</span></td>
                 <td>{{ invitee.invitation_status }}</td>
                 <td>{{ invitee.added }}</td>
                 <td>{{ invitee.updated }}</td>

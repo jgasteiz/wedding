@@ -11,3 +11,19 @@ form {
     max-width: 80%;
     width: 600px;
 }
+
+%invitation-sent {
+    border-radius: 4px;
+    display: inline-block;
+    padding: 2px 8px;
+}
+
+.invitation-sent--no {
+    @extend %invitation-sent;
+    background-color: #FFDB00;
+}
+
+.invitation-sent--yes {
+    @extend %invitation-sent;
+    background-color: #54B8FF;
+}
