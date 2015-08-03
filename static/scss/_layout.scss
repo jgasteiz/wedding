@@ -192,32 +192,33 @@
 }
 %home-faces__face {
     background-position: top;
+    background-size: 300px 600px;
     display: inline-block;
     height: 300px;
     width: 300px;
 }
-.home-faces__javi {
+.home-faces__magda {
     @extend %home-faces__face;
-    background-image: url('/static/img/home-faces-javi.jpg');
+    @include background-image-retina('/static/img/home-faces-magda', 'jpg', 300px, 600px);
     margin-right: 10px;
 
-    &:hover + .home-faces__magda {
+    &:hover + .home-faces__javi {
         background-position: bottom;
     }
 }
-.home-faces__magda {
+.home-faces__javi {
     @extend %home-faces__face;
-    background-image: url('/static/img/home-faces-magda.jpg');
+    @include background-image-retina('/static/img/home-faces-javi', 'jpg', 300px, 600px);
     margin-left: 10px;
 }
-.home-faces__magda-mask {
+.home-faces__javi-mask {
     height: 300px;
     position: absolute;
     right: 0;
     top: 0;
     width: 300px;
 
-    &:hover + .home-faces__javi {
+    &:hover + .home-faces__magda {
         background-position: bottom;
     }
 }
