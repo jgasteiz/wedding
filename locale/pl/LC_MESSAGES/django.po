@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-26 13:12+0000\n"
+"POT-Creation-Date: 2015-08-04 20:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,34 +19,297 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: templates/public/base.html:31
+#: templates/public/base.html:37 templates/public/home.html:4
 msgid "Home"
 msgstr "Strona Główna"
 
-#: templates/public/base.html:34
+#: templates/public/base.html:40
 msgid "Wedding Details"
 msgstr "O Weselu"
 
-#: templates/public/base.html:37
+#: templates/public/base.html:43 templates/public/song-wishlist.html:4
 msgid "Song wish list"
 msgstr "Wybierz Piosenkę"
 
-#: templates/public/base.html:40
+#: templates/public/base.html:46 templates/public/rsvp.html:4
 msgid "Confirm attendance"
 msgstr "Potwierdź Przybycie"
 
-#: templates/public/base.html:43
+#: templates/public/base.html:49 templates/public/contact.html:4
+#: templates/public/contact.html.py:9
 msgid "Contact"
 msgstr "Kontakt"
 
-#: templates/public/home.html:10
+#: templates/public/contact.html:11
+msgid "If you want to get in contact with us, drop us a line at"
+msgstr ""
+
+#: templates/public/details.html:4
+#, fuzzy
+#| msgid "Wedding Details"
+msgid "Wedding details"
+msgstr "O Weselu"
+
+#: templates/public/details.html:9
+msgid "Polish weddings, what to expect"
+msgstr ""
+
+#: templates/public/details.html:11
+msgid "Eat, Dance, Drink, Repeat (at least 5 times)"
+msgstr ""
+
+#: templates/public/details.html:13
+msgid ""
+"The party starts with food (probably chicken soup) and it's followed by some "
+"meat dish. That's the standard."
+msgstr ""
+
+#: templates/public/details.html:14
+msgid ""
+"After that, you should expect the First Dance and the vodka will start "
+"flowing after that."
+msgstr ""
+
+#: templates/public/details.html:17
+msgid "What food should I expect?"
+msgstr ""
+
+#: templates/public/details.html:19
+msgid ""
+"Traditionally, Polish weddings start with a traditional chicken soup. It's "
+"fatty and good for making a good pre-drinking base in your stomach."
+msgstr ""
+
+#: templates/public/details.html:20
+msgid ""
+"After that, you should expect around 4 or 5 main dishes of meat and salads "
+"every couple of hours."
+msgstr ""
+
+#: templates/public/details.html:21
+msgid ""
+"These dishes will probably be served between 4pm and 12am, being the last "
+"one most likely beetroot soup with dumplings (also traditional dish)."
+msgstr ""
+
+#: templates/public/details.html:24
+msgid ""
+"If you are vegetarian/vegan or have some kind of food intolerance, please "
+"get in touch with me and we'll sort something out."
+msgstr ""
+
+#: templates/public/details.html:27
+msgid "How much should I eat?"
+msgstr ""
+
+#: templates/public/details.html:28
+msgid "As much as you want. The more you eat, the more you can drink."
+msgstr ""
+
+#: templates/public/details.html:30
+msgid "What should I drink?"
+msgstr ""
+
+#: templates/public/details.html:32
+msgid ""
+"Vodka! But do not mix it with other alcohol or people (me included) will "
+"start taking pictures of you."
+msgstr ""
+
+#: templates/public/details.html:33
+msgid ""
+"There will be beer, but only drink it if you're not planning to drink vodka. "
+"Seriously, this is a good advice."
+msgstr ""
+
+#: templates/public/details.html:34
+msgid "There might be some wine, but it won't be nice Spanish wine."
+msgstr ""
+
+#: templates/public/details.html:37
+msgid ""
+"And of course, there will be plenty of juices, water and other soft drinks."
+msgstr ""
+
+#: templates/public/details.html:40
+msgid "How much should I drink?"
+msgstr ""
+
+#: templates/public/details.html:42
+msgid ""
+"I've only experienced one Polish wedding in my life and I survived it quite "
+"gracefully."
+msgstr ""
+
+#: templates/public/details.html:43
+msgid ""
+"If you're not Polish, I suggest you fill half of your shot glass. It worked "
+"well for me."
+msgstr ""
+
+#: templates/public/details.html:46
+msgid "How much should I dance?"
+msgstr ""
+
+#: templates/public/details.html:47
+msgid ""
+"As much as possible. The more you dance, the better chances you'll have to "
+"survive and enjoy the wedding."
+msgstr ""
+
+#: templates/public/details.html:52
+msgid "Where?"
+msgstr ""
+
+#: templates/public/details.html:53
+msgid ""
+"The ceremony will take place in a town called Przeworsk (pronunced "
+"`Pseworsk`). It's around 50km away from Rzeszów, the main city in the region "
+"of Podkarpacie."
+msgstr ""
+
+#: templates/public/details.html:55
+msgid "A general map (click for zoom)"
+msgstr ""
+
+#: templates/public/details.html:56
+msgid ""
+"Here you can see the region of Podkarpacie in red, bordering with Ukraine in "
+"the East and Slovakia in the South."
+msgstr ""
+
+#: templates/public/details.html:63
+msgid "Zooming in Rzeszów"
+msgstr ""
+
+#: templates/public/details.html:72
+msgid "How to get here?"
+msgstr ""
+
+#: templates/public/details.html:75
+msgid "In an ideal world, you should be able to get by plane to Rzeszów."
+msgstr ""
+
+#: templates/public/details.html:76
+msgid ""
+"For the people coming from UK, it should be relatively easy. Unfortunately, "
+"coming from Spain might get a bit tricky."
+msgstr ""
+
+#: templates/public/details.html:79
+msgid "From UK"
+msgstr ""
+
+#: templates/public/details.html:81 templates/public/details.html.py:108
+msgid "London Stansted - Rzeszów with Ryanair"
+msgstr ""
+
+#: templates/public/details.html:82 templates/public/details.html.py:91
+#: templates/public/details.html:99 templates/public/details.html.py:109
+msgid "search flights in ryanair.com"
+msgstr ""
+
+#: templates/public/details.html:85
+msgid "From Spain"
+msgstr ""
+
+#: templates/public/details.html:88
+msgid "Option 1 - from Madrid"
+msgstr ""
+
+#: templates/public/details.html:90
+msgid "Madrid - Kraków with Ryanair"
+msgstr ""
+
+#: templates/public/details.html:92 templates/public/details.html.py:100
+msgid "After that, you'll need to take a bus from Krakow to Rzeszów"
+msgstr ""
+
+#: templates/public/details.html:92 templates/public/details.html.py:100
+msgid "Kraków bus station"
+msgstr ""
+
+#: templates/public/details.html:96
+msgid "Option 2 - from Barcelona"
+msgstr ""
+
+#: templates/public/details.html:98
+msgid "Barcelona - Kraków with Ryanair"
+msgstr ""
+
+#: templates/public/details.html:104
+msgid "Option 3 - from Bilbao via London"
+msgstr ""
+
+#: templates/public/details.html:106
+msgid "Bilbao - London with easyJet"
+msgstr ""
+
+#: templates/public/details.html:107
+msgid "search flights in easyjet.com"
+msgstr ""
+
+#: templates/public/details.html:112
+msgid ""
+"This last option might not be possible, it will all depend on what kind of "
+"flights easyjet will be offering for those dates."
+msgstr ""
+
+#: templates/public/details.html:115
+msgid "Option 4 - from Bilbao via Frankfurt"
+msgstr ""
+
+#: templates/public/details.html:117
+msgid "Bilbao - Rzeszów with Lufthansa"
+msgstr ""
+
+#: templates/public/details.html:118
+msgid "search flights in lufthansa.com"
+msgstr ""
+
+#: templates/public/details.html:121
+msgid ""
+"This is the most expensive option, but if you can't be bothered to go to "
+"Madrid or Barcelona, this might be the best pick."
+msgstr ""
+
+#: templates/public/home.html:15
 msgid "In"
 msgstr "Za"
 
-#: templates/public/home.html:10
+#: templates/public/home.html:15
 msgid "days we're getting married!"
 msgstr "dni pobieramy się"
 
-#: templates/public/home.html:11
-msgid "Celebrate with us, bla bla bla bla bla bla bla"
+#: templates/public/home.html:16
+msgid "Come and celebrate with us the most important day of our lives."
+msgstr ""
+
+#: templates/public/rsvp.html:9
+msgid "RSVP confirmation"
+msgstr ""
+
+#: templates/public/rsvp.html:11
+msgid "Coming soon"
+msgstr ""
+
+#: templates/public/song-wishlist.html:10
+msgid "Help us organising our wedding"
+msgstr ""
+
+#: templates/public/song-wishlist.html:13
+msgid "Enter the name of a song you would like to hear in the after party"
+msgstr ""
+
+#: templates/public/song-wishlist.html:30
+msgid "Submitting as"
+msgstr ""
+
+#: templates/public/song-wishlist.html:36
+msgid ""
+"Log in with your Google account and help us picking music for the after party"
+msgstr ""
+
+#: templates/public/song-wishlist.html:38
+msgid "Log in"
 msgstr ""
