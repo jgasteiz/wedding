@@ -1,40 +1,96 @@
 {% extends 'public/base.html' %}
-{% load static %}
+{% load static i18n %}
 
-{% block page_title %}
-    Wedding details
-{% endblock page_title %}
+{% block page_title %}{% trans "Wedding details" %}{% endblock page_title %}
 
 {% block content %}
 
-    <h1 class="text-center">Polish weddings, what to expect</h1>
+    <section>
+        <h1 class="text-center">{% trans "Polish weddings, what to expect" %}</h1>
 
-    <h2>What should I eat?</h2>
-    <p>Everything, as much as possible.</p>
+        <h2>{% trans "What should I eat?" %}</h2>
+        <p>{% trans "Everything, as much as possible." %}</p>
 
-    <h2>What should I drink?</h2>
-    <p>Anything, but it's encouraged not to mix.</p>
+        <h2>{% trans "What should I drink?" %}</h2>
+        <p>{% trans "Anything, but it's encouraged not to mix." %}</p>
+    </section>
 
-    <h1 class="text-center">How to get here?</h1>
+    <section>
+        <h1 class="text-center">{% trans "Where?" %}</h1>
+        <p>{% trans "The ceremony will take place in a town called Przeworsk (pronunced `Pseworsk`). It's around 50km away from Rzeszów, the main city in the region of Podkarpacie." %}</p>
 
-    <h2>A general map (click for zoom)</h2>
-    <p>
-        <a href="#"
-           class="js-open-modal"
-           data-img="{% static 'img/map1@2x.jpg' %}"
-        >
-            {% include 'public/partials/picture.html' with src1='img/map1.jpg' src2='img/map1@2x.jpg' src1sm='img/map1.jpg' src2sm='img/map1@2x.jpg' alt='Europe map' title='Europe map' %}
-        </a>
-    </p>
+        <h2>{% trans "A general map (click for zoom)" %}</h2>
+        <p>{% trans "Here you can see the region of Podkarpacie in red, bordering with Ukraine in the East and Slovakia in the South." %}</p>
+        <p>
+            <a href="#" class="js-open-modal" data-img="{% static 'img/map1@2x.jpg' %}">
+                {% include 'public/partials/picture.html' with src1='img/map1.jpg' src2='img/map1@2x.jpg' src1sm='img/map1.jpg' src2sm='img/map1@2x.jpg' alt='Europe map' title='Europe map' %}
+            </a>
+        </p>
 
-    <h2>A more specific map (click for zoom)</h2>
-    <p>
-        <a href="#"
-           class="js-open-modal"
-           data-img="{% static 'img/map2@2x.jpg' %}"
-        >
-            {% include 'public/partials/picture.html' with src1='img/map2.jpg' src2='img/map2@2x.jpg' src1sm='img/map2.jpg' src2sm='img/map2@2x.jpg' alt='Region map' title='Region map' %}
-        </a>
-    </p>
+        <h2>{% trans "Zooming in Rzeszów" %}</h2>
+        <p>
+            <a href="#" class="js-open-modal" data-img="{% static 'img/map2@2x.jpg' %}">
+                {% include 'public/partials/picture.html' with src1='img/map2.jpg' src2='img/map2@2x.jpg' src1sm='img/map2.jpg' src2sm='img/map2@2x.jpg' alt='Region map' title='Region map' %}
+            </a>
+        </p>
+    </section>
+
+    <section>
+        <h1 class="text-center">{% trans "How to get here?" %}</h1>
+
+        <p>
+            {% trans "In an ideal world, you should be able to get by plane to Rzeszów." %}
+            {% trans "For the people coming from UK, it should be relatively easy. Unfortunately, coming from Spain might get a bit tricky." %}
+        </p>
+
+        <h2>{% trans "From UK" %}</h2>
+        <p>
+            {% trans "London Stansted - Rzeszów with Ryanair" %}:
+            <a target="_blank" href="https://www.ryanair.com/en/cheap-flights/london-stansted-to-rzeszow/?out-date=2016-06-20">{% trans "search flights in ryanair.com" %}</a>
+        </p>
+
+        <h2>{% trans "From Spain" %}</h2>
+        <ul>
+            <li>
+                <p><strong>{% trans "Option 1 - from Madrid" %}</strong></p>
+                <p>
+                    {% trans "Madrid - Kraków with Ryanair" %}:
+                    <a target="_blank" href="https://www.ryanair.com/en/cheap-flights/madrid-to-krakow/?out-date=2016-06-20">{% trans "search flights in ryanair.com" %}</a><br>
+                    {% trans "After that, you'll need to take a bus from Krakow to Rzeszów" %}: <a target="_blank" href="http://www.inyourpocket.com/krakow/Krakow-Bus-Station_16992v">{% trans "Kraków bus station" %}</a>
+                </p>
+            </li>
+            <li>
+                <p><strong>{% trans "Option 2 - from Barcelona" %}</strong></p>
+                <p>
+                    {% trans "Barcelona - Kraków with Ryanair" %}:
+                    <a target="_blank" href="http://www.ryanair.com/en/cheap-flights/barcelona-girona-to-krakow/?out-date=2016-06-20">{% trans "search flights in ryanair.com" %}</a><br>
+                    {% trans "After that, you'll need to take a bus from Krakow to Rzeszów" %}: <a target="_blank" href="http://www.inyourpocket.com/krakow/Krakow-Bus-Station_16992v">{% trans "Kraków bus station" %}</a>
+                </p>
+            </li>
+            <li>
+                <p><strong>{% trans "Option 3 - from Bilbao via London" %}</strong></p>
+                <p>
+                    {% trans "Bilbao - London with easyJet" %}:
+                    <a target="_blank" href="http://www.easyjet.com/">{% trans "search flights in easyjet.com" %}</a><br>
+                    {% trans "London Stansted - Rzeszów with Ryanair" %}:
+                    <a target="_blank" href="https://www.ryanair.com/en/cheap-flights/london-stansted-to-rzeszow/?out-date=2016-06-20">{% trans "search flights in ryanair.com" %}</a>
+                </p>
+                <p>
+                    {% trans "This last option might not be possible, it will all depend on what kind of flights easyjet will be offering for those dates." %}
+                </p>
+            </li><li>
+                <p><strong>{% trans "Option 4 - from Bilbao via Frankfurt" %}</strong></p>
+                <p>
+                    {% trans "Bilbao - Rzeszów with Lufthansa" %}:
+                    <a target="_blank" href="http://www.lufthansa.com/">{% trans "search flights in lufthansa.com" %}</a>
+                </p>
+                <p>
+                    {% trans "This is the most expensive option, but if you can't be bothered to go to Madrid or Barcelona, this might be the best pick." %}
+                </p>
+            </li>
+        </ul>
+
+        </p>
+    </section>
 
 {% endblock content %}
