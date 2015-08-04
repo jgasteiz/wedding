@@ -1,18 +1,14 @@
 {% extends 'public/base.html' %}
-{% load static %}
+{% load static i18n %}
 
-{% block page_title %}
-    Contact
-{% endblock page_title %}
+{% block page_title %}{% trans "Contact" %}{% endblock page_title %}
 
 {% block content %}
 
     <div class="text-center">
-        <h1>Contact</h1>
+        <h1>{% trans "Contact" %}</h1>
         {% include 'public/partials/picture.html' with src1='img/javi-magda.jpg' src2='img/javi-magda@2x.jpg' src1sm='img/javi-magda-sm.jpg' src2sm='img/javi-magda-sm@2x.jpg' alt='Europe map' title='Europe map' %}
-
-        <p>If you want to get in contact with us, drop us a line at <a href="mailto:javi.manzano.oller@gmail.com">javi.manzano.oller@gmail.com</a>
-            or <a href="mailto:magdalena.kap1@gmail.com">magdalena.kap1@gmail.com</a>.</p>
+        <p>{% trans "If you want to get in contact with us, drop us a line at" %} <a href="mailto:javiandmagda@gmail.com">javiandmagda@gmail.com</a>.</p>
     </div>
 
 {% endblock content %}

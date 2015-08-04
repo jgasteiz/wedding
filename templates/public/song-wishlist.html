@@ -1,18 +1,16 @@
 {% extends 'public/base.html' %}
-{% load static %}
+{% load static i18n %}
 
-{% block page_title %}
-    Song wish list
-{% endblock page_title %}
+{% block page_title %}{% trans "Song wish list" %}{% endblock page_title %}
 
 {% block content %}
 
     <div class="text-center">
 
-        <h1>Help us organising our wedding.</h1>
+        <h1>{% trans "Help us organising our wedding" %}.</h1>
 
         {% if is_user_logged_in %}
-            <h2>Enter the name of a song you would like to hear in the after party.</h2>
+            <h2>{% trans "Enter the name of a song you would like to hear in the after party" %}.</h2>
 
             <form class="form" action="" method="post">
                 {% csrf_token %}
@@ -29,15 +27,15 @@
                     {% endif %}
                 </div>
                 {% endfor %}
-                <p><em>Submitting as {{ user_email }}</em></p>
+                <p><em>{% trans "Submitting as" %} {{ user_email }}</em></p>
                 <p class="text-center">
                     <input class="form__submit" type="submit" value="Submit">
                 </p>
             </form>
         {% else %}
-            <h2>Log in with your Google account and help us picking music for the after party.</h2>
+            <h2>{% trans "Log in with your Google account and help us picking music for the after party" %}.</h2>
             <p>
-                <a href="{% url 'login:djangae_login_redirect' %}?next={% url 'public:song_wishlist' %}" class="btn">Log in</a>
+                <a href="{% url 'login:djangae_login_redirect' %}?next={% url 'public:song_wishlist' %}" class="btn">{% trans "Log in" %}</a>
             </p>
         {% endif %}
     </div>

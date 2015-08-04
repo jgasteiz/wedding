@@ -1,16 +1,14 @@
 {% extends 'public/base.html' %}
-{% load static %}
+{% load static i18n %}
 
-{% block page_title %}
-    RSVP
-{% endblock page_title %}
+{% block page_title %}{% trans "Confirm attendance" %}{% endblock page_title %}
 
 {% block content %}
 
     <div class="text-center">
-        <h1>RSVP confirmation</h1>
+        <h1>{% trans "RSVP confirmation" %}</h1>
 
-        <h2>Coming soon</h2>
+        <h2>{% trans "Coming soon" %}</h2>
     </div>
 
 {% endblock content %}
