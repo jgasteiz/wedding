@@ -4,7 +4,7 @@
  *
  */
 .main-header {
-    @include background-image-retina('/static/img/header-flowers', 'png', 800px, 368px);
+    @include background-image-retina('/static/img/base/header-flowers', 'png', 800px, 368px);
     background-repeat: no-repeat;
     background-size: 100% auto;
     margin-bottom: 40px;

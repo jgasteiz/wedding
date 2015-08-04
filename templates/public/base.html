@@ -27,7 +27,7 @@
                     <a href="{% url 'public:change_language' 'pl' %}">Polski</a>
                 </li>
             </ul>
-            {% include 'public/partials/picture.html' with src1='img/header-flowers-lap.jpg' src2='img/header-flowers-lap@2x.jpg' src1sm='img/header-flowers-palm.jpg' src2sm='img/header-flowers-palm@2x.jpg' alt='Some flowers' title='Some flowers' class='maia-header__image' %}
+            {% include 'public/partials/picture.html' with src1='img/base/header-flowers-lap.jpg' src2='img/base/header-flowers-lap@2x.jpg' src1sm='img/base/header-flowers-palm.jpg' src2sm='img/base/header-flowers-palm@2x.jpg' alt='Some flowers' title='Some flowers' class='maia-header__image' %}
             <span class="main-header__title">Magda & Javi</span>
             <span class="main-header__subtitle">25.06.2016</span>
         </header>
@@ -54,7 +54,7 @@
             {% block content %}{% endblock content %}
         </div>
         <footer class="main-footer">
-            {% include 'public/partials/picture.html' with src1='img/footer-pattern.jpg' src2='img/footer-pattern@2x.jpg' src1sm='img/footer-pattern-palm.jpg' src2sm='img/footer-pattern-palm@2x.jpg' alt='Some flowers' title='Some flowers' %}
+            {% include 'public/partials/picture.html' with src1='img/base/footer-pattern.jpg' src2='img/base/footer-pattern@2x.jpg' src1sm='img/base/footer-pattern-palm.jpg' src2sm='img/base/footer-pattern-palm@2x.jpg' alt='Some flowers' title='Some flowers' %}
         </footer>
     </div>
 
