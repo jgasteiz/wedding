@@ -20,6 +20,16 @@
             {% trans "After that, you should expect around 4 or 5 main dishes of meat and salads every couple of hours." %}
             {% trans "These dishes will probably be served between 6pm and 2am, being the last one most likely beetroot soup with dumplings (also traditional dish)." %}
         </p>
+        <div class="row">
+            <div class="one-half">
+                {% include 'public/partials/picture.html' with src1='img/food/zurek.jpg' src2='img/food/zurek@2x.jpg' src1sm='img/food/zurek.jpg' src2sm='img/food/zurek@2x.jpg' alt='Zurek' title='Zurek' %}
+                <span class="picture-description">{% trans "This is Zurek, a traditional Polish soup." %}</span>
+            </div><!--
+            --><div class="one-half">
+                {% include 'public/partials/picture.html' with src1='img/food/barszcz-czerwony.jpg' src2='img/food/barszcz-czerwony@2x.jpg' src1sm='img/food/barszcz-czerwony.jpg' src2sm='img/food/barszcz-czerwony@2x.jpg' alt='Barszcz Czerwony' title='Barszcz Czerwony' %}
+                <span class="picture-description">{% trans "This is Barszcz Czerwony, another traditional Polish soup with dumplings." %}</span>
+            </div>
+        </div>
         <p>
             {% trans "If you are vegetarian/vegan or have some kind of food intolerance, please get in touch with me and we'll sort something out." %}
         </p>
@@ -33,8 +43,9 @@
             {% trans "There will be beer, but only drink it if you're not planning to drink vodka. Seriously, this is a good advice." %}
             {% trans "There might be some wine, but it won't be nice Spanish wine." %}
         </p>
+
         <p>
-            {% trans "And of course, there will be plenty of juices, water and other soft drinks." %}
+            {% trans "Of course, there will be plenty of juices, water and other soft drinks." %}
         </p>
 
         <h2>{% trans "How much should I drink?" %}</h2>
@@ -45,6 +56,9 @@
 
         <h2>{% trans "How much should I dance?" %}</h2>
         <p>{% trans "As much as possible. The more you dance, the better chances you'll have to survive and enjoy the wedding." %}</p>
+
+        {% include 'public/partials/picture.html' with src1='img/karolina-wedding-2.jpg' src2='img/karolina-wedding-2@2x.jpg' src1sm='img/karolina-wedding-2-sm.jpg' src2sm='img/karolina-wedding-2-sm@2x.jpg' alt="Karolina's wedding" title="Karolina's wedding" %}
+        <span class="picture-description">{% trans "Magda's sister wedding, September 2014." %}</span>
 
     </section>
 
