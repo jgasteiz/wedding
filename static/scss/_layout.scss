@@ -262,3 +262,39 @@
 .text-center {
     text-align: center;
 }
+
+.picture-description {
+    @extend .text-center;
+    color: #888;
+    display: block;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: block;
+    margin: 20px 0;
+    margin-left: -$gutter;
+
+    @include respond-to('lap') {
+        margin: 0;
+    }
+}
+
+.one-half {
+    display: inline-block;
+    padding-left: $gutter;
+    vertical-align: top;
+    width: 50%;
+
+    @include respond-to('lap') {
+        display: block;
+        margin: 0 0 20px;
+        padding: 0;
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+}
