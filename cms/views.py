@@ -199,18 +199,36 @@ class EmailCreateView(mixins.ViewNameMixin, FormView):
 create_email = EmailCreateView.as_view()
 
 
+class EmailUpdateView(mixins.ViewNameMixin, FormView):
+    form_class = EmailForm
+    page_name = 'emails'
+    success_url = reverse_lazy('cms:emails')
+    template_name = 'cms/email_form.html'
 
-create_invitation_email = InvitationEmailCreateView.as_view()
+    def get(self, request, *args, **kwargs):
+        Email = get_email_class()
+        email_pk = self.kwargs.get('pk')
+        self.object = Email.objects.get(pk=email_pk)
+        return super(EmailUpdateView, self).get(request, *args, **kwargs)
 
+    def post(self, request, *args, **kwargs):
+        Email = get_email_class()
+        email_pk = self.kwargs.get('pk')
+        self.object = Email.objects.get(pk=email_pk)
+        return super(EmailUpdateView, self).post(request, *args, **kwargs)
 
-class InvitationEmailUpdateView(mixins.ViewNameMixin, UpdateView):
-    form_class = InvitationEmailForm
-    model = InvitationEmail
-    page_name = 'invitation_emails'
-    success_url = reverse_lazy('cms:invitation_emails')
-    template_name = 'cms/invitation_email_form.html'
+    def form_valid(self, form):
+        form.save()
+        return super(EmailUpdateView, self).form_valid(form)
 
-update_invitation_email = InvitationEmailUpdateView.as_view()
+    def get_form_kwargs(self):
+        kwargs = super(EmailUpdateView, self).get_form_kwargs()
+        if hasattr(self, 'object'):
+            kwargs.update({'instance': self.object})
+        return kwargs
+
+update_email = EmailUpdateView.as_view()
+
 
 
 class InvitationEmailDeleteView(mixins.ViewNameMixin, DeleteView):
