@@ -141,32 +141,38 @@ class InviteeDeleteView(mixins.ViewNameMixin, DeleteView):
 delete_invitee = InviteeDeleteView.as_view()
 
 
-class SendInvitationView(View):
+class SendEmailView(View):
     success_url = reverse_lazy('cms:invitees')
 
     def get(self, *args, **kwargs):
-        invitee = Invitee.objects.get(pk=kwargs.get('pk'))
+        # invitee = Invitee.objects.get(pk=kwargs.get('pk'))
+        #
+        # email_template_qs = Email.objects.filter(email_language=invitee.language)
+        # if not email_template_qs.exists():
+        #     email_html = """
+        #         Hey! You are invited to our wedding.
+        #         Check this out: https://magdaandjavi.appspot.com/en/
+        #         """
+        # else:
+        #     email_html = email_template_qs[0].html
+        #
+        # message = mail.EmailMessage(
+        #     sender="Javi Manzano <{}>".format(settings.EMAIL_FROM),
+        #     subject="You're invited to our wedding"
+        # )
+        #
+        # message.to = "{} {} <{}>".format(invitee.first_name, invitee.last_name, invitee.email)
+        # message.html = email_html
+        # message.send()
+        #
+        # invitee.invitation_sent = True
+        # invitee.save()
 
-        email_template_qs = InvitationEmail.objects.filter(email_language=invitee.language)
-        if not email_template_qs.exists():
-            email_html = """
-                Hey! You are invited to our wedding.
-                Check this out: https://magdaandjavi.appspot.com/en/
-                """
-        else:
-            email_html = email_template_qs[0].html
+        return redirect(self.success_url)
 
-        message = mail.EmailMessage(
-            sender="Javi Manzano <{}>".format(settings.EMAIL_FROM),
-            subject="You're invited to our wedding"
-        )
+send_email = SendEmailView.as_view()
 
-        message.to = "{} {} <{}>".format(invitee.first_name, invitee.last_name, invitee.email)
-        message.html = email_html
-        message.send()
 
-        invitee.invitation_sent = True
-        invitee.save()
 
         return redirect(self.success_url)
 
