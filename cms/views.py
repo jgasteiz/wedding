@@ -186,24 +186,19 @@ class EmailView(mixins.ViewNameMixin, ListView):
 emails = EmailView.as_view()
 
 
-class InvitationEmailView(mixins.ViewNameMixin, ListView):
-    model = InvitationEmail
-    page_name = 'invitation_emails'
-    template_name = 'cms/invitation_emails.html'
+class EmailCreateView(mixins.ViewNameMixin, FormView):
+    form_class = EmailForm
+    page_name = 'emails'
+    success_url = reverse_lazy('cms:emails')
+    template_name = 'cms/email_form.html'
 
-    def get_object(self, queryset=None):
-        instance = self.model.get_instance()
-        return instance
+    def form_valid(self, form):
+        form.save()
+        return super(EmailCreateView, self).form_valid(form)
 
-invitation_email = InvitationEmailView.as_view()
+create_email = EmailCreateView.as_view()
 
 
-class InvitationEmailCreateView(mixins.ViewNameMixin, CreateView):
-    form_class = InvitationEmailForm
-    model = InvitationEmail
-    page_name = 'invitation_emails'
-    success_url = reverse_lazy('cms:invitation_emails')
-    template_name = 'cms/invitation_email_form.html'
 
 create_invitation_email = InvitationEmailCreateView.as_view()
 
