@@ -13,11 +13,12 @@ from django.views.generic import (
     RedirectView,
     UpdateView,
     View,
+    FormView,
 )
 
 from wedding import mixins
-from wedding.forms import InvitationEmailForm, InviteeForm
-from wedding.models import InvitationEmail, Invitee, Song
+from wedding.forms import EmailForm, InviteeForm
+from wedding.models import Invitee, Song, get_email_class
 
 
 class HomeView(RedirectView):
@@ -173,10 +174,16 @@ class SendEmailView(View):
 send_email = SendEmailView.as_view()
 
 
+class EmailView(mixins.ViewNameMixin, ListView):
+    model = None
+    page_name = 'emails'
+    template_name = 'cms/emails.html'
 
-        return redirect(self.success_url)
+    def get_queryset(self):
+        Email = get_email_class()
+        return Email.objects.all()
 
-send_invitation = SendInvitationView.as_view()
+emails = EmailView.as_view()
 
 
 class InvitationEmailView(mixins.ViewNameMixin, ListView):
