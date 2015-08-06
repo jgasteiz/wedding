@@ -9,7 +9,7 @@
 
 {% block content %}
 
-    <h1>Edit email credentials</h1>
+    <h1>Edit email</h1>
 
     <form action="" method="post">
         {% csrf_token %}
@@ -18,19 +18,19 @@
         <div class="form-group {% if field.errors %}has-error{% endif %}">
             <label for="{{ field.id_for_label }}">{{ field.label }} {% if field.field.required %}*{% endif %} </label>
 
-            {% ifequal field.html_name 'html' %}
-            {{ field|add_css_class:'form-control--hidden' }}
-            <div class="row">
+            {% if field.field.is_html %}
+            <div class="row html-field" data-index="{{ forloop.counter }}">
+                {{ field|add_css_class:'form-control--hidden' }}
                 <div class="col-md-6">
-                    <div id="html" class="form-control--editor"></div>
+                    <div id="html-{{ forloop.counter }}" class="form-control--editor"></div>
                 </div>
                 <div class="col-md-6">
-                    <iframe id="html-preview" class="editor-preview" width="100%" height="400" frameborder="0"></iframe>
+                    <iframe id="html-preview-{{ forloop.counter }}" class="editor-preview" width="100%" height="400" frameborder="0"></iframe>
                 </div>
             </div>
             {% else %}
             {{ field|add_css_class:'form-control' }}
-            {% endifequal %}
+            {% endif %}
 
             {% if field.errors %}
             <ul class="errors">
