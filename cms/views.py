@@ -230,14 +230,17 @@ class EmailUpdateView(mixins.ViewNameMixin, FormView):
 update_email = EmailUpdateView.as_view()
 
 
+class EmailDeleteView(mixins.ViewNameMixin, DeleteView):
+    page_name = 'emails'
+    success_url = reverse_lazy('cms:emails')
+    template_name = 'cms/email_delete_confirmation.html'
 
-class InvitationEmailDeleteView(mixins.ViewNameMixin, DeleteView):
-    model = InvitationEmail
-    page_name = 'invitation_emails'
-    success_url = reverse_lazy('cms:invitation_emails')
-    template_name = 'cms/invitation_email_delete_confirmation.html'
+    def get_object(self, queryset=None):
+        Email = get_email_class()
+        email_pk = self.kwargs.get('pk')
+        return Email.objects.get(pk=email_pk)
 
-delete_invitation_email = InvitationEmailDeleteView.as_view()
+delete_email = EmailDeleteView.as_view()
 
 
 class InvitationEmailPreviewView(View):
