@@ -17,13 +17,13 @@ urlpatterns = [
     url(r'^invitees/update/(?P<pk>\d+)/$', views.update_invitee, name='update_invitee'),
     url(r'^invitees/delete/(?P<pk>\d+)/$', views.delete_invitee, name='delete_invitee'),
 
-    url(r'^invitation-emails/$', views.invitation_email, name='invitation_emails'),
-    url(r'^invittaion-emails/create/$', views.create_invitation_email, name='create_invitation_email'),
-    url(r'^invitation-emails/update/(?P<pk>\d+)/$', views.update_invitation_email, name='update_invitation_email'),
-    url(r'^invitation-emails/delete/(?P<pk>\d+)/$', views.delete_invitation_email, name='delete_invitation_email'),
-    url(r'^invitation-emails/preview/(?P<pk>\d+)/$', views.preview_invitation_email, name='preview_invitation_email'),
+    url(r'^emails/$', views.emails, name='emails'),
+    url(r'^emails/create/$', views.create_email, name='create_email'),
+    url(r'^emails/update/(?P<pk>\d+)/$', views.update_email, name='update_email'),
+    url(r'^emails/delete/(?P<pk>\d+)/$', views.delete_email, name='delete_email'),
+    url(r'^emails/preview/(?P<pk>\d+)/$', views.preview_email, name='preview_email'),
 
-    url(r'^send-invitation/(?P<pk>\d+)/$', views.send_invitation, name='send_invitation'),
+    url(r'^send-invitation/(?P<pk>\d+)/$', views.send_email, name='send_invitation'),
 ]
 
 # handler403 = views.cms_forbidden

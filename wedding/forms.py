@@ -22,9 +22,6 @@ class SongForm(forms.ModelForm):
         model = Song
 
 
-class InvitationEmailForm(forms.ModelForm):
-    email_language = forms.ChoiceField(choices=LANGUAGES)
+class EmailForm(forms.Form):
+    name = forms.CharField()
 
-    class Meta:
-        fields = ('email_language', 'html',)
-        model = InvitationEmail
