@@ -1,5 +1,7 @@
 from django.db import models
 
+from .constants import LANGUAGES
+
 
 class Song(models.Model):
     name = models.CharField(max_length=256)

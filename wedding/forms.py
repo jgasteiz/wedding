@@ -1,22 +1,6 @@
 from django import forms
 
-from .models import InvitationEmail, Invitee, Song
-
-LANGUAGES = (
-    ('en', 'English'),
-    ('es', 'Spanish'),
-    ('pl', 'Polish'),
-)
-
-INVITATION_STATUSES = (
-    ('no_rsvp', 'No RSVP'),
-)
-
-INVITER_CHOICES = (
-    ('both', 'Both'),
-    ('javi', 'Javi'),
-    ('magda', 'Magda'),
-)
+from .constants import LANGUAGES, INVITATION_STATUSES, INVITER_CHOICES
 
 
 class InviteeForm(forms.ModelForm):
