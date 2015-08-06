@@ -9,7 +9,15 @@ class InviteeForm(forms.ModelForm):
     inviter = forms.ChoiceField(choices=INVITER_CHOICES, required=False)
 
     class Meta:
-        fields = ('first_name', 'last_name', 'email', 'invitation_sent', 'language', 'invitation_status', 'inviter')
+        fields = (
+            'first_name',
+            'last_name',
+            'email',
+            'invitation_sent',
+            'language',
+            'invitation_status',
+            'inviter',
+        )
         model = Invitee
 
 
