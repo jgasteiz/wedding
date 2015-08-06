@@ -243,9 +243,11 @@ class EmailDeleteView(mixins.ViewNameMixin, DeleteView):
 delete_email = EmailDeleteView.as_view()
 
 
-class InvitationEmailPreviewView(View):
+class EmailPreviewView(View):
     def get(self, *args, **kwargs):
-        invitation_email = InvitationEmail.objects.get(pk=kwargs.get('pk'))
-        return HttpResponse(invitation_email.html)
+        Email = get_email_class()
+        email_pk = kwargs.get('pk')
+        email = Email.objects.get(pk=email_pk)
+        return HttpResponse(email.html_en)
 
-preview_invitation_email = InvitationEmailPreviewView.as_view()
+preview_email = EmailPreviewView.as_view()
