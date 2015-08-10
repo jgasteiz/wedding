@@ -43,20 +43,6 @@ class AppEngineTestCase(TestCase):
         self._restore_user()
         super(AppEngineTestCase, self).tearDown()
 
-    def login(self, email, user_id=None, is_admin=False):
-        """Set the current Google authenticated user by email address.
-
-        Use is_admin=True to set them as an App Engine admin.
-        """
-        user_id = user_id or email.split('@', 1)[0]
-        os.environ['USER_EMAIL'] = email
-        os.environ['USER_ID'] = user_id
-        os.environ['USER_IS_ADMIN'] = '1' if is_admin else '0'
-
-    def logout(self):
-        for key in self._user_keys:
-            del os.environ[key]
-
     def _save_user(self):
         self._userenv = {k: os.environ.get(k, sentinel) for k in self._user_keys}
 
