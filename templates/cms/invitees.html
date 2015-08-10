@@ -36,13 +36,13 @@
                     <a href="{% url 'cms:invitees' %}?order_by=-inviter"><i class="glyphicon glyphicon-triangle-top"></i></a>
                 </th>
                 <th>Language
-                    <a href="{% url 'cms:invitees' %}?order_by=invitation_sent"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                    <a href="{% url 'cms:invitees' %}?order_by=-invitation_sent"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                    <a href="{% url 'cms:invitees' %}?order_by=language"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:invitees' %}?order_by=-language"><i class="glyphicon glyphicon-triangle-top"></i></a>
                 </th>
-                <th>Invitation sent
-                    <a href="{% url 'cms:invitees' %}?order_by=invitation_sent"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                    <a href="{% url 'cms:invitees' %}?order_by=-invitation_sent"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                </th>
+{#                <th>Invitation sent#}
+{#                    <a href="{% url 'cms:invitees' %}?order_by=invitation_sent"><i class="glyphicon glyphicon-triangle-bottom"></i></a>#}
+{#                    <a href="{% url 'cms:invitees' %}?order_by=-invitation_sent"><i class="glyphicon glyphicon-triangle-top"></i></a>#}
+{#                </th>#}
                 <th>Invitation status
                     <a href="{% url 'cms:invitees' %}?order_by=invitation_status"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
                     <a href="{% url 'cms:invitees' %}?order_by=-invitation_status"><i class="glyphicon glyphicon-triangle-top"></i></a>
@@ -61,16 +61,23 @@
                 <td>{{ invitee.email }}</td>
                 <td>{{ invitee.inviter }}</td>
                 <td>{{ invitee.language }}</td>
-                <td><span class="invitation-sent--{{ invitee.invitation_sent|yesno:"yes,no" }}">{{ invitee.invitation_sent|yesno:"Yes,No" }}</span></td>
+{#                <td><span class="invitation-sent--{{ invitee.invitation_sent|yesno:"yes,no" }}">{{ invitee.invitation_sent|yesno:"Yes,No" }}</span></td>#}
                 <td>{{ invitee.invitation_status }}</td>
                 <td>{{ invitee.added }}</td>
                 <td>{{ invitee.updated }}</td>
                 <td>
-                    <a href="{% url 'cms:update_invitee' invitee.id %}" class="btn btn-default btn-sm">Update</a>
-                    <a href="{% url 'cms:delete_invitee' invitee.id %}" class="btn btn-danger btn-sm">Delete</a>
-                    <p>
-                        <a href="{% url 'cms:send_invitation' invitee.id %}" class="btn btn-default btn-sm">Send invitation</a>
-                    </p>
+                    <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                        <a href="{% url 'cms:update_invitee' invitee.id %}" class="btn btn-default btn-sm">Update</a>
+                        <a href="{% url 'cms:delete_invitee' invitee.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    </div>
+                    {% if emails %}
+                    <strong>Emails</strong>
+                    <div class="btn-group-vertical" role="group" aria-label="...">
+                        {% for email in emails %}
+                        <a href="{% url 'cms:send_email' invitee.id email.id %}" class="btn btn-default btn-sm">Send "{{ email }}"</a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
                 </td>
             </tr>
         {% empty %}
@@ -81,7 +88,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
+{#                <td></td>#}
                 <td></td>
                 <td></td>
                 <td></td>

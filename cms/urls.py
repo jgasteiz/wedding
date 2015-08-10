@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^emails/delete/(?P<pk>\d+)/$', views.delete_email, name='delete_email'),
     url(r'^emails/preview/(?P<pk>\d+)/$', views.preview_email, name='preview_email'),
 
-    url(r'^send-invitation/(?P<pk>\d+)/$', views.send_email, name='send_invitation'),
+    url(r'^send-email/(?P<invitee_id>\d+)/(?P<email_id>\d+)/$', views.send_email, name='send_email'),
 ]
 
 # handler403 = views.cms_forbidden

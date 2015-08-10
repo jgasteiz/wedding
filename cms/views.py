@@ -110,6 +110,12 @@ class InviteesView(mixins.OrderByMixin, mixins.ViewNameMixin, ListView):
     page_name = 'invitees'
     template_name = 'cms/invitees.html'
 
+    def get_context_data(self, **kwargs):
+        ctx = super(InviteesView, self).get_context_data(**kwargs)
+        Email = get_email_class()
+        ctx['emails'] = Email.objects.all()
+        return ctx
+
 invitees = InviteesView.as_view()
 
 
@@ -146,26 +152,27 @@ class SendEmailView(View):
     success_url = reverse_lazy('cms:invitees')
 
     def get(self, *args, **kwargs):
-        # invitee = Invitee.objects.get(pk=kwargs.get('pk'))
-        #
-        # email_template_qs = Email.objects.filter(email_language=invitee.language)
-        # if not email_template_qs.exists():
-        #     email_html = """
-        #         Hey! You are invited to our wedding.
-        #         Check this out: https://magdaandjavi.appspot.com/en/
-        #         """
-        # else:
-        #     email_html = email_template_qs[0].html
-        #
-        # message = mail.EmailMessage(
-        #     sender="Javi Manzano <{}>".format(settings.EMAIL_FROM),
-        #     subject="You're invited to our wedding"
-        # )
-        #
-        # message.to = "{} {} <{}>".format(invitee.first_name, invitee.last_name, invitee.email)
-        # message.html = email_html
-        # message.send()
-        #
+        Email = get_email_class()
+        invitee = Invitee.objects.get(pk=kwargs.get('invitee_id'))
+        email = Email.objects.get(pk=kwargs.get('email_id'))
+
+        email_html = getattr(email, 'html_{}'.format(invitee.language))
+        if email_html == '':
+            email_html = """
+                Hey! You are invited to our wedding.
+                Check this out: https://magdaandjavi.appspot.com/en/
+                """
+
+        message = mail.EmailMessage(
+            sender="Javi Manzano <{}>".format(settings.EMAIL_FROM),
+            subject="You're invited to our wedding"
+        )
+
+        message.to = "{} {} <{}>".format(invitee.first_name, invitee.last_name, invitee.email)
+        message.html = email_html
+        message.send()
+
+        # Do something clever with this?
         # invitee.invitation_sent = True
         # invitee.save()
 
