@@ -68,8 +68,12 @@ def create_model(name, fields=None, app_label='', module='', options=None):
 
 def get_email_class():
     fields = {
-        'name': models.CharField(max_length=256)
+        'name': models.CharField(max_length=256),
+        '__unicode__': lambda self: self.name
+    }
+    options = {
+        'ordering': ['name'],
     }
     for language_key, language_name in LANGUAGES:
         fields['html_{}'.format(language_key)] = models.TextField(blank=True, null=True)
-    return create_model('Email', fields, 'wedding')
+    return create_model('Email', fields, 'wedding', options=options)
