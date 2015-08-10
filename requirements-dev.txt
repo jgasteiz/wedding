@@ -1,0 +1,4 @@
+nose
+ipdb==0.8
+model-mommy==1.2.3
+mock

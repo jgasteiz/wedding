@@ -23,6 +23,7 @@ lib/
 lib64/
 parts/
 sitepackages/
+sitepackages-dev/
 sdist/
 var/
 *.egg-info/
