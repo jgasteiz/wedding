@@ -15,7 +15,6 @@ class SongTestCase(AppEngineTestCase):
             artist=artist_name,
             submitted_by='javi@test.com'
         )
-
         song = Song.objects.get()
         self.assertEqual(song.artist, 'Acdc')
 
@@ -26,8 +25,9 @@ class EmailTestCase(AppEngineTestCase):
         self.email_class = get_email_class()
 
     def test_email_class_has_html_field_per_language(self):
+        all_field_names = self.email_class._meta.get_all_field_names()
         for language_key, language_name in LANGUAGES:
-            self.assertTrue('html_{}'.format(language_key) in self.email_class._meta.get_all_field_names())
+            self.assertTrue('html_{}'.format(language_key) in all_field_names)
 
     def test_email_unicode(self):
         email = self.email_class(name='Email test')
@@ -42,4 +42,3 @@ class EmailTestCase(AppEngineTestCase):
         self.assertTrue(all_emails[0], email1)
         self.assertTrue(all_emails[1], email2)
         self.assertTrue(all_emails[2], email3)
-
