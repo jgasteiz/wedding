@@ -15,7 +15,15 @@ form {
 %invitation-sent {
     border-radius: 4px;
     display: inline-block;
+    margin-bottom: 4px;
     padding: 2px 8px;
+
+    &:after {
+        content: ", ";
+    }
+    &:last-child:after {
+        content: "";
+    }
 }
 
 .invitation-sent--no {
@@ -49,4 +57,9 @@ form {
     &:last-child {
         margin-bottom: 0;
     }
+}
+
+.margin-row {
+    margin-bottom: 20px;
+    margin-top: 20px;
 }

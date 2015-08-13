@@ -9,11 +9,20 @@
 
     <h1>Invitees</h1>
 
-    <p class="text-right">
-        <a class="btn btn-primary" href="{% url 'cms:invitee_create' %}">Create invitee</a>
-        <a class="btn btn-default" href="#to-be-implemented">Download as Text file</a>
-        <a class="btn btn-default" href="#to-be-implemented">Download as CSV</a>
-    </p>
+    <div class="row margin-row">
+        <div class="col-sm-6">
+            {% for email in emails %}
+            <form action="" data-csrftoken="{{ csrf_token }}">
+                <button data-url="{% url 'cms:send_emails' %}" data-email-id="{{ email.pk }}" class="btn btn-default send-email">Send "{{ email }}"</button>
+            </form>
+            {% endfor %}
+        </div>
+        <div class="col-sm-6 text-right">
+            <a class="btn btn-primary" href="{% url 'cms:invitee_create' %}">Create invitee</a>
+            <a class="btn btn-default" href="#to-be-implemented">Download as Text file</a>
+            <a class="btn btn-default" href="#to-be-implemented">Download as CSV</a>
+        </div>
+    </div>
 
     <table class="table table-bordered table-responsive">
         <thead>
@@ -39,10 +48,10 @@
                     <a href="{% url 'cms:invitees' %}?order_by=language"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
                     <a href="{% url 'cms:invitees' %}?order_by=-language"><i class="glyphicon glyphicon-triangle-top"></i></a>
                 </th>
-{#                <th>Invitation sent#}
-{#                    <a href="{% url 'cms:invitees' %}?order_by=invitation_sent"><i class="glyphicon glyphicon-triangle-bottom"></i></a>#}
-{#                    <a href="{% url 'cms:invitees' %}?order_by=-invitation_sent"><i class="glyphicon glyphicon-triangle-top"></i></a>#}
-{#                </th>#}
+                <th>Emails sent
+                    <a href="{% url 'cms:invitees' %}?order_by=emails"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:invitees' %}?order_by=-emails"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                </th>
                 <th>Invitation status
                     <a href="{% url 'cms:invitees' %}?order_by=invitation_status"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
                     <a href="{% url 'cms:invitees' %}?order_by=-invitation_status"><i class="glyphicon glyphicon-triangle-top"></i></a>
@@ -54,30 +63,29 @@
         </thead>
         <tbody>
         {% for invitee in invitee_list %}
-            <tr>
-                <td>{{ forloop.counter }}</td>
+            <tr data-row="{{ invitee.pk }}" class="invitee-row">
+                <td>
+                    {{ forloop.counter }}
+                    <input type="checkbox" class="invitee-selector" data-id="{{ invitee.pk }}" tabindex="1">
+                </td>
                 <td>{{ invitee.first_name }}</td>
                 <td>{{ invitee.last_name }}</td>
                 <td>{{ invitee.email }}</td>
                 <td>{{ invitee.inviter }}</td>
                 <td>{{ invitee.language }}</td>
-{#                <td><span class="invitation-sent--{{ invitee.invitation_sent|yesno:"yes,no" }}">{{ invitee.invitation_sent|yesno:"Yes,No" }}</span></td>#}
+                <td>
+                    {% for email in invitee.get_emails %}
+                    <span class="invitation-sent--yes">{{ email }}</span>
+                    {% empty %}
+                    <span class="invitation-sent--no">No emails sent</span>
+                    {% endfor %}
+                </td>
                 <td>{{ invitee.invitation_status }}</td>
                 <td>{{ invitee.added }}</td>
                 <td>{{ invitee.updated }}</td>
                 <td>
-                    <div class="btn-group btn-group-sm" role="group" aria-label="...">
-                        <a href="{% url 'cms:update_invitee' invitee.id %}" class="btn btn-default btn-sm">Update</a>
-                        <a href="{% url 'cms:delete_invitee' invitee.id %}" class="btn btn-danger btn-sm">Delete</a>
-                    </div>
-                    {% if emails %}
-                    <strong>Emails</strong>
-                    <div class="btn-group-vertical" role="group" aria-label="...">
-                        {% for email in emails %}
-                        <a href="{% url 'cms:send_email' invitee.id email.id %}" class="btn btn-default btn-sm">Send "{{ email }}"</a>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
+                    <a href="{% url 'cms:update_invitee' invitee.id %}" class="btn btn-default btn-sm">Update</a>
+                    <a href="{% url 'cms:delete_invitee' invitee.id %}" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>
         {% empty %}
@@ -88,7 +96,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-{#                <td></td>#}
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -99,3 +107,7 @@
 
     </table>
 {% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/invitees.js' %}"></script>
+{% endblock extra_js %}
