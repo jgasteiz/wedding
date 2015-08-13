@@ -31,8 +31,27 @@ class Invitee(models.Model):
     updated = models.DateTimeField(auto_now=True)
     inviter = models.CharField(max_length=256, blank=True)
 
+    emails = models.CommaSeparatedIntegerField(max_length=512)
+
     def __unicode__(self):
         return '{} {}'.format(self.first_name, self.last_name)
+
+    def get_emails(self):
+        """
+        Return the list of Email instances that have been sent to the invitee.
+        """
+        email_ids = self.get_email_ids()
+        Email = get_email_class()
+        return [email for email in Email.objects.filter(pk__in=email_ids)]
+
+    def get_email_ids(self):
+        """
+        Return the list of Email ids that have been sent to the invitee.
+        """
+        if self.emails is None:
+            return []
+        email_ids = self.emails.replace(' ', '')
+        return email_ids.split(',')
 
 
 def create_model(name, fields=None, app_label='', module='', options=None):
