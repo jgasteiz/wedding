@@ -148,37 +148,49 @@ class InviteeDeleteView(mixins.ViewNameMixin, DeleteView):
 delete_invitee = InviteeDeleteView.as_view()
 
 
-class SendEmailView(View):
-    success_url = reverse_lazy('cms:invitees')
+class SendEmailsView(View):
+    def post(self, *args, **kwargs):
 
-    def get(self, *args, **kwargs):
+        invitee_ids = self.request.POST.getlist('invitees[]')
+        email_id = self.request.POST.get('email')
+
         Email = get_email_class()
-        invitee = Invitee.objects.get(pk=kwargs.get('invitee_id'))
-        email = Email.objects.get(pk=kwargs.get('email_id'))
 
-        email_html = getattr(email, 'html_{}'.format(invitee.language))
-        if email_html == '':
-            email_html = """
-                Hey! You are invited to our wedding.
-                Check this out: https://magdaandjavi.appspot.com/en/
-                """
+        for invitee_id in invitee_ids:
+            invitee = Invitee.objects.get(pk=invitee_id)
 
-        message = mail.EmailMessage(
-            sender="Javi Manzano <{}>".format(settings.EMAIL_FROM),
-            subject="You're invited to our wedding"
-        )
+            # Check if the email has already been sent to the invitee.
+            emails_sent_to_invitee_ids = invitee.get_email_ids()
+            if email_id in emails_sent_to_invitee_ids:
+                continue
 
-        message.to = "{} {} <{}>".format(invitee.first_name, invitee.last_name, invitee.email)
-        message.html = email_html
-        message.send()
+            email = Email.objects.get(pk=email_id)
 
-        # Do something clever with this?
-        # invitee.invitation_sent = True
-        # invitee.save()
+            email_html = getattr(email, 'html_{}'.format(invitee.language))
+            if email_html == '':
+                email_html = """
+                    Hey! You are invited to our wedding.
+                    Check this out: https://magdaandjavi.appspot.com/en/
+                    """
 
-        return redirect(self.success_url)
+            message = mail.EmailMessage(
+                sender="Javi Manzano <{}>".format(settings.EMAIL_FROM),
+                subject="You're invited to our wedding"
+            )
 
-send_email = SendEmailView.as_view()
+            message.to = "{} {} <{}>".format(invitee.first_name, invitee.last_name, invitee.email)
+            message.html = email_html
+            message.send()
+
+            # Add email id to invitee emails list.
+            if email_id not in emails_sent_to_invitee_ids:
+                email_ids.append(email_id)
+                invitee.emails = ','.join(email_ids)
+                invitee.save()
+
+        return HttpResponse('OK')
+
+send_emails = SendEmailsView.as_view()
 
 
 class EmailView(mixins.ViewNameMixin, ListView):
