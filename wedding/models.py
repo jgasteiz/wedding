@@ -25,7 +25,6 @@ class Invitee(models.Model):
     first_name = models.CharField(max_length=256)
     last_name = models.CharField(max_length=256, blank=True)
     email = models.EmailField(blank=True)
-    invitation_sent = models.NullBooleanField(default=False)
     language = models.CharField(max_length=256)
     invitation_status = models.CharField(max_length=256)
     added = models.DateTimeField(auto_now_add=True)

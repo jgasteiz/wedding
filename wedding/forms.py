@@ -16,7 +16,6 @@ class InviteeForm(forms.ModelForm):
             'first_name',
             'last_name',
             'email',
-            'invitation_sent',
             'language',
             'invitation_status',
             'inviter',
