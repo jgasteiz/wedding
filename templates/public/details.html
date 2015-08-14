@@ -8,17 +8,17 @@
     <section>
         <h1 class="text-center">{% trans "Polish weddings, what to expect" %}</h1>
 
-        <h2>{% trans "Eat, Dance, Drink, Repeat (at least 5 times)" %}</h2>
+        <h2>{% trans "Eat, Dance, Drink, Repeat (5 times)" %}</h2>
         <p>
-            {% trans "The party starts with food (probably chicken soup) and it's followed by some meat dish. That's the standard." %}
+            {% trans "The party starts with a traditional chicken soup and it's followed by a meat dish. That's the standard." %}
             {% trans "After that, you should expect the First Dance and then the vodka will start flowing." %}
         </p>
 
-        <h2>{% trans "What food should I expect?" %}</h2>
+        <h2>{% trans "What food will be served?" %}</h2>
         <p>
-            {% trans "Traditionally, Polish weddings start with a traditional chicken soup. It's fatty and good for making a good pre-drinking base in your stomach." %}
+            {% trans "Traditionally, Polish weddings start with a traditional chicken soup. Nowadays it's not necessarily to have it, but I'm all up for traditions." %}
             {% trans "After that, you should expect around 4 or 5 main dishes of meat and salads every couple of hours." %}
-            {% trans "These dishes will probably be served between 6pm and 2am, being the last one most likely beetroot soup with dumplings (also traditional dish)." %}
+            {% trans "These dishes will be served between 5pm and 2am, being the last one a delicious beetroot soup with dumplings – a very traditional one too." %}
         </p>
         <div class="row">
             <div class="one-half">
@@ -31,39 +31,38 @@
             </div>
         </div>
         <p>
-            {% trans "If you are vegetarian/vegan or have some kind of food intolerance, please get in touch with me and we'll sort something out." %}
+            {% trans "If you are vegetarian/vegan or have some kind of food intolerance, please get in touch with us and we'll sort something out." %}: <a href="{% url 'public:contact' %}">{% trans "Contact" %}</a>
         </p>
 
         <h2>{% trans "How much should I eat?" %}</h2>
-        <p>{% trans "As much as you want. The more you eat, the more you can drink." %}</p>
+        <p>{% trans "As much as you can! If you've been invited to this wedding is because you're our friend or family. And if that's the case, you must love food." %}</p>
 
-        <h2>{% trans "What should I drink?" %}</h2>
+        <h2>{% trans "What drinks will be served?" %}</h2>
         <p>
-            {% trans "Vodka! But do not mix it with other alcohol or people (me included) will start taking pictures of you." %}
-            {% trans "There will be beer, but only drink it if you're not planning to drink vodka. Seriously, this is a good advice." %}
-            {% trans "There might be some wine, but it won't be nice Spanish wine." %}
+            {% trans "If you're used to Spanish weddings, this one might seem a bit different. There might be some wine, but won't be the main alcoholic drink of the wedding. Vodka will." %}
         </p>
-
         <p>
-            {% trans "Of course, there will be plenty of juices, water and other soft drinks." %}
+            {% trans "Of course, you can mix the vodka with anything you like, but you'll see the most of the locals drinking it in shots. And I encourage you to try the same." %}
+            {% trans "We're personally making sure we're getting one of the best – if not the best – Polish vodkas, so people can drink it without worrying too much about the next morning." %}
+            {% trans "Our only advice would be to take it easy if you're planning to drink other alcohols, everyone knows what happens when you mix too much right?" %}
         </p>
-
-        <h2>{% trans "How much should I drink?" %}</h2>
         <p>
-            {% trans "I've only experienced one Polish wedding in my life and I survived it quite gracefully." %}
-            {% trans "If you're not Polish, I suggest you fill half of your shot glass. It worked well for me." %}
+            {% trans "That said, there will be plenty of beer, juices, water and other soft drinks." %}
         </p>
 
         <h2>{% trans "How much should I dance?" %}</h2>
-        <p>{% trans "As much as possible. The more you dance, the better chances you'll have to survive and enjoy the wedding." %}</p>
+        <p>{% trans "As much as you can! Dancing is a very social and common thing to do in a Polish wedding, everyone must dance." %}</p>
 
         {% include 'public/partials/picture.html' with src1='img/karolina-wedding-2.jpg' src2='img/karolina-wedding-2@2x.jpg' src1sm='img/karolina-wedding-2-sm.jpg' src2sm='img/karolina-wedding-2-sm@2x.jpg' alt="Karolina's wedding" title="Karolina's wedding" %}
         <span class="picture-description">{% trans "Magda's sister wedding, September 2014." %}</span>
 
+        <h2>{% trans "Some random invitee is insisting to drink with him/her, what should I do?" %}</h2>
+        <p>{% trans "You won't offend (too much) anyone by not drinking when you're offered a toast, but it's always better if you accept." %}</p>
+
     </section>
 
     <section>
-        <h1 class="text-center">{% trans "Where?" %}</h1>
+        <h1 class="text-center">{% trans "Where is this happening?" %}</h1>
         <p>{% trans "The ceremony will take place in a town called Przeworsk (pronunced `Pseworsk`). It's around 50km away from Rzeszów, the main city in the region of Podkarpacie." %}</p>
 
         <h2>{% trans "A general map (click for zoom)" %}</h2>
@@ -80,6 +79,13 @@
                 {% include 'public/partials/picture.html' with src1='img/maps/map2.jpg' src2='img/maps/map2@2x.jpg' src1sm='img/maps/map2.jpg' src2sm='img/maps/map2@2x.jpg' alt='Region map' title='Region map' %}
             </a>
         </p>
+    </section>
+
+    <section>
+        <h1 class="text-center">{% trans "When is this happening?" %}</h1>
+        <h2>{% trans "Saturday, 25th June 2016" %}</h2>
+
+        <p>{% trans "You should definitely try to be in Rzeszów or Przeworsk by Friday 24th June. I've heard some people are thinking on visiting Krakow for a few days before the wedding, so feel free to do the same." %}</p>
     </section>
 
     <section>
