@@ -48,7 +48,7 @@ class Invitee(models.Model):
         """
         Return the list of Email ids that have been sent to the invitee.
         """
-        if self.emails is None:
+        if self.emails is None or self.emails == '':
             return []
         email_ids = self.emails.replace(' ', '')
         return email_ids.split(',')
