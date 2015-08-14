@@ -1,5 +1,5 @@
 nose
-ipdb
 ipython
+ipdb
 model-mommy==1.2.3
 mock
