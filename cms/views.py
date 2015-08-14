@@ -184,8 +184,8 @@ class SendEmailsView(View):
 
             # Add email id to invitee emails list.
             if email_id not in emails_sent_to_invitee_ids:
-                email_ids.append(email_id)
-                invitee.emails = ','.join(email_ids)
+                emails_sent_to_invitee_ids.append(email_id)
+                invitee.emails = ','.join(emails_sent_to_invitee_ids)
                 invitee.save()
 
         return HttpResponse('OK')
