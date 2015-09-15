@@ -1,11 +1,20 @@
+from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.i18n import i18n_patterns
+from django.conf.urls.static import static
 
 import session_csrf
 session_csrf.monkeypatch()
 
 from public import views as public_views
 
+
+urlpatterns = [
+    url(r'^_ah/', include('djangae.urls')),
+    url(r'^csp/', include('cspreports.urls')),
+    url(r'^auth/', include('djangae.contrib.gauth.urls', namespace='login')),
+    url(r'^cms/', include('cms.urls', namespace='cms')),
+]
 
 public_patterns = [
     url(r'^$', public_views.home, name='home'),
@@ -17,12 +26,8 @@ public_patterns = [
     url(r'^change_language/(?P<lang_code>.*)/$', public_views.change_language, name='change_language'),
 ]
 
-urlpatterns = [
-    url(r'^cms/', include('cms.urls', namespace='cms'))
-] + i18n_patterns(
-    url(r'^_ah/', include('djangae.urls')),
-    url(r'^csp/', include('cspreports.urls')),
-    url(r'^auth/', include('djangae.contrib.gauth.urls', namespace='login')),
-
+urlpatterns += i18n_patterns(
     url(r'', include(public_patterns, namespace='public')),
 )
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
