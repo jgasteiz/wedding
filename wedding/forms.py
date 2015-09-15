@@ -3,6 +3,7 @@ from django.db import models
 
 from .constants import LANGUAGES, INVITATION_STATUSES, INVITER_CHOICES
 from django.forms import model_to_dict
+from django.utils.translation import ugettext_lazy as _
 from .models import Invitee, Song, get_email_class
 
 
@@ -24,8 +25,8 @@ class InviteeForm(forms.ModelForm):
 
 
 class SongForm(forms.ModelForm):
-    name = forms.CharField(label='Song title')
-    artist = forms.CharField(label='Artist name', required=False)
+    name = forms.CharField(label=_('Song title'))
+    artist = forms.CharField(label=_('Artist name'), required=False)
 
     class Meta:
         fields = ('name', 'artist',)

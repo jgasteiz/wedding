@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-15 19:41+0000\n"
+"POT-Creation-Date: 2015-09-15 20:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,12 +71,11 @@ msgstr ""
 
 #: templates/public/details.html:18
 msgid ""
-"Traditionally, Polish weddings start with a traditional chicken soup. "
-"Nowadays it's not necessarily to have it, but I'm all up for traditions. "
-"After that, you should expect around 4 or 5 main dishes of meat and salads "
-"every couple of hours. These dishes will be served between 5pm and 2am, "
-"being the last one a delicious beetroot soup with dumplings – a very "
-"traditional one too."
+"Traditionally, Polish weddings start with a chicken soup. Nowadays it's not "
+"necessary to have it, but I'm all up for traditions. After that, you should "
+"expect around 4 or 5 main dishes of meat and salads every couple of hours. "
+"These dishes will be served between 5pm and 2am, being the last one a "
+"delicious beetroot soup with dumplings – a very traditional one too."
 msgstr ""
 
 #: templates/public/details.html:23
@@ -111,7 +110,7 @@ msgstr ""
 #: templates/public/details.html:42
 msgid ""
 "If you're used to Spanish weddings, this one might seem a bit different. "
-"There might be some wine, but won't be the main alcoholic drink of the "
+"There might be some wine, but it won't be the main alcoholic drink of the "
 "wedding. Vodka will."
 msgstr ""
 
@@ -146,8 +145,7 @@ msgid "Magda's sister wedding, September 2014."
 msgstr ""
 
 #: templates/public/details.html:59
-msgid ""
-"Some random invitee is insisting to drink with him/her, what should I do?"
+msgid "Some random invitee is insisting to drink with him, what should I do?"
 msgstr ""
 
 #: templates/public/details.html:61
@@ -326,4 +324,12 @@ msgstr ""
 
 #: templates/public/song-wishlist.html:38
 msgid "Log in"
+msgstr ""
+
+#: wedding/forms.py:28
+msgid "Song title"
+msgstr ""
+
+#: wedding/forms.py:29
+msgid "Artist name"
 msgstr ""

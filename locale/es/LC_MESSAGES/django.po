@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-15 19:41+0000\n"
+"POT-Creation-Date: 2015-09-15 20:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,8 +44,6 @@ msgid "If you want to get in contact with us, drop us a line at"
 msgstr "Si quieres ponerte en contacto con nosotros, escríbenos a"
 
 #: templates/public/details.html:4
-#, fuzzy
-#| msgid "Wedding Details"
 msgid "Wedding details"
 msgstr "Detalles de la boda"
 
@@ -72,21 +70,12 @@ msgid "What food will be served?"
 msgstr "Qué tipo de comida será servida?"
 
 #: templates/public/details.html:18
-#, fuzzy
-#| msgid ""
-#| "Traditionally, Polish weddings start with a chicken soup. Nowadays it's "
-#| "not necessarily to have it, but I'm all up for traditions. After that, "
-#| "you should expect around 4 or 5 main dishes of meat and salads every "
-#| "couple of hours. These dishes will be served between 5pm and 2am, being "
-#| "the last one a delicious beetroot soup with dumplings – a very "
-#| "traditional one too."
 msgid ""
-"Traditionally, Polish weddings start with a traditional chicken soup. "
-"Nowadays it's not necessarily to have it, but I'm all up for traditions. "
-"After that, you should expect around 4 or 5 main dishes of meat and salads "
-"every couple of hours. These dishes will be served between 5pm and 2am, "
-"being the last one a delicious beetroot soup with dumplings – a very "
-"traditional one too."
+"Traditionally, Polish weddings start with a chicken soup. Nowadays it's not "
+"necessary to have it, but I'm all up for traditions. After that, you should "
+"expect around 4 or 5 main dishes of meat and salads every couple of hours. "
+"These dishes will be served between 5pm and 2am, being the last one a "
+"delicious beetroot soup with dumplings – a very traditional one too."
 msgstr ""
 "Tradicionalmente, las bodas polacas empiezan con una sopa de pollo. Hoy día "
 "no es estrictamente necesario, pero ya que estamos, lo hacemos bien. No? "
@@ -130,14 +119,9 @@ msgid "What drinks will be served?"
 msgstr "Qué tipo de bebidas serán servidas?"
 
 #: templates/public/details.html:42
-#, fuzzy
-#| msgid ""
-#| "If you're used to Spanish weddings, this one might seem a bit different. "
-#| "There might be some wine, but it won't be the main alcoholic drink of the "
-#| "wedding. Vodka will."
 msgid ""
 "If you're used to Spanish weddings, this one might seem a bit different. "
-"There might be some wine, but won't be the main alcoholic drink of the "
+"There might be some wine, but it won't be the main alcoholic drink of the "
 "wedding. Vodka will."
 msgstr ""
 "Si estás acostumbrado a bodas españolas, esta puede resultarte un poco "
@@ -187,11 +171,7 @@ msgid "Magda's sister wedding, September 2014."
 msgstr "La boda de la hermana de Magda, Septiembre 2014."
 
 #: templates/public/details.html:59
-#, fuzzy
-#| msgid ""
-#| "Some random invitee is insisting to drink with him, what should I do?"
-msgid ""
-"Some random invitee is insisting to drink with him/her, what should I do?"
+msgid "Some random invitee is insisting to drink with him, what should I do?"
 msgstr ""
 "Uno de los invitados está insistiendo en que beba con él, qúe debería hacer?"
 
@@ -250,9 +230,9 @@ msgid ""
 "wedding, so feel free to do the same."
 msgstr ""
 "Deberías intentar estar en Resovia o Przeworsk para el viernes 24 de junio, "
-"aunque probablemente sea buena idea que intentes estar para el jueves. Hemos oído "
-"que algunos están pensando en visitar Cracovia durante unos días antes de la boda y "
-"nos parece una idea estupenda."
+"aunque probablemente sea buena idea que intentes estar para el jueves. Hemos "
+"oído que algunos están pensando en visitar Cracovia durante unos días antes "
+"de la boda y nos parece una idea estupenda."
 
 #: templates/public/details.html:99
 msgid "How to get here?"
@@ -264,9 +244,9 @@ msgid ""
 "people coming from UK, it should be relatively easy. Unfortunately, coming "
 "from Spain might get a bit tricky."
 msgstr ""
-"En un mundo ideal, deberías poder llegar en avión a Resovia. Para los que vengan "
-"del Reino Unido, debería ser relativamente sencillo. Desafortunadamente, venir "
-"desde España puede ser un poco más complicado."
+"En un mundo ideal, deberías poder llegar en avión a Resovia. Para los que "
+"vengan del Reino Unido, debería ser relativamente sencillo. "
+"Desafortunadamente, venir desde España puede ser un poco más complicado."
 
 #: templates/public/details.html:105
 msgid "From UK"
@@ -295,7 +275,8 @@ msgstr "Madrid - Cracovia con Ryanair"
 
 #: templates/public/details.html:118 templates/public/details.html.py:127
 msgid "After that, you'll need to take a bus from Krakow to Rzeszów"
-msgstr "Después de eso, tendrás que coger un autobús desde Cracovia hata Resovia"
+msgstr ""
+"Después de eso, tendrás que coger un autobús desde Cracovia hata Resovia"
 
 #: templates/public/details.html:119 templates/public/details.html.py:128
 msgid "Kraków bus station"
@@ -326,8 +307,8 @@ msgid ""
 "This last option might not be possible, it will all depend on what kind of "
 "flights easyjet will be offering for those dates."
 msgstr ""
-"Esta última opción puede no estar disponible, todo dependerá de los vuelos que easyJet"
-"ofrezca para esas fechas."
+"Esta última opción puede no estar disponible, todo dependerá de los vuelos "
+"que easyJetofrezca para esas fechas."
 
 #: templates/public/details.html:143
 msgid "Option 4 - from Bilbao via Frankfurt"
@@ -346,8 +327,8 @@ msgid ""
 "This is the most expensive option, but if you can't be bothered to go to "
 "Madrid or Barcelona, this might be the best pick."
 msgstr ""
-"Esta opcíon es la más cara, pero si no te queda otro remedio o no tienes ganas "
-"de volar desde Madrid o Barcelona, puede ser la mejor opción."
+"Esta opcíon es la más cara, pero si no te queda otro remedio o no tienes "
+"ganas de volar desde Madrid o Barcelona, puede ser la mejor opción."
 
 #: templates/public/home.html:15
 msgid "In"
@@ -362,8 +343,6 @@ msgid "Come and celebrate with us the most important day of our lives."
 msgstr "Ven y celebra con nosotros el día más importante de nuestras vidas."
 
 #: templates/public/rsvp.html:9
-#, fuzzy
-#| msgid "Confirm attendance"
 msgid "Confirm your attendance"
 msgstr "Confirma tu asistencia"
 
@@ -377,7 +356,8 @@ msgstr "Ayúdanos a organizar nuestra boda"
 
 #: templates/public/song-wishlist.html:13
 msgid "Enter the name of a song you would like to hear in the after party"
-msgstr "Escribe el nombre de una canción que te gustaría que sonara en la after party"
+msgstr ""
+"Escribe el nombre de una canción que te gustaría que sonara en la after party"
 
 #: templates/public/song-wishlist.html:30
 msgid "Submitting as"
@@ -387,11 +367,17 @@ msgstr "Enviando como"
 msgid ""
 "Log in with your Google account and help us picking music for the after party"
 msgstr ""
-"Inicia sesión con tu cuenta de Google y ayúdanos a elegir la música de la after party"
+"Inicia sesión con tu cuenta de Google y ayúdanos a elegir la música de la "
+"after party"
 
 #: templates/public/song-wishlist.html:38
 msgid "Log in"
 msgstr "Inicia sesión"
 
-#~ msgid "Celebrate with us, bla bla bla bla bla bla bla"
-#~ msgstr "Celébralo con nosotros, bla bla bla bla bla bla"
+#: wedding/forms.py:28
+msgid "Song title"
+msgstr "Título de la cancíon"
+
+#: wedding/forms.py:29
+msgid "Artist name"
+msgstr "Nombre del artista"
