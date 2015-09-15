@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-04 20:55+0000\n"
+"POT-Creation-Date: 2015-09-15 19:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,30 +18,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/public/base.html:37 templates/public/home.html:4
+#: templates/public/base.html:39 templates/public/home.html:4
 msgid "Home"
 msgstr "Inicio"
 
-#: templates/public/base.html:40
+#: templates/public/base.html:42
 msgid "Wedding Details"
 msgstr "Detalles de la boda"
 
-#: templates/public/base.html:43 templates/public/song-wishlist.html:4
+#: templates/public/base.html:45 templates/public/song-wishlist.html:4
 msgid "Song wish list"
 msgstr "Elige la música"
 
-#: templates/public/base.html:46 templates/public/rsvp.html:4
+#: templates/public/base.html:48 templates/public/rsvp.html:4
 msgid "Confirm attendance"
 msgstr "Confirma asistencia"
 
-#: templates/public/base.html:49 templates/public/contact.html:4
-#: templates/public/contact.html.py:9
+#: templates/public/base.html:51 templates/public/contact.html:4
+#: templates/public/contact.html.py:9 templates/public/details.html:32
 msgid "Contact"
 msgstr "Contacto"
 
-#: templates/public/contact.html:11
+#: templates/public/contact.html:10
 msgid "If you want to get in contact with us, drop us a line at"
-msgstr ""
+msgstr "Si quieres ponerte en contacto con nosotros, escríbenos a"
 
 #: templates/public/details.html:4
 #, fuzzy
@@ -51,226 +51,303 @@ msgstr "Detalles de la boda"
 
 #: templates/public/details.html:9
 msgid "Polish weddings, what to expect"
-msgstr ""
+msgstr "Qué te puedes esperar de una boda polaca"
 
 #: templates/public/details.html:11
-msgid "Eat, Dance, Drink, Repeat (at least 5 times)"
-msgstr ""
+msgid "Eat, Dance, Drink, Repeat (5 times)"
+msgstr "Comer, Bailar, Beber, Repetir (5 veces)"
 
 #: templates/public/details.html:13
 msgid ""
-"The party starts with food (probably chicken soup) and it's followed by some "
-"meat dish. That's the standard."
+"The party starts with a traditional chicken soup and it's followed by a meat "
+"dish. That's the standard. After that, you should expect the First Dance and "
+"then the vodka will start flowing."
 msgstr ""
+"La fiesta comienza con una tradicional sopa de pollo, seguida por un plato "
+"de carne. Es lo estándar. Después de los primeros platos, es hora del primer "
+"baile. Y después de eso, el vodka empezará a correr."
 
-#: templates/public/details.html:14
+#: templates/public/details.html:16
+msgid "What food will be served?"
+msgstr "Qué tipo de comida será servida?"
+
+#: templates/public/details.html:18
+#, fuzzy
+#| msgid ""
+#| "Traditionally, Polish weddings start with a chicken soup. Nowadays it's "
+#| "not necessarily to have it, but I'm all up for traditions. After that, "
+#| "you should expect around 4 or 5 main dishes of meat and salads every "
+#| "couple of hours. These dishes will be served between 5pm and 2am, being "
+#| "the last one a delicious beetroot soup with dumplings – a very "
+#| "traditional one too."
 msgid ""
-"After that, you should expect the First Dance and the vodka will start "
-"flowing after that."
-msgstr ""
-
-#: templates/public/details.html:17
-msgid "What food should I expect?"
-msgstr ""
-
-#: templates/public/details.html:19
-msgid ""
-"Traditionally, Polish weddings start with a traditional chicken soup. It's "
-"fatty and good for making a good pre-drinking base in your stomach."
-msgstr ""
-
-#: templates/public/details.html:20
-msgid ""
+"Traditionally, Polish weddings start with a traditional chicken soup. "
+"Nowadays it's not necessarily to have it, but I'm all up for traditions. "
 "After that, you should expect around 4 or 5 main dishes of meat and salads "
-"every couple of hours."
+"every couple of hours. These dishes will be served between 5pm and 2am, "
+"being the last one a delicious beetroot soup with dumplings – a very "
+"traditional one too."
 msgstr ""
+"Tradicionalmente, las bodas polacas empiezan con una sopa de pollo. Hoy día "
+"no es estrictamente necesario, pero ya que estamos, lo hacemos bien. No? "
+"Después de la sopa, deberías esperarte unos 4 o 5 platos de comida, servidos "
+"con ensaladas y otros entrantes cada dos horas – más o menos. La comida será "
+"servida entre las 5pm y 2am, siendo el último plato una sopa de remolacha "
+"con dumplings – muy tradicional también."
 
-#: templates/public/details.html:21
-msgid ""
-"These dishes will probably be served between 4pm and 12am, being the last "
-"one most likely beetroot soup with dumplings (also traditional dish)."
-msgstr ""
-
-#: templates/public/details.html:24
-msgid ""
-"If you are vegetarian/vegan or have some kind of food intolerance, please "
-"get in touch with me and we'll sort something out."
-msgstr ""
+#: templates/public/details.html:23
+msgid "This is Zurek, a traditional Polish soup."
+msgstr "Esto es Zurek, una sopa tradicional."
 
 #: templates/public/details.html:27
+msgid ""
+"This is Barszcz Czerwony, another traditional Polish soup with dumplings."
+msgstr "Esto es Barszcz Czerwony, otra sopa tradicional con dumplings."
+
+#: templates/public/details.html:31
+msgid ""
+"If you are vegetarian/vegan or have some kind of food intolerance, please "
+"get in touch with us and we'llsort something out."
+msgstr ""
+"Si eres vegetariano/vegano o tienes algún tipo de intolerancia alimentaria, "
+"ponte en contacto con nosotros y ya arreglaremos algo."
+
+#: templates/public/details.html:35
 msgid "How much should I eat?"
-msgstr ""
-
-#: templates/public/details.html:28
-msgid "As much as you want. The more you eat, the more you can drink."
-msgstr ""
-
-#: templates/public/details.html:30
-msgid "What should I drink?"
-msgstr ""
-
-#: templates/public/details.html:32
-msgid ""
-"Vodka! But do not mix it with other alcohol or people (me included) will "
-"start taking pictures of you."
-msgstr ""
-
-#: templates/public/details.html:33
-msgid ""
-"There will be beer, but only drink it if you're not planning to drink vodka. "
-"Seriously, this is a good advice."
-msgstr ""
-
-#: templates/public/details.html:34
-msgid "There might be some wine, but it won't be nice Spanish wine."
-msgstr ""
+msgstr "Cuánto debería comer?"
 
 #: templates/public/details.html:37
 msgid ""
-"And of course, there will be plenty of juices, water and other soft drinks."
+"As much as you can! If you've been invited to this wedding is because you're "
+"our friend or family. And if that's the case, you must love food."
 msgstr ""
+"Todo lo que puedas! Si te hemos invitado a nuestra boda es porque eres "
+"nuestro amigo o familiar. Y si es así, entonces te tiene que gustar la "
+"comida."
 
 #: templates/public/details.html:40
-msgid "How much should I drink?"
-msgstr ""
+msgid "What drinks will be served?"
+msgstr "Qué tipo de bebidas serán servidas?"
 
 #: templates/public/details.html:42
+#, fuzzy
+#| msgid ""
+#| "If you're used to Spanish weddings, this one might seem a bit different. "
+#| "There might be some wine, but it won't be the main alcoholic drink of the "
+#| "wedding. Vodka will."
 msgid ""
-"I've only experienced one Polish wedding in my life and I survived it quite "
-"gracefully."
+"If you're used to Spanish weddings, this one might seem a bit different. "
+"There might be some wine, but won't be the main alcoholic drink of the "
+"wedding. Vodka will."
 msgstr ""
+"Si estás acostumbrado a bodas españolas, esta puede resultarte un poco "
+"diferente. Es posible que haya algo de vino, pero no será la principal "
+"bebida alcohólica en la boda."
 
-#: templates/public/details.html:43
+#: templates/public/details.html:45
 msgid ""
-"If you're not Polish, I suggest you fill half of your shot glass. It worked "
-"well for me."
+"Of course, you can mix the vodka with anything you like, but you'll see the "
+"most of the locals drinking it in shots. And I encourage you to try the "
+"same. We're personally making sure we're getting one of the best – if not "
+"the best – Polish vodkas, so people can drink it without worrying too much "
+"about the next morning. Our only advice would be to take it easy if you're "
+"planning to drink other alcohols, everyone knows what happens when you mix "
+"too much right?"
 msgstr ""
+"Por supuesto, puedes mezclar el vodka con lo que quieras, pero lo más "
+"probable es que me veas a mí y a mucha otra gente beberlo sin mezclar, en "
+"vasos de chupito. Y te aconsejo que al menos lo intentes hacer un par de "
+"veces! <em>Donde fueres, haz lo que vieres</em>. Nos aseguraremos de tener "
+"uno de los mejores – si no el mejor – vodkas polacos, de forma que todos "
+"puedan beberlo sin preocuparse de la resaca del día siguiente. Nuestro único "
+"consejo es que te lo tomes con calma si planeas beber vodka y otros "
+"alcoholes, todos sabemos lo que pasa cuando mezclas demasiado, verdad?"
 
-#: templates/public/details.html:46
+#: templates/public/details.html:48
+msgid ""
+"That said, there will be plenty of beer, juices, water and other soft drinks."
+msgstr ""
+"Dicho esto, habrá abundancia de cerveza, zumos, agua y otras bebidas no "
+"alcohólicas."
+
+#: templates/public/details.html:51
 msgid "How much should I dance?"
-msgstr ""
-
-#: templates/public/details.html:47
-msgid ""
-"As much as possible. The more you dance, the better chances you'll have to "
-"survive and enjoy the wedding."
-msgstr ""
-
-#: templates/public/details.html:52
-msgid "Where?"
-msgstr ""
+msgstr "Cuánto debería bailar?"
 
 #: templates/public/details.html:53
+msgid ""
+"As much as you can! Dancing is a very social and common thing to do in a "
+"Polish wedding, everyone must dance."
+msgstr ""
+"Cuanto más, mejor. Bailar en bodas polacas es un <em>must</em>, todo el "
+"mundo tiene que bailar."
+
+#: templates/public/details.html:57
+msgid "Magda's sister wedding, September 2014."
+msgstr "La boda de la hermana de Magda, Septiembre 2014."
+
+#: templates/public/details.html:59
+#, fuzzy
+#| msgid ""
+#| "Some random invitee is insisting to drink with him, what should I do?"
+msgid ""
+"Some random invitee is insisting to drink with him/her, what should I do?"
+msgstr ""
+"Uno de los invitados está insistiendo en que beba con él, qúe debería hacer?"
+
+#: templates/public/details.html:61
+msgid ""
+"You won't offend (too much) anyone by not drinking when you're offered a "
+"toast, but it's always better if you accept."
+msgstr ""
+"No ofenderás (demasiado) a nadie por no beber cuando te han ofrecido un "
+"brindis, pero es siempre mejor si aceptas."
+
+#: templates/public/details.html:67
+msgid "Where is this happening?"
+msgstr "Dónde va a ser todo esto?"
+
+#: templates/public/details.html:69
 msgid ""
 "The ceremony will take place in a town called Przeworsk (pronunced "
 "`Pseworsk`). It's around 50km away from Rzeszów, the main city in the region "
 "of Podkarpacie."
 msgstr ""
+"La ceremonia será en una pequeña ciudad llamada Przeworsk (pronunciado "
+"Psevorsk). Está a unos 50km de Resovia, la principal ciudad de la región de "
+"Podkarpacie. Por cierto, está región de Polina (Sudeste) tiene el nombre "
+"histórico de Galicia."
 
-#: templates/public/details.html:55
+#: templates/public/details.html:72
 msgid "A general map (click for zoom)"
-msgstr ""
+msgstr "Un mapa de la zona (haz click para hacer zoom)"
 
-#: templates/public/details.html:56
+#: templates/public/details.html:74
 msgid ""
 "Here you can see the region of Podkarpacie in red, bordering with Ukraine in "
 "the East and Slovakia in the South."
 msgstr ""
+"Aquí puedes ver la región de Podkarpacie en rojo, haciendo frontera con "
+"Ucrania en el este y con Eslovaquia en el sur."
 
-#: templates/public/details.html:63
+#: templates/public/details.html:82
 msgid "Zooming in Rzeszów"
-msgstr ""
+msgstr "Haciendo zoom en Resovia"
 
-#: templates/public/details.html:72
-msgid "How to get here?"
-msgstr ""
+#: templates/public/details.html:91
+msgid "When is this happening?"
+msgstr "Cuándo va a ser todo esto?"
 
-#: templates/public/details.html:75
-msgid "In an ideal world, you should be able to get by plane to Rzeszów."
-msgstr ""
+#: templates/public/details.html:92
+msgid "Saturday, 25th June 2016"
+msgstr "Sábado, 25 de junio de 2016"
 
-#: templates/public/details.html:76
+#: templates/public/details.html:94
 msgid ""
-"For the people coming from UK, it should be relatively easy. Unfortunately, "
-"coming from Spain might get a bit tricky."
+"You should definitely try to be in Rzeszów or Przeworsk by Friday 24th June, "
+"although it's probably a good idea if you can be there by Thursday. I've "
+"heard some people are thinking on visiting Krakow for a few days before the "
+"wedding, so feel free to do the same."
 msgstr ""
+"Deberías intentar estar en Resovia o Przeworsk para el viernes 24 de junio, "
+"aunque probablemente sea buena idea que intentes estar para el jueves. Hemos oído "
+"que algunos están pensando en visitar Cracovia durante unos días antes de la boda y "
+"nos parece una idea estupenda."
 
-#: templates/public/details.html:79
+#: templates/public/details.html:99
+msgid "How to get here?"
+msgstr "Cómo llegar?"
+
+#: templates/public/details.html:102
+msgid ""
+"In an ideal world, you should be able to get by plane to Rzeszów. For the "
+"people coming from UK, it should be relatively easy. Unfortunately, coming "
+"from Spain might get a bit tricky."
+msgstr ""
+"En un mundo ideal, deberías poder llegar en avión a Resovia. Para los que vengan "
+"del Reino Unido, debería ser relativamente sencillo. Desafortunadamente, venir "
+"desde España puede ser un poco más complicado."
+
+#: templates/public/details.html:105
 msgid "From UK"
-msgstr ""
+msgstr "Desde el Reino Unido"
 
-#: templates/public/details.html:81 templates/public/details.html.py:108
+#: templates/public/details.html:107 templates/public/details.html.py:136
 msgid "London Stansted - Rzeszów with Ryanair"
-msgstr ""
+msgstr "London Stansted - Resovia con Ryanair"
 
-#: templates/public/details.html:82 templates/public/details.html.py:91
-#: templates/public/details.html:99 templates/public/details.html.py:109
+#: templates/public/details.html:108 templates/public/details.html.py:117
+#: templates/public/details.html:126 templates/public/details.html.py:137
 msgid "search flights in ryanair.com"
-msgstr ""
+msgstr "buscar vuelos en ryanair.com"
 
-#: templates/public/details.html:85
+#: templates/public/details.html:111
 msgid "From Spain"
-msgstr ""
+msgstr "Desde España"
 
-#: templates/public/details.html:88
+#: templates/public/details.html:114
 msgid "Option 1 - from Madrid"
-msgstr ""
+msgstr "Opción 1 - desde Madrid"
 
-#: templates/public/details.html:90
+#: templates/public/details.html:116
 msgid "Madrid - Kraków with Ryanair"
-msgstr ""
+msgstr "Madrid - Cracovia con Ryanair"
 
-#: templates/public/details.html:92 templates/public/details.html.py:100
+#: templates/public/details.html:118 templates/public/details.html.py:127
 msgid "After that, you'll need to take a bus from Krakow to Rzeszów"
-msgstr ""
+msgstr "Después de eso, tendrás que coger un autobús desde Cracovia hata Resovia"
 
-#: templates/public/details.html:92 templates/public/details.html.py:100
+#: templates/public/details.html:119 templates/public/details.html.py:128
 msgid "Kraków bus station"
-msgstr ""
+msgstr "Estación de autobús de Cracovia"
 
-#: templates/public/details.html:96
+#: templates/public/details.html:123
 msgid "Option 2 - from Barcelona"
-msgstr ""
+msgstr "Opción 2 - desde Barcelona"
 
-#: templates/public/details.html:98
+#: templates/public/details.html:125
 msgid "Barcelona - Kraków with Ryanair"
-msgstr ""
+msgstr "Barcelona - Cracovia con Ryanair"
 
-#: templates/public/details.html:104
+#: templates/public/details.html:132
 msgid "Option 3 - from Bilbao via London"
-msgstr ""
+msgstr "Opción 3 - desde Bilbao, pasando por Londres"
 
-#: templates/public/details.html:106
+#: templates/public/details.html:134
 msgid "Bilbao - London with easyJet"
-msgstr ""
+msgstr "Bilbao - Londres con easyJet"
 
-#: templates/public/details.html:107
+#: templates/public/details.html:135
 msgid "search flights in easyjet.com"
-msgstr ""
+msgstr "buscar vuelos en easyjet.com"
 
-#: templates/public/details.html:112
+#: templates/public/details.html:140
 msgid ""
 "This last option might not be possible, it will all depend on what kind of "
 "flights easyjet will be offering for those dates."
 msgstr ""
+"Esta última opción puede no estar disponible, todo dependerá de los vuelos que easyJet"
+"ofrezca para esas fechas."
 
-#: templates/public/details.html:115
+#: templates/public/details.html:143
 msgid "Option 4 - from Bilbao via Frankfurt"
-msgstr ""
+msgstr "Opción 4 - desde Bilbao, pasando por Frankfurt"
 
-#: templates/public/details.html:117
+#: templates/public/details.html:145
 msgid "Bilbao - Rzeszów with Lufthansa"
-msgstr ""
+msgstr "Bilbao - Resovia con Lufthansa"
 
-#: templates/public/details.html:118
+#: templates/public/details.html:146
 msgid "search flights in lufthansa.com"
-msgstr ""
+msgstr "buscar vuelos en lufthansa.com"
 
-#: templates/public/details.html:121
+#: templates/public/details.html:149
 msgid ""
 "This is the most expensive option, but if you can't be bothered to go to "
 "Madrid or Barcelona, this might be the best pick."
 msgstr ""
+"Esta opcíon es la más cara, pero si no te queda otro remedio o no tienes ganas "
+"de volar desde Madrid o Barcelona, puede ser la mejor opción."
 
 #: templates/public/home.html:15
 msgid "In"
@@ -282,36 +359,39 @@ msgstr "días nos casamos!"
 
 #: templates/public/home.html:16
 msgid "Come and celebrate with us the most important day of our lives."
-msgstr ""
+msgstr "Ven y celebra con nosotros el día más importante de nuestras vidas."
 
 #: templates/public/rsvp.html:9
-msgid "RSVP confirmation"
-msgstr ""
+#, fuzzy
+#| msgid "Confirm attendance"
+msgid "Confirm your attendance"
+msgstr "Confirma tu asistencia"
 
 #: templates/public/rsvp.html:11
 msgid "Coming soon"
-msgstr ""
+msgstr "Pronto disponible"
 
 #: templates/public/song-wishlist.html:10
 msgid "Help us organising our wedding"
-msgstr ""
+msgstr "Ayúdanos a organizar nuestra boda"
 
 #: templates/public/song-wishlist.html:13
 msgid "Enter the name of a song you would like to hear in the after party"
-msgstr ""
+msgstr "Escribe el nombre de una canción que te gustaría que sonara en la after party"
 
 #: templates/public/song-wishlist.html:30
 msgid "Submitting as"
-msgstr ""
+msgstr "Enviando como"
 
 #: templates/public/song-wishlist.html:36
 msgid ""
 "Log in with your Google account and help us picking music for the after party"
 msgstr ""
+"Inicia sesión con tu cuenta de Google y ayúdanos a elegir la música de la after party"
 
 #: templates/public/song-wishlist.html:38
 msgid "Log in"
-msgstr ""
+msgstr "Inicia sesión"
 
 #~ msgid "Celebrate with us, bla bla bla bla bla bla bla"
 #~ msgstr "Celébralo con nosotros, bla bla bla bla bla bla"
