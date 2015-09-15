@@ -4,7 +4,7 @@
  *
  */
 .main-header {
-    @include background-image-retina('/static/img/base/header-flowers', 'png', 800px, 368px);
+    @include background-image-retina('../img/base/header-flowers', 'png', 800px, 368px);
     background-repeat: no-repeat;
     background-size: 100% auto;
     margin-bottom: 40px;
@@ -214,7 +214,7 @@
 }
 .home-faces__magda {
     @extend %home-faces__face;
-    @include background-image-retina('/static/img/home-faces-magda', 'jpg', 300px, 600px);
+    @include background-image-retina('../img/home-faces-magda', 'jpg', 300px, 600px);
     margin-right: 10px;
 
     &:hover + .home-faces__javi {
@@ -227,7 +227,7 @@
 }
 .home-faces__javi {
     @extend %home-faces__face;
-    @include background-image-retina('/static/img/home-faces-javi', 'jpg', 300px, 600px);
+    @include background-image-retina('../img/home-faces-javi', 'jpg', 300px, 600px);
     margin-left: 10px;
 }
 .home-faces__javi-mask {

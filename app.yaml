@@ -19,13 +19,13 @@ handlers:
   static_dir: sitepackages/django/contrib/admin/static/admin/
   secure: always
 
-- url: /static/
-  static_dir: static/src/
+- url: /static/build/[^/]+
+  static_dir: static/build/
   expiration: '365d'
   secure: always
 
-- url: /static/build/[^/]+
-  static_dir: static/build/
+- url: /static/src/
+  static_dir: static/src/
   expiration: '365d'
   secure: always
 
