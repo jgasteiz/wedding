@@ -15,7 +15,7 @@ from django.core.wsgi import get_wsgi_application
 from djangae.wsgi import DjangaeApplication
 from djangae.utils import on_production
 
-settings = "wedding.settings_live" if on_production() else "wedding.settings"
+settings = "wedding.settings_live" if on_production() else "wedding.settings_local"
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings)
 
 

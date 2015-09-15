@@ -44,12 +44,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'djangosecure',
     'csp',
     'cspreports',
     'djangae.contrib.gauth.datastore',
     'djangae.contrib.security',
-    'djangae.contrib.uniquetool',
+    # 'djangae.contrib.uniquetool',
 
     'wedding',
     'public',
@@ -117,7 +118,7 @@ TEMPLATE_DIRS = (
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 LANGUAGES = (
     ('en', 'English'),
@@ -140,8 +141,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
-
-STATIC_URL = '/static/'
 
 CACHES = {
     'default': {
