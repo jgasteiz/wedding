@@ -20,13 +20,13 @@
         <header class="main-header">
             <ul class="language-selector">
                 <li class="language-selector__lang {% ifequal request.LANGUAGE_CODE 'en' %}language-selector__lang--active{% endifequal %}">
-                    <a href="{% url 'public:change_language' 'en' %}">English</a>
+                    <a href="{% url 'public:change_language' 'en' %}?next={{ current_view_name }}">English</a>
                 </li>
                 <li class="language-selector__lang {% ifequal request.LANGUAGE_CODE 'es' %}language-selector__lang--active{% endifequal %}">
-                    <a href="{% url 'public:change_language' 'es' %}">Español</a>
+                    <a href="{% url 'public:change_language' 'es' %}?next={{ current_view_name }}">Español</a>
                 </li>
                 <li class="language-selector__lang {% ifequal request.LANGUAGE_CODE 'pl' %}language-selector__lang--active{% endifequal %}">
-                    <a href="{% url 'public:change_language' 'pl' %}">Polski</a>
+                    <a href="{% url 'public:change_language' 'pl' %}?next={{ current_view_name }}">Polski</a>
                 </li>
             </ul>
             {% include 'public/partials/picture.html' with src1='img/base/header-flowers-lap.jpg' src2='img/base/header-flowers-lap@2x.jpg' src1sm='img/base/header-flowers-palm.jpg' src2sm='img/base/header-flowers-palm@2x.jpg' alt='Some flowers' title='Some flowers' class='main-header__image' %}

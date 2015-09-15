@@ -80,7 +80,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
-    "session_csrf.context_processor"
+    "session_csrf.context_processor",
+    "public.context_processors.current_view_name",
 )
 
 SECURE_CHECKS = [

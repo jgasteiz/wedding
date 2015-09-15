@@ -78,7 +78,10 @@ contact = ContactView.as_view()
 class ChangeLanguageView(View):
     def dispatch(self, request, *args, **kwargs):
         lang_code = kwargs.get('lang_code')
+        next_url = request.GET.get('next')
+        if next_url is None:
+            next_url = 'home'
         activate(lang_code)
-        return redirect(reverse('public:home'))
+        return redirect(reverse('public:{}'.format(next_url)))
 
 change_language = ChangeLanguageView.as_view()
