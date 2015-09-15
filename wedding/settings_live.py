@@ -1,3 +1,5 @@
+import hashlib
+
 from wedding.settings import *
 
 SESSION_COOKIE_SECURE = True
@@ -19,3 +21,6 @@ SECURE_CHECKS += ["wedding.checks.check_csp_sources_not_unsafe"]
 
 DEBUG = False
 TEMPLATE_DEBUG = False
+
+version_hash = hashlib.md5(os.environ['CURRENT_VERSION_ID']).hexdigest()
+STATIC_URL = '/static/build/%s/' % version_hash[:10]

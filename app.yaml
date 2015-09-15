@@ -1,5 +1,5 @@
 application: magdaandjavi
-version: 7
+version: 8
 runtime: python27
 api_version: 1
 threadsafe: true
@@ -20,7 +20,13 @@ handlers:
   secure: always
 
 - url: /static/
-  static_dir: static/
+  static_dir: static/src/
+  expiration: '365d'
+  secure: always
+
+- url: /static/build/[^/]+
+  static_dir: static/build/
+  expiration: '365d'
   secure: always
 
 # Set Django admin to be login:admin as well as Django's is_staff restriction
@@ -39,10 +45,20 @@ handlers:
   secure: always
 
 skip_files:
-    - manage.py
-    - README.md
-    - install_deps
-    - requirements.txt
-    - sitepackages/google_appengine*
-    - \.storage.*
-    - (.*)\.pyc
+  - ^(.*/)?#.*#$
+  - ^(.*/)?.*~$
+  - ^(.*/)?.*\.py[co]$
+  - ^(.*/)?.*/RCS/.*$
+  - ^(.*/)?\..*$
+  - \.storage.*
+  - (.*)\.pyc
+  - ^manage\.py$
+  - ^README\.md$
+  - ^(deploy|installdeps|runtests)\.sh$
+  - ^requirements\.txt$
+  - install_deps
+  - sitepackages/google_appengine*
+  - ^lib/(.*)-info$
+  - ^node_modules/*
+  - ^static/src/*
+  - ^sitepackages-dev/*

@@ -53,5 +53,6 @@ coverage.xml
 docs/_build/
 
 node_modules/
-static/css/*
-static/libs/**
+static/src/css/*
+static/src/libs/**
+static/build/**

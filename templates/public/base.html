@@ -10,10 +10,14 @@
 
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{% static 'css/wedding.css' %}"/>
 
-    {# picturefill lib with async attribute #}
-    <script src="{% static 'libs/picturefill/dist/picturefill.min.js' %}" async></script>
+    {% if debug %}
+        <link rel="stylesheet" href="{% static 'css/wedding.css' %}"/>
+        <script src="{% static 'libs/picturefill/dist/picturefill.min.js' %}" async></script>
+    {% else %}
+        <link rel="stylesheet" href="{% static 'css/wedding.min.css' %}"/>
+        <script src="{% static 'js/picturefill.min.js' %}" async></script>
+    {% endif %}
 </head>
 <body>
     <div role="main">
@@ -60,7 +64,11 @@
         </footer>
     </div>
 
-    <script src="{% static 'libs/jquery/dist/jquery.min.js' %}"></script>
-    <script src="{% static 'js/wedding.js' %}"></script>
+    {% if debug %}
+        <script src="{% static 'libs/jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'js/wedding.js' %}"></script>
+    {% else %}
+        <script src="{% static 'js/wedding.min.js' %}"></script>
+    {% endif %}
 </body>
 </html>
