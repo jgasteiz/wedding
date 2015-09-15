@@ -12,22 +12,19 @@
     position: relative;
     text-align: center;
 
-    @include respond-to('lap') {
+    @include respond-to(lap) {
         background: none;
         margin-bottom: 20px;
         padding: 0;
     }
 }
 
-.maia-header__image {
+.main-header__image {
     display: none;
 
-    @include respond-to('lap') {
+    @include respond-to(lap) {
         display: block;
-        margin: 0 0 20px;
-    }
-    @include respond-to('palm') {
-        margin: 0;
+        margin: 0
     }
 }
 
@@ -37,7 +34,7 @@
     font-size: $h1-font-size;
     margin-bottom: 0;
 
-    @include respond-to('palm') {
+    @include respond-to(palm) {
         font-size: $h2-font-size;
     }
 }
@@ -48,7 +45,7 @@
     font-size: $h1-font-size;
     font-weight: 400;
 
-    @include respond-to('palm') {
+    @include respond-to(palm) {
         font-size: $h2-font-size;
     }
 }
@@ -66,7 +63,7 @@
         margin-left: 10px;
     }
 
-    @include respond-to('lap') {
+    @include respond-to(lap) {
         position: static;
         text-align: right;
     }
@@ -95,7 +92,7 @@
     margin-bottom: 40px;
     text-align: center;
 
-    @include respond-to('palm') {
+    @include respond-to(palm) {
         margin-bottom: 20px;
     }
 }
@@ -112,10 +109,10 @@
     font-size: $h3-font-size;
     margin: 0 15px;
 
-    @include respond-to('lap') {
+    @include respond-to(lap) {
         margin: 5px 15px;
     }
-    @include respond-to('palm') {
+    @include respond-to(palm) {
         font-size: $base-font-size;
         margin: 5px 10px;
     }
@@ -141,7 +138,7 @@
 .main-content {
     margin-bottom: 40px;
 
-    @include respond-to('palm') {
+    @include respond-to(palm) {
         margin-bottom: 20px;
     }
 }
@@ -159,7 +156,7 @@
         display: block;
     }
 
-    @include respond-to('lap') {
+    @include respond-to(lap) {
         margin: 40px -20px 0;
     }
 }
@@ -172,7 +169,7 @@
 %home-content {
     font-size: $h2-font-size;
 
-    @include respond-to('palm') {
+    @include respond-to(palm) {
         font-size: $h3-font-size;
     }
 }
@@ -190,11 +187,11 @@
     position: relative;
     width: 620px;
 
-    @include respond-to('lap') {
+    @include respond-to(lap) {
         width: 420px;
     }
 
-    @include respond-to('palm') {
+    @include respond-to(palm) {
         width: auto;
     }
 }
@@ -204,13 +201,13 @@
     height: 300px;
     width: 300px;
 
-    @include respond-to('lap') {
+    @include respond-to(lap) {
         background-size: 200px 400px !important;
         height: 200px;
         width: 200px;
     }
 
-    @include respond-to('palm') {
+    @include respond-to(palm) {
         display: block;
         margin: 0 auto 10px !important;
     }
@@ -223,7 +220,7 @@
     &:hover + .home-faces__javi {
         background-position: bottom;
 
-        @include respond-to('palm') {
+        @include respond-to(palm) {
             background-position: top;
         }
     }
@@ -240,7 +237,7 @@
     top: 0;
     width: 300px;
 
-    @include respond-to('lap') {
+    @include respond-to(lap) {
         height: 200px;
         width: 200px;
     }
@@ -248,7 +245,7 @@
     &:hover + .home-faces__magda {
         background-position: bottom;
 
-        @include respond-to('palm') {
+        @include respond-to(palm) {
             background-position: top;
         }
     }
@@ -276,8 +273,8 @@
     margin: 20px 0;
     margin-left: -$gutter;
 
-    @include respond-to('lap') {
-        margin: 0;
+    @include respond-to(palm) {
+        margin-left: 0;
     }
 }
 
@@ -287,7 +284,7 @@
     vertical-align: top;
     width: 50%;
 
-    @include respond-to('lap') {
+    @include respond-to(palm) {
         display: block;
         margin: 0 0 20px;
         padding: 0;

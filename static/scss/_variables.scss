@@ -11,19 +11,19 @@ $base-font-family: 'PT Sans Narrow', sans-serif;
 $gutter: 20px;
 
 $base-font-size: 22px;
-$base-font-size-sm: 16px;
+$base-font-size-sm: 18px;
 $h1-font-size: 48px;
 $h2-font-size: 32px;
 $h3-font-size: 26px;
 
-$break-palm: 480px;
+$break-palm: 520px;
 $break-lap: 800px;
 
 @mixin respond-to($media) {
-    @if $media == 'palm' {
+    @if $media == palm {
         @media only screen and (max-width: $break-palm) { @content; }
     }
-    @else if $media == 'lap' {
+    @else if $media == lap {
         @media only screen and (max-width: $break-lap) { @content; }
     }
 }

@@ -36,7 +36,15 @@ img {
 }
 
 p {
-    margin: 20px 0;
+    margin: 0 0 20px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 30px;
 }
 
 h1,
@@ -48,21 +56,21 @@ h3 {
 h1 {
     font-size: $h1-font-size;
 
-    @include respond-to('palm') {
+    @include respond-to(palm) {
         font-size: $h2-font-size;
     }
 }
 h2 {
     font-size: $h2-font-size;
 
-    @include respond-to('palm') {
+    @include respond-to(palm) {
         font-size: $h3-font-size;
     }
 }
 h3 {
     font-size: $h3-font-size;
 
-    @include respond-to('palm') {
+    @include respond-to(palm) {
         font-size: $base-font-family;
     }
 }
