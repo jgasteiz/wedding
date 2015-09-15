@@ -10,15 +10,12 @@
 
         <h2>{% trans "Eat, Dance, Drink, Repeat (5 times)" %}</h2>
         <p>
-            {% trans "The party starts with a traditional chicken soup and it's followed by a meat dish. That's the standard." %}
-            {% trans "After that, you should expect the First Dance and then the vodka will start flowing." %}
+            {% blocktrans %}The party starts with a traditional chicken soup and it's followed by a meat dish. That's the standard. After that, you should expect the First Dance and then the vodka will start flowing.{% endblocktrans %}
         </p>
 
         <h2>{% trans "What food will be served?" %}</h2>
         <p>
-            {% trans "Traditionally, Polish weddings start with a traditional chicken soup. Nowadays it's not necessarily to have it, but I'm all up for traditions." %}
-            {% trans "After that, you should expect around 4 or 5 main dishes of meat and salads every couple of hours." %}
-            {% trans "These dishes will be served between 5pm and 2am, being the last one a delicious beetroot soup with dumplings – a very traditional one too." %}
+            {% blocktrans %}Traditionally, Polish weddings start with a traditional chicken soup. Nowadays it's not necessarily to have it, but I'm all up for traditions. After that, you should expect around 4 or 5 main dishes of meat and salads every couple of hours. These dishes will be served between 5pm and 2am, being the last one a delicious beetroot soup with dumplings – a very traditional one too.{% endblocktrans %}
         </p>
         <div class="row">
             <div class="one-half">
@@ -31,42 +28,51 @@
             </div>
         </div>
         <p>
-            {% trans "If you are vegetarian/vegan or have some kind of food intolerance, please get in touch with us and we'll sort something out." %}: <a href="{% url 'public:contact' %}">{% trans "Contact" %}</a>
+            {% blocktrans %}If you are vegetarian/vegan or have some kind of food intolerance, please get in touch with us and we'llsort something out.{% endblocktrans %}:
+            <a href="{% url 'public:contact' %}">{% trans "Contact" %}</a>
         </p>
 
         <h2>{% trans "How much should I eat?" %}</h2>
-        <p>{% trans "As much as you can! If you've been invited to this wedding is because you're our friend or family. And if that's the case, you must love food." %}</p>
+        <p>
+            {% blocktrans %}As much as you can! If you've been invited to this wedding is because you're our friend or family. And if that's the case, you must love food.{% endblocktrans %}
+        </p>
 
         <h2>{% trans "What drinks will be served?" %}</h2>
         <p>
-            {% trans "If you're used to Spanish weddings, this one might seem a bit different. There might be some wine, but won't be the main alcoholic drink of the wedding. Vodka will." %}
+            {% blocktrans %}If you're used to Spanish weddings, this one might seem a bit different. There might be some wine, but won't be the main alcoholic drink of the wedding. Vodka will.{% endblocktrans %}
         </p>
         <p>
-            {% trans "Of course, you can mix the vodka with anything you like, but you'll see the most of the locals drinking it in shots. And I encourage you to try the same." %}
-            {% trans "We're personally making sure we're getting one of the best – if not the best – Polish vodkas, so people can drink it without worrying too much about the next morning." %}
-            {% trans "Our only advice would be to take it easy if you're planning to drink other alcohols, everyone knows what happens when you mix too much right?" %}
+            {% blocktrans %}Of course, you can mix the vodka with anything you like, but you'll see the most of the locals drinking it in shots. And I encourage you to try the same. We're personally making sure we're getting one of the best – if not the best – Polish vodkas, so people can drink it without worrying too much about the next morning. Our only advice would be to take it easy if you're planning to drink other alcohols, everyone knows what happens when you mix too much right?{% endblocktrans %}
         </p>
         <p>
-            {% trans "That said, there will be plenty of beer, juices, water and other soft drinks." %}
+            {% blocktrans %}That said, there will be plenty of beer, juices, water and other soft drinks.{% endblocktrans %}
         </p>
 
         <h2>{% trans "How much should I dance?" %}</h2>
-        <p>{% trans "As much as you can! Dancing is a very social and common thing to do in a Polish wedding, everyone must dance." %}</p>
+        <p>
+            {% blocktrans %}As much as you can! Dancing is a very social and common thing to do in a Polish wedding, everyone must dance.{% endblocktrans %}
+        </p>
 
         {% include 'public/partials/picture.html' with src1='img/karolina-wedding-2.jpg' src2='img/karolina-wedding-2@2x.jpg' src1sm='img/karolina-wedding-2-sm.jpg' src2sm='img/karolina-wedding-2-sm@2x.jpg' alt="Karolina's wedding" title="Karolina's wedding" %}
         <span class="picture-description">{% trans "Magda's sister wedding, September 2014." %}</span>
 
         <h2>{% trans "Some random invitee is insisting to drink with him/her, what should I do?" %}</h2>
-        <p>{% trans "You won't offend (too much) anyone by not drinking when you're offered a toast, but it's always better if you accept." %}</p>
+        <p>
+            {% blocktrans %}You won't offend (too much) anyone by not drinking when you're offered a toast, but it's always better if you accept.{% endblocktrans %}
+        </p>
 
     </section>
 
     <section>
         <h1 class="text-center">{% trans "Where is this happening?" %}</h1>
-        <p>{% trans "The ceremony will take place in a town called Przeworsk (pronunced `Pseworsk`). It's around 50km away from Rzeszów, the main city in the region of Podkarpacie." %}</p>
+        <p>
+            {% blocktrans %}The ceremony will take place in a town called Przeworsk (pronunced `Pseworsk`). It's around 50km away from Rzeszów, the main city in the region of Podkarpacie.{% endblocktrans %}
+        </p>
 
         <h2>{% trans "A general map (click for zoom)" %}</h2>
-        <p>{% trans "Here you can see the region of Podkarpacie in red, bordering with Ukraine in the East and Slovakia in the South." %}</p>
+        <p>
+            {% blocktrans %}Here you can see the region of Podkarpacie in red, bordering with Ukraine in the East and Slovakia in the South.{% endblocktrans %}
+        </p>
         <p>
             <a href="#" class="js-open-modal" data-img="{% static 'img/maps/map1@2x.jpg' %}">
                 {% include 'public/partials/picture.html' with src1='img/maps/map1.jpg' src2='img/maps/map1@2x.jpg' src1sm='img/maps/map1.jpg' src2sm='img/maps/map1@2x.jpg' alt='Europe map' title='Europe map' %}
@@ -84,16 +90,16 @@
     <section>
         <h1 class="text-center">{% trans "When is this happening?" %}</h1>
         <h2>{% trans "Saturday, 25th June 2016" %}</h2>
-
-        <p>{% trans "You should definitely try to be in Rzeszów or Przeworsk by Friday 24th June. I've heard some people are thinking on visiting Krakow for a few days before the wedding, so feel free to do the same." %}</p>
+        <p>
+            {% blocktrans %}You should definitely try to be in Rzeszów or Przeworsk by Friday 24th June. I've heard some people are thinking on visiting Krakow for a few days before the wedding, so feel free to do the same.{% endblocktrans %}
+        </p>
     </section>
 
     <section>
         <h1 class="text-center">{% trans "How to get here?" %}</h1>
 
         <p>
-            {% trans "In an ideal world, you should be able to get by plane to Rzeszów." %}
-            {% trans "For the people coming from UK, it should be relatively easy. Unfortunately, coming from Spain might get a bit tricky." %}
+            {% blocktrans %}In an ideal world, you should be able to get by plane to Rzeszów. For the people coming from UK, it should be relatively easy. Unfortunately, coming from Spain might get a bit tricky.{% endblocktrans %}
         </p>
 
         <h2>{% trans "From UK" %}</h2>
@@ -109,7 +115,8 @@
                 <p>
                     {% trans "Madrid - Kraków with Ryanair" %}:
                     <a target="_blank" href="https://www.ryanair.com/en/cheap-flights/madrid-to-krakow/?out-date=2016-06-20">{% trans "search flights in ryanair.com" %}</a><br>
-                    {% trans "After that, you'll need to take a bus from Krakow to Rzeszów" %}: <a target="_blank" href="http://www.inyourpocket.com/krakow/Krakow-Bus-Station_16992v">{% trans "Kraków bus station" %}</a>
+                    {% trans "After that, you'll need to take a bus from Krakow to Rzeszów" %}:
+                    <a target="_blank" href="http://www.inyourpocket.com/krakow/Krakow-Bus-Station_16992v">{% trans "Kraków bus station" %}</a>
                 </p>
             </li>
             <li>
@@ -117,7 +124,8 @@
                 <p>
                     {% trans "Barcelona - Kraków with Ryanair" %}:
                     <a target="_blank" href="http://www.ryanair.com/en/cheap-flights/barcelona-girona-to-krakow/?out-date=2016-06-20">{% trans "search flights in ryanair.com" %}</a><br>
-                    {% trans "After that, you'll need to take a bus from Krakow to Rzeszów" %}: <a target="_blank" href="http://www.inyourpocket.com/krakow/Krakow-Bus-Station_16992v">{% trans "Kraków bus station" %}</a>
+                    {% trans "After that, you'll need to take a bus from Krakow to Rzeszów" %}:
+                    <a target="_blank" href="http://www.inyourpocket.com/krakow/Krakow-Bus-Station_16992v">{% trans "Kraków bus station" %}</a>
                 </p>
             </li>
             <li>
@@ -138,12 +146,11 @@
                     <a target="_blank" href="http://www.lufthansa.com/">{% trans "search flights in lufthansa.com" %}</a>
                 </p>
                 <p>
-                    {% trans "This is the most expensive option, but if you can't be bothered to go to Madrid or Barcelona, this might be the best pick." %}
+                    {% blocktrans %}This is the most expensive option, but if you can't be bothered to go to Madrid or Barcelona, this might be the best pick.{% endblocktrans %}
                 </p>
             </li>
         </ul>
 
-        </p>
     </section>
 
 {% endblock content %}
