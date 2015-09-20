@@ -1,7 +1,6 @@
 LANGUAGES = (
     ('en', 'English'),
     ('es', 'Spanish'),
-    ('pl', 'Polish'),
 )
 
 INVITATION_STATUSES = (

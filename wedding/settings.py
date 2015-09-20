@@ -123,7 +123,6 @@ LANGUAGE_CODE = 'en'
 LANGUAGES = (
     ('en', 'English'),
     ('es', 'Spanish'),
-    # ('pl', 'Polish'),
 )
 
 LOCALE_PATHS = (
