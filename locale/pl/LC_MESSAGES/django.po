@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-20 16:25+0000\n"
+"POT-Creation-Date: 2015-09-20 16:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: templates/public/base.html:44 templates/public/home.html:4
+#: templates/public/base.html:44
 msgid "Home"
 msgstr "Strona Główna"
 
@@ -281,6 +281,10 @@ msgstr ""
 msgid ""
 "This is the most expensive option, but if you can't be bothered to go to "
 "Madrid or Barcelona, this might be the best pick."
+msgstr ""
+
+#: templates/public/home.html:4
+msgid "Save the Date"
 msgstr ""
 
 #: templates/public/home.html:15

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-20 16:25+0000\n"
+"POT-Creation-Date: 2015-09-20 16:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/public/base.html:44 templates/public/home.html:4
+#: templates/public/base.html:44
 msgid "Home"
 msgstr "Inicio"
 
@@ -329,6 +329,10 @@ msgid ""
 msgstr ""
 "Esta opcíon es la más cara, pero si no te queda otro remedio o no tienes "
 "ganas de volar desde Madrid o Barcelona, puede ser la mejor opción."
+
+#: templates/public/home.html:4
+msgid "Save the Date"
+msgstr "Reserva la Fecha"
 
 #: templates/public/home.html:15
 msgid "In"
