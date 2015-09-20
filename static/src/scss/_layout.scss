@@ -29,24 +29,25 @@
 }
 
 .main-header__title {
-    font-family: cursive;
+    font-family: 'Tangerine', cursive;
     display: block;
-    font-size: $h1-font-size;
+    font-size: 78px;
     margin-bottom: 0;
+    margin-top: 10px;
 
     @include respond-to(palm) {
-        font-size: $h2-font-size;
+        font-size: 56px;
     }
 }
 
 .main-header__subtitle {
     color: $indigo;
     display: block;
-    font-size: $h1-font-size;
+    font-size: 42px;
     font-weight: 400;
 
     @include respond-to(palm) {
-        font-size: $h2-font-size;
+        font-size: 36px;
     }
 }
 
@@ -61,6 +62,7 @@
     li {
         display: inline-block;
         margin-left: 10px;
+        margin-bottom: 0;
     }
 
     @include respond-to(lap) {
