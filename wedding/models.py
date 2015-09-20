@@ -33,6 +33,9 @@ class Invitee(models.Model):
 
     emails = models.CommaSeparatedIntegerField(max_length=512)
 
+    class Meta:
+        ordering = ('first_name', 'last_name',)
+
     def __unicode__(self):
         return '{} {}'.format(self.first_name, self.last_name)
 
