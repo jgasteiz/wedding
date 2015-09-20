@@ -210,6 +210,7 @@ CSP_IMG_SRC = (
     "s.ytimg.com",
     "maps.googleapis.com",
     "magdaandjavi.appspot.com",
+    "*.google-analytics.com",
     "*.googleusercontent.com",
     "*.gstatic.com"
 )

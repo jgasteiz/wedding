@@ -70,6 +70,12 @@ module.exports = function(grunt) {
                         flatten: true,
                         src: '<%= dev %>/libs/picturefill/dist/picturefill.min.js',
                         dest: '<%= build %>/js/'
+                    },
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: '<%= dev %>/js/analytics.js',
+                        dest: '<%= build %>/js/'
                     }
                 ]
             }

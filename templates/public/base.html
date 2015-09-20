@@ -18,6 +18,7 @@
     {% else %}
         <link rel="stylesheet" href="{% static 'css/wedding.min.css' %}"/>
         <script src="{% static 'js/picturefill.min.js' %}" async></script>
+        <script src="{% static 'js/analytics.js' %}"></script>
     {% endif %}
 </head>
 <body>
@@ -30,9 +31,6 @@
                 <li class="language-selector__lang {% ifequal request.LANGUAGE_CODE 'es' %}language-selector__lang--active{% endifequal %}">
                     <a href="{% url 'public:change_language' 'es' %}?next={{ current_view_name }}">Español</a>
                 </li>
-{#                <li class="language-selector__lang {% ifequal request.LANGUAGE_CODE 'pl' %}language-selector__lang--active{% endifequal %}">#}
-{#                    <a href="{% url 'public:change_language' 'pl' %}?next={{ current_view_name }}">Polski</a>#}
-{#                </li>#}
             </ul>
             {% include 'public/partials/picture.html' with src1='img/base/header-flowers-lap.jpg' src2='img/base/header-flowers-lap@2x.jpg' src1sm='img/base/header-flowers-palm.jpg' src2sm='img/base/header-flowers-palm@2x.jpg' alt='Some flowers' title='Some flowers' class='main-header__image' %}
             <span class="main-header__title">Magda & Javi</span>
