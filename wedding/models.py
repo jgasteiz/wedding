@@ -31,6 +31,8 @@ class Invitee(models.Model):
     updated = models.DateTimeField(auto_now=True)
     inviter = models.CharField(max_length=256, blank=True)
 
+    has_plusone = models.NullBooleanField(default=False)
+
     emails = models.CommaSeparatedIntegerField(max_length=512)
 
     class Meta:

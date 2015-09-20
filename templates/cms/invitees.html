@@ -56,6 +56,7 @@
                     <a href="{% url 'cms:invitees' %}?order_by=invitation_status"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
                     <a href="{% url 'cms:invitees' %}?order_by=-invitation_status"><i class="glyphicon glyphicon-triangle-top"></i></a>
                 </th>
+                <th>Has +1</th>
                 <th>Created</th>
                 <th>Updated</th>
                 <th>Actions</th>
@@ -81,6 +82,7 @@
                     {% endfor %}
                 </td>
                 <td>{{ invitee.invitation_status }}</td>
+                <td>{{ invitee.has_plusone }}</td>
                 <td>{{ invitee.added }}</td>
                 <td>{{ invitee.updated }}</td>
                 <td>

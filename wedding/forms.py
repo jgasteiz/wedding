@@ -19,6 +19,7 @@ class InviteeForm(forms.ModelForm):
             'email',
             'language',
             'invitation_status',
+            'has_plusone',
             'inviter',
         )
         model = Invitee
