@@ -33,6 +33,11 @@ indexes:
   - name: app
   - name: name
 
+- kind: wedding_invitee
+  properties:
+  - name: first_name
+  - name: last_name
+
 - kind: wedding_song
   properties:
   - name: is_approved
