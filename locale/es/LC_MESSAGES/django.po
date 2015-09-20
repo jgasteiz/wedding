@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-15 20:00+0000\n"
+"POT-Creation-Date: 2015-09-20 16:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/public/base.html:39 templates/public/home.html:4
+#: templates/public/base.html:44 templates/public/home.html:4
 msgid "Home"
 msgstr "Inicio"
 
-#: templates/public/base.html:42
+#: templates/public/base.html:47
 msgid "Wedding Details"
 msgstr "Detalles de la boda"
 
-#: templates/public/base.html:45 templates/public/song-wishlist.html:4
+#: templates/public/base.html:50 templates/public/song-wishlist.html:4
 msgid "Song wish list"
 msgstr "Elige la música"
 
-#: templates/public/base.html:48 templates/public/rsvp.html:4
+#: templates/public/base.html:53
 msgid "Confirm attendance"
 msgstr "Confirma asistencia"
 
-#: templates/public/base.html:51 templates/public/contact.html:4
+#: templates/public/base.html:56 templates/public/contact.html:4
 #: templates/public/contact.html.py:9 templates/public/details.html:32
 msgid "Contact"
 msgstr "Contacto"
@@ -342,7 +342,7 @@ msgstr "días nos casamos!"
 msgid "Come and celebrate with us the most important day of our lives."
 msgstr "Ven y celebra con nosotros el día más importante de nuestras vidas."
 
-#: templates/public/rsvp.html:9
+#: templates/public/rsvp.html:4 templates/public/rsvp.html.py:9
 msgid "Confirm your attendance"
 msgstr "Confirma tu asistencia"
 

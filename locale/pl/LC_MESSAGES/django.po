@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-15 20:00+0000\n"
+"POT-Creation-Date: 2015-09-20 16:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,23 +19,23 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: templates/public/base.html:39 templates/public/home.html:4
+#: templates/public/base.html:44 templates/public/home.html:4
 msgid "Home"
 msgstr "Strona Główna"
 
-#: templates/public/base.html:42
+#: templates/public/base.html:47
 msgid "Wedding Details"
 msgstr "O Weselu"
 
-#: templates/public/base.html:45 templates/public/song-wishlist.html:4
+#: templates/public/base.html:50 templates/public/song-wishlist.html:4
 msgid "Song wish list"
 msgstr "Wybierz Piosenkę"
 
-#: templates/public/base.html:48 templates/public/rsvp.html:4
+#: templates/public/base.html:53
 msgid "Confirm attendance"
 msgstr "Potwierdź Przybycie"
 
-#: templates/public/base.html:51 templates/public/contact.html:4
+#: templates/public/base.html:56 templates/public/contact.html:4
 #: templates/public/contact.html.py:9 templates/public/details.html:32
 msgid "Contact"
 msgstr "Kontakt"
@@ -295,7 +295,7 @@ msgstr "dni pobieramy się"
 msgid "Come and celebrate with us the most important day of our lives."
 msgstr ""
 
-#: templates/public/rsvp.html:9
+#: templates/public/rsvp.html:4 templates/public/rsvp.html.py:9
 #, fuzzy
 #| msgid "Confirm attendance"
 msgid "Confirm your attendance"
