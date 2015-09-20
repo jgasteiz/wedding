@@ -89,6 +89,8 @@ module.exports = function(grunt) {
                         '<%= dev %>/libs/jquery/dist/jquery.js',
                         '<%= dev %>/libs/bootstrap/dist/js/bootstrap.js',
                         '<%= dev %>/libs/ace-builds/src-min-noconflict/ace.js',
+                        '<%= dev %>/libs/ace-builds/src-min-noconflict/theme-monokai.js',
+                        '<%= dev %>/libs/ace-builds/src-min-noconflict/mode-html.js',
                         '<%= dev %>/js/editor.js',
                         '<%= dev %>/js/invitees.js'
                     ]

@@ -29,6 +29,11 @@ handlers:
   expiration: '365d'
   secure: always
 
+- url: /static/email/
+  static_dir: static/email/
+  expiration: '365d'
+  secure: always
+
 # Set Django admin to be login:admin as well as Django's is_staff restriction
 - url: /admin.*
   script: wedding.wsgi.application
