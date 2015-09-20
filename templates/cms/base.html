@@ -12,10 +12,13 @@
 
     <title>Magda and Javi CMS - {% block page_title %}{% endblock page_title %}</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{% static 'libs/bootstrap/dist/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'libs/bootstrap/dist/css/bootstrap-theme.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/cms.css' %}">
+    {% if debug %}
+        <link rel="stylesheet" href="{% static 'libs/bootstrap/dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'libs/bootstrap/dist/css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/cms.css' %}">
+    {% else %}
+        <link rel="stylesheet" href="{% static 'css/cms.min.css' %}">
+    {% endif %}
 </head>
 
 <body>
@@ -43,8 +46,12 @@
 
     <div class="{% block container_class %}container{% endblock container_class %}">{% block content %}{% endblock content %}</div>
 
-    <script src="{% static 'libs/jquery/dist/jquery.min.js' %}"></script>
-    <script src="{% static 'libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-    {% block extra_js %}{% endblock extra_js %}
+    {% if debug %}
+        <script src="{% static 'libs/jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        {% block extra_js %}{% endblock extra_js %}
+    {% else %}
+        <script src="{% static 'js/cms.min.js' %}"></script>
+    {% endif %}
 </body>
 </html>

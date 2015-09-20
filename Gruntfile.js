@@ -35,6 +35,8 @@ module.exports = function(grunt) {
             cms: {
                 files: {
                     '<%= build %>/css/cms.min.css': [
+                        '<%= dev %>/libs/bootstrap/dist/css/bootstrap.css',
+                        '<%= dev %>/libs/bootstrap/dist/css/bootstrap-theme.css',
                         '<%= dev %>/css/cms.css'
                     ]
                 }
@@ -48,6 +50,16 @@ module.exports = function(grunt) {
                         dest: '<%= build %>/img/',
                         src: ['**'],
                         cwd: '<%= dev %>/img'
+                    }
+                ]
+            },
+            fonts: {
+                files: [
+                    {
+                        expand: true,
+                        dest: '<%= build %>/fonts/',
+                        src: ['**'],
+                        cwd: '<%= dev %>/libs/bootstrap/dist/fonts'
                     }
                 ]
             },
@@ -71,19 +83,17 @@ module.exports = function(grunt) {
                     ]
                 }
             },
-            //cms: {
-            //    files: {
-            //        '<%= build %>/js/cms.min.js': [
-            //            '<%= dev %>/libs/jquery/dist/jquery.js',
-            //            '<%= dev %>/libs/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js',
-            //            '<%= dev %>/libs/trumbowyg/dist/trumbowyg.js',
-            //            '<%= dev %>/js/cms/alert-dismiss.js',
-            //            '<%= dev %>/js/cms/datetimepicker-setup.js',
-            //            '<%= dev %>/js/cms/trumbowyg-setup.js',
-            //            '<%= dev %>/js/components/preview-image.js'
-            //        ]
-            //    }
-            //}
+            cms: {
+                files: {
+                    '<%= build %>/js/cms.min.js': [
+                        '<%= dev %>/libs/jquery/dist/jquery.js',
+                        '<%= dev %>/libs/bootstrap/dist/js/bootstrap.js',
+                        '<%= dev %>/libs/ace-builds/src-min-noconflict/ace.js',
+                        '<%= dev %>/js/editor.js',
+                        '<%= dev %>/js/invitees.js'
+                    ]
+                }
+            }
         }
     });
 

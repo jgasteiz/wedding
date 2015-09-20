@@ -48,7 +48,9 @@
 
 {% endblock content %}
 
-{% block extra_js %}
-    <script src="{% static 'libs/ace-builds/src-min-noconflict/ace.js' %}"></script>
-    <script src="{% static 'js/editor.js' %}"></script>
-{% endblock extra_js %}
+{% if debug %}
+    {% block extra_js %}
+        <script src="{% static 'libs/ace-builds/src-min-noconflict/ace.js' %}"></script>
+        <script src="{% static 'js/editor.js' %}"></script>
+    {% endblock extra_js %}
+{% endif %}

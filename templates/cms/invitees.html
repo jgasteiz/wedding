@@ -108,6 +108,9 @@
     </table>
 {% endblock content %}
 
-{% block extra_js %}
-    <script src="{% static 'js/invitees.js' %}"></script>
-{% endblock extra_js %}
+
+{% if debug %}
+    {% block extra_js %}
+        <script src="{% static 'js/invitees.js' %}"></script>
+    {% endblock extra_js %}
+{% endif %}
