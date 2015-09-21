@@ -12,7 +12,7 @@ form {
     width: 600px;
 }
 
-%invitation-sent {
+%colour-label {
     border-radius: 4px;
     display: inline-block;
     margin-bottom: 4px;
@@ -27,13 +27,33 @@ form {
 }
 
 .invitation-sent--no {
-    @extend %invitation-sent;
+    @extend %colour-label;
     background-color: #FFDB00;
 }
 
 .invitation-sent--yes {
-    @extend %invitation-sent;
+    @extend %colour-label;
     background-color: #54B8FF;
+}
+
+.invitation-status--no_rsvp {
+    @extend %colour-label;
+    background-color: #B0BEC5;
+}
+
+.invitation-status--confirmed {
+    @extend %colour-label;
+    background-color: #8BC34A;
+}
+
+.invitation-status--declined {
+    @extend %colour-label;
+    background-color: #BCAAA4;
+}
+
+.invitation-status--rejected {
+    @extend %colour-label;
+    background-color: #E57373;
 }
 
 .form-control--hidden {

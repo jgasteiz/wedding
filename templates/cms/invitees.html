@@ -81,8 +81,8 @@
                     <span class="invitation-sent--no">No emails sent</span>
                     {% endfor %}
                 </td>
-                <td>{{ invitee.invitation_status }}</td>
-                <td>{{ invitee.has_plusone }}</td>
+                <td><span class="invitation-status--{{ invitee.invitation_status }}">{{ invitee.get_invitation_status }}</span></td>
+                <td>{{ invitee.has_plusone|yesno }}</td>
                 <td>{{ invitee.added }}</td>
                 <td>{{ invitee.updated }}</td>
                 <td>

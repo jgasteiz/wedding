@@ -1,6 +1,6 @@
 from django.db import models
 
-from .constants import LANGUAGES, NO_RSVP
+from .constants import LANGUAGES, NO_RSVP, INVITATION_STATUSES_DICT
 
 
 class Song(models.Model):
@@ -57,6 +57,9 @@ class Invitee(models.Model):
             return []
         email_ids = self.emails.replace(' ', '')
         return email_ids.split(',')
+
+    def get_invitation_status(self):
+        return INVITATION_STATUSES_DICT[self.invitation_status]
 
 
 def create_model(name, fields=None, app_label='', module='', options=None):
