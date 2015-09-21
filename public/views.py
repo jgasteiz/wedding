@@ -1,13 +1,17 @@
 from datetime import date
+import logging
 
 from google.appengine.api import users
+from django.core.exceptions import ObjectDoesNotExist
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.shortcuts import redirect
 from django.utils.translation import activate
 from django.views.generic import TemplateView, FormView, View
 
 from wedding import mixins
+from wedding.constants import CONFIRMED
 from wedding.forms import SongForm
+from wedding.models import Invitee
 
 
 class HomeView(mixins.ViewNameMixin, TemplateView):
@@ -64,6 +68,26 @@ song_wishlist_thanks = SongSubmissionThanks.as_view()
 class RSVPView(mixins.ViewNameMixin, TemplateView):
     page_name = 'rsvp'
     template_name = 'public/rsvp.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        if 'invitee' in request.GET.keys():
+            invitee_id = request.GET.get('invitee')
+            try:
+                invitee = Invitee.objects.get(id=int(invitee_id))
+                invitee.invitation_status = CONFIRMED
+                invitee.save()
+                request.session['invitee'] = str(invitee)
+                return redirect('public:rsvp')
+            except ObjectDoesNotExist as e:
+                logging.info('Invitee with id `{}` does not exist'.format(invitee_id))
+
+        return super(RSVPView, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        ctx = super(RSVPView, self).get_context_data(**kwargs)
+        if 'invitee' in self.request.session.keys():
+            ctx.update(status=CONFIRMED, invitee=self.request.session.get('invitee'))
+        return ctx
 
 rsvp = RSVPView.as_view()
 
