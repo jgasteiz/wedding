@@ -11,7 +11,8 @@
             <p>{% blocktrans %}Don't hesitate in contacting us with any questions you might have:{% endblocktrans %} <a href="{% url 'public:contact' %}">{% trans 'Contact' %}</a></p>
         {% else %}
             <h1>{% trans 'Confirm your attendance' %}</h1>
-            <p>{% blocktrans %}You should have received an invitation in your email. If not, contact us.{% endblocktrans %}</p>
+            <h2>{% trans 'Coming soon' %}</h2>
+            {#            <p>{% blocktrans %}You should have received an invitation in your email. If not, contact us.{% endblocktrans %}</p>#}
         {% endifequal %}
     </div>
 
