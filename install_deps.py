@@ -18,7 +18,6 @@ PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 REQUIREMENTS_FILE = os.path.join(PROJECT_DIR, "requirements.txt")
 REQUIREMENTS_DEV_FILE = os.path.join(PROJECT_DIR, "requirements-dev.txt")
 TARGET_DIR = os.path.join(PROJECT_DIR, "sitepackages")
-TARGET_DEV_DIR = os.path.join(PROJECT_DIR, "sitepackages-dev")
 
 APPENGINE_TARGET_DIR = os.path.join(TARGET_DIR, "google_appengine")
 
@@ -87,15 +86,16 @@ if __name__ == "__main__":
     p = subprocess.Popen(args)
     p.wait()
 
+    args = ["pip", "install", "-r", REQUIREMENTS_DEV_FILE, "-I", "--no-deps"]
+    p = subprocess.Popen(args)
+    p.wait()
 
-    filenames = (filename for filename in os.listdir(TARGET_DEV_DIR) if filename not in FILES_IGNORED_FOR_DELETION)
-    for filename in filenames:
-        path = os.path.join(TARGET_DIR, filename)
-        if os.path.isdir(path) and not os.path.islink(path):
-            shutil.rmtree(path)
-        elif os.path.isfile(path):
-            os.remove(path)
+    print("Running bower install...")
+    args = ["bower", "install"]
+    p = subprocess.Popen(args)
+    p.wait()
 
-    args = ["pip", "install", "-r", REQUIREMENTS_DEV_FILE, "-t", TARGET_DEV_DIR, "-I", "--no-deps"]
+    print("Running npm install...")
+    args = ["npm", "install"]
     p = subprocess.Popen(args)
     p.wait()
