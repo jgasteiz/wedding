@@ -1,6 +1,6 @@
 from django.db import models
 
-from .constants import LANGUAGES
+from .constants import LANGUAGES, NO_RSVP
 
 
 class Song(models.Model):
@@ -26,7 +26,7 @@ class Invitee(models.Model):
     last_name = models.CharField(max_length=256, blank=True)
     email = models.EmailField(blank=True)
     language = models.CharField(max_length=256)
-    invitation_status = models.CharField(max_length=256)
+    invitation_status = models.CharField(max_length=256, default=NO_RSVP)
     added = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     inviter = models.CharField(max_length=256, blank=True)

@@ -3,8 +3,16 @@ LANGUAGES = (
     ('es', 'Spanish'),
 )
 
+NO_RSVP = 'no_rsvp'
+CONFIRMED = 'confirmed'
+DECLINED = 'declined'
+REJECTED = 'rejected'
+
 INVITATION_STATUSES = (
-    ('no_rsvp', 'No RSVP'),
+    (NO_RSVP, 'No RSVP'),
+    (CONFIRMED, 'Confirmed'),
+    (DECLINED, 'Declined'),
+    (REJECTED, 'Rejected'),
 )
 
 INVITER_CHOICES = (
