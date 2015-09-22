@@ -5,8 +5,6 @@
     Email credentials
 {% endblock page_title %}
 
-{% block container_class %}container-fluid{% endblock container_class %}
-
 {% block content %}
 
     <h1>Edit email</h1>
@@ -25,7 +23,7 @@
                     <div id="html-{{ forloop.counter }}" class="form-control--editor"></div>
                 </div>
                 <div class="col-md-6">
-                    <iframe id="html-preview-{{ forloop.counter }}" class="editor-preview" width="100%" height="400" frameborder="0"></iframe>
+                    <iframe id="html-preview-{{ forloop.counter }}" class="editor-preview" width="100%" height="200" frameborder="0"></iframe>
                 </div>
             </div>
             {% else %}
