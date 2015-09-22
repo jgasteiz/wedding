@@ -3,6 +3,7 @@ from wedding.models import (
     Invitee,
     Song,
     get_email_class,
+    get_email_content,
 )
 from wedding.settings import LANGUAGES
 from wedding.tests import AppEngineTestCase
@@ -54,6 +55,21 @@ class EmailTestCase(AppEngineTestCase):
     def test_email_unicode(self):
         email = self.email_class(name='Email test')
         self.assertTrue(email, 'Email test')
+
+    def test_get_email_content(self):
+        email = self.email_class(name='Email test')
+        setattr(email, 'html_en', 'Email title')
+        setattr(email, 'html_es', 'Titulo del email')
+        email.save()
+
+        english_email = get_email_content(email=email, language='en')
+        spanish_email = get_email_content(email=email, language='es')
+
+        self.assertTrue('Email title' in english_email)
+        self.assertTrue('<head>' in english_email)
+        self.assertTrue('Titulo del email' in spanish_email)
+        self.assertTrue('<head>' in english_email)
+
 
     def test_email_ordering(self):
         email2 = self.email_class.objects.create(name='B second email')
