@@ -72,8 +72,8 @@
                 <td>{{ invitee.first_name }}</td>
                 <td>{{ invitee.last_name }}</td>
                 <td>{{ invitee.email }}</td>
-                <td>{{ invitee.inviter }}</td>
-                <td>{{ invitee.language }}</td>
+                <td>{{ invitee.get_inviter }}</td>
+                <td>{{ invitee.get_language }}</td>
                 <td>
                     {% for email in invitee.get_emails %}
                     <span class="invitation-sent--yes">{{ email }}</span>
@@ -82,7 +82,7 @@
                     {% endfor %}
                 </td>
                 <td><span class="invitation-status--{{ invitee.invitation_status }}">{{ invitee.get_invitation_status }}</span></td>
-                <td>{{ invitee.has_plusone|yesno }}</td>
+                <td>{{ invitee.has_plusone|yesno:"Yes,No,Unknown" }}</td>
                 <td>{{ invitee.added }}</td>
                 <td>{{ invitee.updated }}</td>
                 <td>

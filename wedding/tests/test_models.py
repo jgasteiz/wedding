@@ -1,10 +1,32 @@
 # coding: utf-8
 from wedding.models import (
+    Invitee,
     Song,
     get_email_class,
 )
 from wedding.settings import LANGUAGES
 from wedding.tests import AppEngineTestCase
+
+
+class InviteeTestCase(AppEngineTestCase):
+    def setUp(self):
+        super(InviteeTestCase, self).setUp()
+        self.invitee = Invitee.objects.create(
+            first_name='John',
+            last_name='Doe',
+            email='test@example.com',
+            language='en',
+            inviter='javi',
+        )
+
+    def test_get_language(self):
+        self.assertEqual(self.invitee.get_language(), 'English')
+
+    def test_get_invitation_status(self):
+        self.assertEqual(self.invitee.get_invitation_status(), 'No RSVP')
+
+    def test_get_inviter(self):
+        self.assertEqual(self.invitee.get_inviter(), 'Javi')
 
 
 class SongTestCase(AppEngineTestCase):

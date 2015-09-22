@@ -10,13 +10,6 @@ INVITATION_STATUSES = (
     (REJECTED, 'Rejected'),
 )
 
-INVITATION_STATUSES_DICT = {
-    NO_RSVP: 'No RSVP',
-    CONFIRMED: 'Confirmed',
-    DECLINED: 'Declined',
-    REJECTED: 'Rejected',
-}
-
 INVITER_CHOICES = (
     ('both', 'Both'),
     ('javi', 'Javi'),
