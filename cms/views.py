@@ -6,7 +6,6 @@ from django.conf import settings
 from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
 from django.shortcuts import redirect
-from django.template import loader, Context
 from django.views.generic import (
     CreateView,
     DeleteView,
@@ -19,7 +18,7 @@ from django.views.generic import (
 
 from wedding import mixins
 from wedding.forms import EmailForm, InviteeForm
-from wedding.models import Invitee, Song, get_email_class
+from wedding.models import Invitee, Song, get_email_class, get_email_content
 
 
 class HomeView(RedirectView):
@@ -167,15 +166,13 @@ class SendEmailsView(View):
 
             email = Email.objects.get(pk=email_id)
 
-            email_html = getattr(email, 'html_{}'.format(invitee.language))
-
             message = mail.EmailMessage(
                 sender="Javi Manzano <{}>".format(settings.EMAIL_FROM),
                 subject="You're invited to our wedding"
             )
 
             message.to = "{} {} <{}>".format(invitee.first_name, invitee.last_name, invitee.email)
-            message.html = email_html
+            message.html = get_email_content(email=email, language=invitee.language)
             message.send()
 
             # Add email id to invitee emails list.
@@ -259,20 +256,11 @@ delete_email = EmailDeleteView.as_view()
 
 
 class EmailPreviewView(View):
-    template_name = 'cms/email_base.html'
-
     def get(self, *args, **kwargs):
         language = self.request.GET.get('language')
         Email = get_email_class()
         email_pk = kwargs.get('pk')
         email = Email.objects.get(pk=email_pk)
-
-        email_html = getattr(email, 'html_{}'.format(language))
-
-        t = loader.get_template(self.template_name)
-        c = Context({'content': email_html})
-        rendered = t.render(c)
-
-        return HttpResponse(rendered)
+        return HttpResponse(get_email_content(email=email, language=language))
 
 preview_email = EmailPreviewView.as_view()

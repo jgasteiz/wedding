@@ -15,3 +15,5 @@ INVITER_CHOICES = (
     ('javi', 'Javi'),
     ('magda', 'Magda'),
 )
+
+EMAIL_BASE_TEMPLATE = 'cms/email_base.html'
