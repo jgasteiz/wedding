@@ -6,6 +6,7 @@ from django.conf import settings
 from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
 from django.shortcuts import redirect
+from django.template import loader, Context
 from django.views.generic import (
     CreateView,
     DeleteView,
@@ -167,11 +168,6 @@ class SendEmailsView(View):
             email = Email.objects.get(pk=email_id)
 
             email_html = getattr(email, 'html_{}'.format(invitee.language))
-            if email_html == '':
-                email_html = """
-                    Hey! You are invited to our wedding.
-                    Check this out: https://magdaandjavi.appspot.com/en/
-                    """
 
             message = mail.EmailMessage(
                 sender="Javi Manzano <{}>".format(settings.EMAIL_FROM),
@@ -263,10 +259,20 @@ delete_email = EmailDeleteView.as_view()
 
 
 class EmailPreviewView(View):
+    template_name = 'cms/email_base.html'
+
     def get(self, *args, **kwargs):
+        language = self.request.GET.get('language')
         Email = get_email_class()
         email_pk = kwargs.get('pk')
         email = Email.objects.get(pk=email_pk)
-        return HttpResponse(email.html_en)
+
+        email_html = getattr(email, 'html_{}'.format(language))
+
+        t = loader.get_template(self.template_name)
+        c = Context({'content': email_html})
+        rendered = t.render(c)
+
+        return HttpResponse(rendered)
 
 preview_email = EmailPreviewView.as_view()
