@@ -1,7 +1,7 @@
 # coding: utf-8
 from wedding.models import (
     Song,
-    get_email_class
+    get_email_class,
 )
 from wedding.settings import LANGUAGES
 from wedding.tests import AppEngineTestCase
