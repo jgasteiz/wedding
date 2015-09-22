@@ -1,6 +1,7 @@
 from django.db import models
+from django.conf import settings
 
-from .constants import LANGUAGES, NO_RSVP, INVITATION_STATUSES_DICT
+from .constants import NO_RSVP, INVITATION_STATUSES_DICT
 
 
 class Song(models.Model):
@@ -100,6 +101,6 @@ def get_email_class():
     options = {
         'ordering': ['name'],
     }
-    for language_key, language_name in LANGUAGES:
+    for language_key, language_name in settings.LANGUAGES:
         fields['html_{}'.format(language_key)] = models.TextField(blank=True, null=True)
     return create_model('Email', fields, 'wedding', options=options)

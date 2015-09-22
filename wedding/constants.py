@@ -1,8 +1,3 @@
-LANGUAGES = (
-    ('en', 'English'),
-    ('es', 'Spanish'),
-)
-
 NO_RSVP = 'no_rsvp'
 CONFIRMED = 'confirmed'
 DECLINED = 'declined'

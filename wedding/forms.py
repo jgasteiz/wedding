@@ -1,14 +1,15 @@
 from django import forms
 from django.db import models
 
-from .constants import LANGUAGES, INVITATION_STATUSES, INVITER_CHOICES
+from django.conf import settings
 from django.forms import model_to_dict
 from django.utils.translation import ugettext_lazy as _
+from .constants import INVITATION_STATUSES, INVITER_CHOICES
 from .models import Invitee, Song, get_email_class
 
 
 class InviteeForm(forms.ModelForm):
-    language = forms.ChoiceField(choices=LANGUAGES, required=False)
+    language = forms.ChoiceField(choices=settings.LANGUAGES, required=False)
     invitation_status = forms.ChoiceField(choices=INVITATION_STATUSES, required=False)
     inviter = forms.ChoiceField(choices=INVITER_CHOICES, required=False)
 
@@ -48,7 +49,7 @@ class EmailForm(forms.Form):
 
         self.initial = model_to_dict(self.instance)
 
-        for language_key, _ in LANGUAGES:
+        for language_key, _ in settings.LANGUAGES:
             field_name = 'html_{}'.format(language_key)
             self.fields[field_name] = forms.CharField(widget=forms.Textarea, required=False)
             self.fields[field_name].is_html = True
