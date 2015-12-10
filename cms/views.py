@@ -171,7 +171,11 @@ class SendEmailsView(View):
                 subject="You're invited to our wedding"
             )
 
-            message.to = "{} {} <{}>".format(invitee.first_name, invitee.last_name, invitee.email)
+            message.to = u'{} {} <{}>'.format(
+                unicode(invitee.first_name),
+                unicode(invitee.last_name),
+                invitee.email
+            )
             message.html = get_email_content(email=email, language=invitee.language)
             message.send()
 
