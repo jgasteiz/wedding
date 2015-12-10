@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.conf import settings
 from django.template import loader, Context
@@ -52,7 +53,7 @@ class Invitee(models.Model):
         ordering = ('first_name', 'last_name',)
 
     def __unicode__(self):
-        return '{} {}'.format(self.first_name, self.last_name)
+        return u'{} {}'.format(unicode(self.first_name), unicode(self.last_name))
 
     def get_emails(self):
         """
