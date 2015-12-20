@@ -224,4 +224,6 @@ CSP_CONNECT_SRC = (
 EMAIL_FROM = 'javiandmagda@gmail.com'
 SERVER_DOMAIN = 'https://magdaandjavi.appspot.com'
 
+ANON_ALWAYS = True
+
 from djangae.contrib.gauth.settings import *
