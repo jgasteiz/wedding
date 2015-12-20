@@ -96,7 +96,8 @@ class RSVPView(mixins.ViewNameMixin, FormView):
         """
         form = super(RSVPView, self).get_form(form_class)
         invitee = self._get_invitee()
-        if invitee:
+        # If there's an invitee and it has confirmed or declined, update the form.
+        if invitee and invitee.invitation_status in [CONFIRMED, DECLINED]:
             form.initial.update(
                 are_you_coming=invitee.invitation_status == CONFIRMED,
                 bringing_plusone=invitee.has_plusone,
