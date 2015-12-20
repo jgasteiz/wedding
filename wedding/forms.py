@@ -35,6 +35,32 @@ class SongForm(forms.ModelForm):
         model = Song
 
 
+class RsvpForm(forms.Form):
+    are_you_coming = forms.TypedChoiceField(
+        label=_('Are you coming to our wedding?'),
+        coerce=lambda x: x == 'True',
+        choices=((False, 'No'), (True, 'Yes')),
+        widget=forms.RadioSelect,
+    )
+    bringing_plusone = forms.TypedChoiceField(
+        label=_('Are you bringing a plus-one?'),
+        coerce=lambda x: x == 'True',
+        choices=((False, 'No'), (True, 'Yes')),
+        widget=forms.RadioSelect,
+    )
+    special_dietary_requirements = forms.CharField(
+        label=_('If you have any special dietary needs, please specify them here'),
+        required=False,
+        widget=forms.Textarea,
+    )
+
+    def clean_bringing_plusone(self):
+        data = self.cleaned_data['bringing_plusone']
+        if data and not self.cleaned_data['are_you_coming']:
+            raise forms.ValidationError(_("You can't bring a plus one if you're not coming."))
+        return data
+
+
 class EmailForm(forms.Form):
     name = forms.CharField()
 

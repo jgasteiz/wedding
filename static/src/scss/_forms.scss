@@ -4,6 +4,10 @@
     text-align: left;
 }
 
+.form--rsvp {
+    max-width: none;
+}
+
 .form__row {
     margin: 20px 0;
 }
@@ -18,16 +22,46 @@
 .form__label {
     display: inline-block;
     vertical-align: top;
-    width: 25%;
+    width: 30%;
+
+    @include respond-to(palm) {
+        width: 100%;
+    }
 }
 
+.form__field {
+    display: inline-block;
+    padding-left: 20px;
+    vertical-align: top;
+    width: 70%;
+
+    // Radio set
+    > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        > li {
+            margin: 0;
+        }
+    }
+
+    @include respond-to(palm) {
+        width: 100%;
+    }
+}
+
+textarea,
 input[type="text"] {
     border: 1px solid #ddd;
-    display: inline-block;
+    display: block;
     font-size: 14px;
     padding: 10px 10px;
-    vertical-align: top;
-    width: 75%;
+    width: 100%;
+}
+
+textarea {
+    resize: none;
 }
 
 .form__submit {
