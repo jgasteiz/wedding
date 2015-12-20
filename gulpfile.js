@@ -40,19 +40,6 @@ gulp.task('uglify', function() {
         .pipe(gconcat('wedding.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./static/build/js'));
-
-    // Uglify cms js
-    gulp.src([
-        './static/src/libs/jquery/dist/jquery.js',
-        './static/src/libs/bootstrap/dist/js/bootstrap.js',
-        './static/src/libs/ace-builds/src-min-noconflict/ace.js',
-        './static/src/libs/ace-builds/src-min-noconflict/theme-monokai.js',
-        './static/src/libs/ace-builds/src-min-noconflict/mode-html.js',
-        './static/src/js/editor.js',
-        './static/src/js/invitees.js'])
-        .pipe(gconcat('cms.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('./static/build/js'));
 });
 
 gulp.task('copy', function() {
@@ -65,7 +52,16 @@ gulp.task('copy', function() {
         .pipe(gulp.dest('./static/build/fonts'));
 
     // Copy js files
-    gulp.src(['./static/src/libs/picturefill/dist/picturefill.min.js', './static/src/js/analytics.js'])
+    gulp.src([
+        './static/src/libs/picturefill/dist/picturefill.min.js',
+        './static/src/js/analytics.js',
+        './static/src/libs/jquery/dist/jquery.min.js',
+        './static/src/libs/bootstrap/dist/js/bootstrap.min.js',
+        './static/src/libs/ace-builds/src-min-noconflict/ace.js',
+        './static/src/libs/ace-builds/src-min-noconflict/theme-monokai.js',
+        './static/src/libs/ace-builds/src-min-noconflict/mode-html.js',
+        './static/src/js/editor.js',
+        './static/src/js/invitees.js'])
         .pipe(gulp.dest('./static/build/js'));
 });
 
