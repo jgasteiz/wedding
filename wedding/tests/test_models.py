@@ -13,8 +13,8 @@ class InviteeTestCase(AppEngineTestCase):
     def setUp(self):
         super(InviteeTestCase, self).setUp()
         self.invitee = Invitee.objects.create(
-            first_name='John',
-            last_name='Doe',
+            first_name=u'Jóhn',
+            last_name=u'Dóę',
             email='test@example.com',
             language='en',
             inviter='javi',
@@ -28,6 +28,24 @@ class InviteeTestCase(AppEngineTestCase):
 
     def test_get_inviter(self):
         self.assertEqual(self.invitee.get_inviter(), 'Javi')
+
+    def test_fullname(self):
+        self.assertEqual(self.invitee.fullname, u'Jóhn Dóę')
+
+    def test_token_should_get_created_on_save(self):
+        invitee = Invitee(
+            first_name=u'Craźy',
+            last_name=u'Łunatic',
+            email='some@test.com',
+            language='en',
+            inviter='javi',
+        )
+        self.assertEqual(invitee.token, '')
+        invitee.save()
+        self.assertTrue(invitee.token is not None)
+        token = invitee.token
+        invitee.save()
+        self.assertEqual(invitee.token, token)
 
 
 class SongTestCase(AppEngineTestCase):
@@ -69,7 +87,6 @@ class EmailTestCase(AppEngineTestCase):
         self.assertTrue('<head>' in english_email)
         self.assertTrue('Titulo del email' in spanish_email)
         self.assertTrue('<head>' in english_email)
-
 
     def test_email_ordering(self):
         email2 = self.email_class.objects.create(name='B second email')
