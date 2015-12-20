@@ -10,6 +10,8 @@ from .constants import (
     INVITER_CHOICES,
     EMAIL_BASE_TEMPLATE,
 )
+INVITEE_NAME_TOKEN = '[[token_invitee_name]]'
+RSVP_URL_TOKEN = '[[token_rsvp_url]]'
 
 
 class Song(models.Model):

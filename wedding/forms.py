@@ -12,6 +12,8 @@ class InviteeForm(forms.ModelForm):
     language = forms.ChoiceField(choices=settings.LANGUAGES, required=False)
     invitation_status = forms.ChoiceField(choices=INVITATION_STATUSES, required=False)
     inviter = forms.ChoiceField(choices=INVITER_CHOICES, required=False)
+    # TODO: Make this nicer
+    emails = forms.CharField(required=False)
 
     class Meta:
         fields = (
@@ -20,6 +22,7 @@ class InviteeForm(forms.ModelForm):
             'email',
             'language',
             'invitation_status',
+            'emails',
             'has_plusone',
             'inviter',
         )

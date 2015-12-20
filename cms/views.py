@@ -1,9 +1,10 @@
 import csv
+import logging
 from datetime import datetime
 
 from google.appengine.api import mail
 from django.conf import settings
-from django.core.urlresolvers import reverse_lazy
+from django.core.urlresolvers import reverse_lazy, reverse
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views.generic import (
@@ -18,7 +19,14 @@ from django.views.generic import (
 
 from wedding import mixins
 from wedding.forms import EmailForm, InviteeForm
-from wedding.models import Invitee, Song, get_email_class, get_email_content
+from wedding.models import (
+    Invitee,
+    Song,
+    get_email_class,
+    get_email_content,
+    RSVP_URL_TOKEN,
+    INVITEE_NAME_TOKEN,
+)
 
 
 class HomeView(RedirectView):
@@ -176,7 +184,17 @@ class SendEmailsView(View):
                 unicode(invitee.last_name),
                 invitee.email
             )
-            message.html = get_email_content(email=email, language=invitee.language)
+
+            message_html = get_email_content(email=email, language=invitee.language)
+
+            # Replace tokens in the email for their values
+            message_html = message_html.replace(INVITEE_NAME_TOKEN, invitee.first_name)
+            rsvp_url = '{}{}?invitee={}'.format(settings.SERVER_DOMAIN, reverse('public:rsvp'), invitee.id)
+            message_html = message_html.replace(RSVP_URL_TOKEN, rsvp_url)
+
+            logging.info(message_html)
+
+            message.html = message_html
             message.send()
 
             # Add email id to invitee emails list.
