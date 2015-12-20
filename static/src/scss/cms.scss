@@ -12,6 +12,10 @@ form {
     width: 600px;
 }
 
+.table-wrp {
+    overflow-x: auto;
+}
+
 %colour-label {
     border-radius: 4px;
     display: inline-block;

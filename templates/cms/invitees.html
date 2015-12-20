@@ -24,101 +24,103 @@
         </div>
     </div>
 
-    <table class="table table-bordered table-responsive">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>First name
-                    <a href="{% url 'cms:invitees' %}?order_by=first_name"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                    <a href="{% url 'cms:invitees' %}?order_by=-first_name"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                </th>
-                <th>Last name
-                    <a href="{% url 'cms:invitees' %}?order_by=last_name"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                    <a href="{% url 'cms:invitees' %}?order_by=-last_name"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                </th>
-                <th>Email
-                    <a href="{% url 'cms:invitees' %}?order_by=email"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                    <a href="{% url 'cms:invitees' %}?order_by=-email"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                </th>
-                <th>Inviter
-                    <a href="{% url 'cms:invitees' %}?order_by=inviter"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                    <a href="{% url 'cms:invitees' %}?order_by=-inviter"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                </th>
-                <th>Language
-                    <a href="{% url 'cms:invitees' %}?order_by=language"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                    <a href="{% url 'cms:invitees' %}?order_by=-language"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                </th>
-                <th>Emails sent
-                    <a href="{% url 'cms:invitees' %}?order_by=emails"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                    <a href="{% url 'cms:invitees' %}?order_by=-emails"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                </th>
-                <th>Invitation status
-                    <a href="{% url 'cms:invitees' %}?order_by=invitation_status"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                    <a href="{% url 'cms:invitees' %}?order_by=-invitation_status"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                </th>
-                <th>Has +1
-                    <a href="{% url 'cms:invitees' %}?order_by=has_plusone"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                    <a href="{% url 'cms:invitees' %}?order_by=-has_plusone"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                </th>
-                <th>Token</th>
-                <th>Created
-                    <a href="{% url 'cms:invitees' %}?order_by=added"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                    <a href="{% url 'cms:invitees' %}?order_by=-added"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                </th>
-                <th>Updated
-                    <a href="{% url 'cms:invitees' %}?order_by=updated"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                    <a href="{% url 'cms:invitees' %}?order_by=-updated"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                </th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for invitee in invitee_list %}
-            <tr data-row="{{ invitee.pk }}" class="invitee-row">
-                <td>
-                    {{ forloop.counter }}
-                    <input type="checkbox" class="invitee-selector" data-id="{{ invitee.pk }}" tabindex="1">
-                </td>
-                <td>{{ invitee.first_name }}</td>
-                <td>{{ invitee.last_name }}</td>
-                <td>{{ invitee.email }}</td>
-                <td>{{ invitee.get_inviter }}</td>
-                <td>{{ invitee.get_language }}</td>
-                <td>
-                    {% for email in invitee.get_emails %}
-                    <span class="invitation-sent--yes">{{ email }}</span>
-                    {% empty %}
-                    <span class="invitation-sent--no">No emails sent</span>
-                    {% endfor %}
-                </td>
-                <td><span class="invitation-status--{{ invitee.invitation_status }}">{{ invitee.get_invitation_status }}</span></td>
-                <td>{{ invitee.has_plusone|yesno:"Yes,No,Unknown" }}</td>
-                <td>{{ invitee.token }}</td>
-                <td>{{ invitee.added }}</td>
-                <td>{{ invitee.updated }}</td>
-                <td>
-                    <a href="{% url 'cms:update_invitee' invitee.id %}" class="btn btn-default btn-sm">Update</a>
-                    <a href="{% url 'cms:delete_invitee' invitee.id %}" class="btn btn-danger btn-sm">Delete</a>
-                </td>
-            </tr>
-        {% empty %}
-            <tr>
-                <td>0</td>
-                <td>No invitees yet</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        {% endfor %}
-        </tbody>
+    <div class="table-wrp">
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First name
+                        <a href="{% url 'cms:invitees' %}?order_by=first_name"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                        <a href="{% url 'cms:invitees' %}?order_by=-first_name"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                    </th>
+                    <th>Last name
+                        <a href="{% url 'cms:invitees' %}?order_by=last_name"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                        <a href="{% url 'cms:invitees' %}?order_by=-last_name"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                    </th>
+                    <th>Email
+                        <a href="{% url 'cms:invitees' %}?order_by=email"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                        <a href="{% url 'cms:invitees' %}?order_by=-email"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                    </th>
+                    <th>Inviter
+                        <a href="{% url 'cms:invitees' %}?order_by=inviter"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                        <a href="{% url 'cms:invitees' %}?order_by=-inviter"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                    </th>
+                    <th>Language
+                        <a href="{% url 'cms:invitees' %}?order_by=language"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                        <a href="{% url 'cms:invitees' %}?order_by=-language"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                    </th>
+                    <th>Emails sent
+                        <a href="{% url 'cms:invitees' %}?order_by=emails"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                        <a href="{% url 'cms:invitees' %}?order_by=-emails"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                    </th>
+                    <th>Invitation status
+                        <a href="{% url 'cms:invitees' %}?order_by=invitation_status"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                        <a href="{% url 'cms:invitees' %}?order_by=-invitation_status"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                    </th>
+                    <th>Has +1
+                        <a href="{% url 'cms:invitees' %}?order_by=has_plusone"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                        <a href="{% url 'cms:invitees' %}?order_by=-has_plusone"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                    </th>
+                    <th>Token</th>
+                    <th>Created
+                        <a href="{% url 'cms:invitees' %}?order_by=added"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                        <a href="{% url 'cms:invitees' %}?order_by=-added"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                    </th>
+                    <th>Updated
+                        <a href="{% url 'cms:invitees' %}?order_by=updated"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                        <a href="{% url 'cms:invitees' %}?order_by=-updated"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                    </th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for invitee in invitee_list %}
+                <tr data-row="{{ invitee.pk }}" class="invitee-row">
+                    <td>
+                        {{ forloop.counter }}
+                        <input type="checkbox" class="invitee-selector" data-id="{{ invitee.pk }}" tabindex="1">
+                    </td>
+                    <td>{{ invitee.first_name }}</td>
+                    <td>{{ invitee.last_name }}</td>
+                    <td>{{ invitee.email }}</td>
+                    <td>{{ invitee.get_inviter }}</td>
+                    <td>{{ invitee.get_language }}</td>
+                    <td>
+                        {% for email in invitee.get_emails %}
+                        <span class="invitation-sent--yes">{{ email }}</span>
+                        {% empty %}
+                        <span class="invitation-sent--no">No emails sent</span>
+                        {% endfor %}
+                    </td>
+                    <td><span class="invitation-status--{{ invitee.invitation_status }}">{{ invitee.get_invitation_status }}</span></td>
+                    <td>{{ invitee.has_plusone|yesno:"Yes,No,Unknown" }}</td>
+                    <td>{{ invitee.token }}</td>
+                    <td>{{ invitee.added }}</td>
+                    <td>{{ invitee.updated }}</td>
+                    <td>
+                        <a href="{% url 'cms:update_invitee' invitee.id %}" class="btn btn-default btn-sm">Update</a>
+                        <a href="{% url 'cms:delete_invitee' invitee.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td>0</td>
+                    <td>No invitees yet</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            {% endfor %}
+            </tbody>
 
-    </table>
+        </table>
+    </div>
 {% endblock content %}
 
 
