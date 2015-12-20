@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import uuid
+
 from django.db import models
 from django.conf import settings
 from django.template import loader, Context
@@ -47,6 +49,7 @@ class Invitee(models.Model):
     added = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     inviter = models.CharField(max_length=256, blank=True)
+    token = models.CharField(max_length=256, blank=True)
 
     has_plusone = models.NullBooleanField(default=False)
 
@@ -57,6 +60,11 @@ class Invitee(models.Model):
 
     def __unicode__(self):
         return u'{} {}'.format(unicode(self.first_name), unicode(self.last_name))
+
+    def save(self, *args, **kwargs):
+        if not self.token:
+            self.token = uuid.uuid4()
+        super(Invitee, self).save(*args, **kwargs)
 
     def get_emails(self):
         """

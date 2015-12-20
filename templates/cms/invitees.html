@@ -57,6 +57,7 @@
                     <a href="{% url 'cms:invitees' %}?order_by=-invitation_status"><i class="glyphicon glyphicon-triangle-top"></i></a>
                 </th>
                 <th>Has +1</th>
+                <th>Token</th>
                 <th>Created</th>
                 <th>Updated</th>
                 <th>Actions</th>
@@ -83,6 +84,7 @@
                 </td>
                 <td><span class="invitation-status--{{ invitee.invitation_status }}">{{ invitee.get_invitation_status }}</span></td>
                 <td>{{ invitee.has_plusone|yesno:"Yes,No,Unknown" }}</td>
+                <td>{{ invitee.token }}</td>
                 <td>{{ invitee.added }}</td>
                 <td>{{ invitee.updated }}</td>
                 <td>
