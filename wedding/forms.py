@@ -22,7 +22,6 @@ class InviteeForm(forms.ModelForm):
             'invitation_status',
             'has_plusone',
             'inviter',
-            'special_dietary_requirements',
         )
         model = Invitee
 
@@ -48,11 +47,6 @@ class RsvpForm(forms.Form):
         coerce=lambda x: x == 'True',
         choices=((False, 'No'), (True, 'Yes')),
         widget=forms.RadioSelect,
-    )
-    special_dietary_requirements = forms.CharField(
-        label=_('If you have any special dietary needs, please specify them here'),
-        required=False,
-        widget=forms.Textarea,
     )
 
     def clean_bringing_plusone(self):

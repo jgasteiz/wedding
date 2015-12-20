@@ -16,9 +16,6 @@
                 <p>{% trans "You already said you won't be able to make it :(" %}</p>
                 {% endif %}
 
-                {% if invitee.special_dietary_requirements %}
-                <p>{% trans "You also mentioned the following dietary requirements:" %}</p><div><em>{{ invitee.special_dietary_requirements|linebreaks }}</em></div>
-                {% endif %}
                 <p>{% trans "You can change any of your answers in the following form." %}</p>
                 <hr>
             {% endif %}

@@ -45,7 +45,6 @@ class Invitee(models.Model):
     added = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     inviter = models.CharField(max_length=256, blank=True)
-    special_dietary_requirements = models.TextField(blank=True)
 
     has_plusone = models.NullBooleanField(default=False)
 

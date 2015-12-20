@@ -100,7 +100,6 @@ class RSVPView(mixins.ViewNameMixin, FormView):
             form.initial.update(
                 are_you_coming=invitee.invitation_status == CONFIRMED,
                 bringing_plusone=invitee.has_plusone,
-                special_dietary_requirements=invitee.special_dietary_requirements
             )
         return form
 
@@ -116,7 +115,6 @@ class RSVPView(mixins.ViewNameMixin, FormView):
                 invitee.invitation_status = DECLINED
 
             invitee.has_plusone = form.cleaned_data.get('bringing_plusone', False)
-            invitee.special_dietary_requirements = form.cleaned_data.get('special_dietary_requirements')
             invitee.save()
 
         return super(RSVPView, self).form_valid(form)
