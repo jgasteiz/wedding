@@ -1,0 +1,14 @@
+{% extends 'cms/base.html' %}
+{% load static form_tags %}
+
+{% block page_title %}
+    Migrate invitees
+{% endblock page_title %}
+
+{% block content %}
+
+    <h1>All the invitees have been resaved.</h1>
+
+    <a href="{% url 'cms:migrations' %}">Go back to the migrations UI.</a>
+
+{% endblock content %}

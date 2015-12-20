@@ -15,7 +15,7 @@ from django.views.generic import (
     UpdateView,
     View,
     FormView,
-)
+    TemplateView)
 
 from wedding import mixins
 from wedding.forms import EmailForm, InviteeForm
@@ -26,6 +26,9 @@ from wedding.models import (
     get_email_content,
     RSVP_URL_TOKEN,
     INVITEE_NAME_TOKEN,
+)
+MIGRATIONS = (
+    ('invitees', 'Re-save all invitee instances'),
 )
 
 
@@ -286,3 +289,30 @@ class EmailPreviewView(View):
         return HttpResponse(get_email_content(email=email, language=language))
 
 preview_email = EmailPreviewView.as_view()
+
+
+class MigrationsView(mixins.ViewNameMixin, TemplateView):
+    page_name = 'migrations'
+    template_name = 'cms/migrations.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(MigrationsView, self).get_context_data(**kwargs)
+        ctx.update(migrations=MIGRATIONS)
+        return ctx
+
+migrations = MigrationsView.as_view()
+
+
+class MigrateInviteesView(mixins.ViewNameMixin, TemplateView):
+    page_name = 'migrate_invitees'
+    template_name = 'cms/migrate_invitees.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        # Re-save invitees.
+        all_invitees = Invitee.objects.all()
+        for invitee in all_invitees:
+            invitee.save()
+        return super(MigrateInviteesView, self).dispatch(request, *args, **kwargs)
+
+
+migrate_invitees = MigrateInviteesView.as_view()

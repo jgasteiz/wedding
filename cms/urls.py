@@ -24,6 +24,8 @@ urlpatterns = [
     url(r'^emails/preview/(?P<pk>\d+)/$', views.preview_email, name='preview_email'),
 
     url(r'^send-emails/$', views.send_emails, name='send_emails'),
+    url(r'^migrations/$', views.migrations, name='migrations'),
+    url(r'^migrations/invitees/$', views.migrate_invitees, name='migrate_invitees'),
 ]
 
 # handler403 = views.cms_forbidden
