@@ -192,7 +192,7 @@ class SendEmailsView(View):
 
             # Replace tokens in the email for their values
             message_html = message_html.replace(INVITEE_NAME_TOKEN, invitee.first_name)
-            rsvp_url = '{}{}?invitee={}'.format(settings.SERVER_DOMAIN, reverse('public:rsvp'), invitee.id)
+            rsvp_url = '{}{}?invitee={}'.format(settings.SERVER_DOMAIN, reverse('public:rsvp'), invitee.token)
             message_html = message_html.replace(RSVP_URL_TOKEN, rsvp_url)
 
             logging.info(message_html)

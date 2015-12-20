@@ -79,11 +79,11 @@ class RSVPView(mixins.ViewNameMixin, FormView):
 
     def _get_invitee(self):
         if 'invitee' in self.request.session.keys():
-            invitee_id = self.request.session['invitee']
+            invitee_token = self.request.session['invitee']
             try:
-                return Invitee.objects.get(id=int(invitee_id))
+                return Invitee.objects.get(token=invitee_token)
             except ObjectDoesNotExist as e:
-                logging.info('Invitee with id `{}` does not exist'.format(invitee_id))
+                logging.info('Invitee with token `{}` does not exist'.format(invitee_token))
 
     def get_context_data(self, **kwargs):
         ctx = super(RSVPView, self).get_context_data(**kwargs)
