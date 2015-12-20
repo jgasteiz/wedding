@@ -56,10 +56,19 @@
                     <a href="{% url 'cms:invitees' %}?order_by=invitation_status"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
                     <a href="{% url 'cms:invitees' %}?order_by=-invitation_status"><i class="glyphicon glyphicon-triangle-top"></i></a>
                 </th>
-                <th>Has +1</th>
+                <th>Has +1
+                    <a href="{% url 'cms:invitees' %}?order_by=has_plusone"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:invitees' %}?order_by=-has_plusone"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                </th>
                 <th>Token</th>
-                <th>Created</th>
-                <th>Updated</th>
+                <th>Created
+                    <a href="{% url 'cms:invitees' %}?order_by=added"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:invitees' %}?order_by=-added"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                </th>
+                <th>Updated
+                    <a href="{% url 'cms:invitees' %}?order_by=updated"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                    <a href="{% url 'cms:invitees' %}?order_by=-updated"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                </th>
                 <th>Actions</th>
             </tr>
         </thead>
