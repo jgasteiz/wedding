@@ -182,16 +182,15 @@ class SendEmailsView(View):
                 subject="You're invited to our wedding"
             )
 
-            message.to = u'{} {} <{}>'.format(
-                unicode(invitee.first_name),
-                unicode(invitee.last_name),
+            message.to = u'{} <{}>'.format(
+                unicode(invitee.fullname),
                 invitee.email
             )
 
             message_html = get_email_content(email=email, language=invitee.language)
 
             # Replace tokens in the email for their values
-            message_html = message_html.replace(INVITEE_NAME_TOKEN, invitee.first_name)
+            message_html = message_html.replace(INVITEE_NAME_TOKEN, invitee.fullname)
             rsvp_url = '{}{}?invitee={}'.format(settings.SERVER_DOMAIN, reverse('public:rsvp'), invitee.token)
             message_html = message_html.replace(RSVP_URL_TOKEN, rsvp_url)
 

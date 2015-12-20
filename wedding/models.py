@@ -61,6 +61,10 @@ class Invitee(models.Model):
     def __unicode__(self):
         return u'{} {}'.format(unicode(self.first_name), unicode(self.last_name))
 
+    @property
+    def fullname(self):
+        return self.__unicode__()
+
     def save(self, *args, **kwargs):
         if not self.token:
             self.token = uuid.uuid4()
