@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-20 16:41+0000\n"
+"POT-Creation-Date: 2015-12-20 13:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,24 +18,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/public/base.html:44
+#: templates/public/base.html:42
 msgid "Home"
 msgstr "Inicio"
 
-#: templates/public/base.html:47
+#: templates/public/base.html:45
 msgid "Wedding Details"
 msgstr "Detalles de la boda"
 
-#: templates/public/base.html:50 templates/public/song-wishlist.html:4
+#: templates/public/base.html:48 templates/public/song-wishlist.html:4
 msgid "Song wish list"
 msgstr "Elige la música"
 
-#: templates/public/base.html:53
+#: templates/public/base.html:51
 msgid "Confirm attendance"
 msgstr "Confirma asistencia"
 
-#: templates/public/base.html:56 templates/public/contact.html:4
+#: templates/public/base.html:54 templates/public/contact.html:4
 #: templates/public/contact.html.py:9 templates/public/details.html:32
+#: templates/public/rsvp.html:43
 msgid "Contact"
 msgstr "Contacto"
 
@@ -346,13 +347,42 @@ msgstr "días nos casamos!"
 msgid "Come and celebrate with us the most important day of our lives."
 msgstr "Ven y celebra con nosotros el día más importante de nuestras vidas."
 
-#: templates/public/rsvp.html:4 templates/public/rsvp.html.py:9
+#: templates/public/rsvp-thanks.html:4 templates/public/rsvp.html:4
+#: templates/public/rsvp.html.py:9
 msgid "Confirm your attendance"
 msgstr "Confirma tu asistencia"
 
-#: templates/public/rsvp.html:11
-msgid "Coming soon"
-msgstr "Pronto disponible"
+#: templates/public/rsvp-thanks.html:9
+msgid "Thanks for RSVPing."
+msgstr "Gracias por confirmar tu asistencia."
+
+#: templates/public/rsvp-thanks.html:10
+msgid "You can go back and edit your RSVP status: "
+msgstr "Puedes volver a la página anterior y cambiar tu respuesta: "
+
+#: templates/public/rsvp.html:14
+msgid "You already said you'll come to our wedding."
+msgstr "Ya nos has dicho que vendrás a nuestra boda."
+
+#: templates/public/rsvp.html:16
+msgid "You already said you won't be able to make it :("
+msgstr "Ya nos has dicho que no podrás venir a nuestra boda :("
+
+#: templates/public/rsvp.html:19
+msgid "You can change any of your answers in the following form."
+msgstr "Aún estás a tiempo de cambiar tu respuesta en el siguiente formulario."
+
+#: templates/public/rsvp.html:39
+msgid "Save your RSVP status"
+msgstr "Guardar respuesta"
+
+#: templates/public/rsvp.html:43
+msgid "Contact us with any questions you might have:"
+msgstr "Contáctanos con cualquier pregunta que tengas:"
+
+#: templates/public/rsvp.html:45
+msgid "Check your email for the attendance confirmation email."
+msgstr "Busca en tu correo electrónico el email para confirmar asistencia."
 
 #: templates/public/song-wishlist.html:10
 msgid "Help us organising our wedding"
@@ -378,10 +408,24 @@ msgstr ""
 msgid "Log in"
 msgstr "Inicia sesión"
 
-#: wedding/forms.py:28
+#: wedding/forms.py:33
 msgid "Song title"
-msgstr "Título de la cancíon"
+msgstr "Título de la canción"
 
-#: wedding/forms.py:29
+#: wedding/forms.py:34
 msgid "Artist name"
 msgstr "Nombre del artista"
+
+#: wedding/forms.py:43
+#, fuzzy
+#| msgid "Help us organising our wedding"
+msgid "Are you coming to our wedding?"
+msgstr "Ayúdanos a organizar nuestra boda"
+
+#: wedding/forms.py:49
+msgid "Are you bringing a plus-one?"
+msgstr "Vas a traer pareja?"
+
+#: wedding/forms.py:58
+msgid "You can't bring a plus one if you're not coming."
+msgstr "No puedes traer pareja si no vienes a la boda."
