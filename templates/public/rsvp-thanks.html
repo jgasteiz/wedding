@@ -1,0 +1,13 @@
+{% extends 'public/base.html' %}
+{% load static i18n %}
+
+{% block page_title %}{% trans "Confirm your attendance" %}{% endblock page_title %}
+
+{% block content %}
+
+    <div class="text-center">
+        <h1>{% trans 'Thanks for RSVPing.' %}</h1>
+        <h2>{% trans 'You can go back and edit your RSVP status: ' %}<a href="{% url 'public:rsvp' %}">Go ahead</a>.</h2>
+    </div>
+
+{% endblock content %}

@@ -6,14 +6,47 @@
 {% block content %}
 
     <div class="text-center">
-        {% ifequal status 'confirmed' %}
-            <h1>{% trans 'Your attendance has been confirmed, ' %}<br>{{ invitee }}</h1>
-            <p>{% blocktrans %}Don't hesitate in contacting us with any questions you might have:{% endblocktrans %} <a href="{% url 'public:contact' %}">{% trans 'Contact' %}</a></p>
+        <h1>{% trans 'Confirm your attendance' %}</h1>
+        {% if invitee %}
+
+            {% if invitee.has_rsvp %}
+                {% if invitee.has_confirmed %}
+                <p>{% trans "You already said you'll come to our wedding." %}</p>
+                {% else %}
+                <p>{% trans "You already said you won't be able to make it :(" %}</p>
+                {% endif %}
+
+                {% if invitee.special_dietary_requirements %}
+                <p>{% trans "You also mentioned the following dietary requirements:" %}</p><div><em>{{ invitee.special_dietary_requirements|linebreaks }}</em></div>
+                {% endif %}
+                <p>{% trans "You can change any of your answers in the following form." %}</p>
+                <hr>
+            {% endif %}
+
+            <form class="form form--rsvp" action="" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="form__row">
+                    <label class="form__label" for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %}<span class="asterisk">*</span>{% endif %}</label><!--
+                    --><div class="form__field">{{ field }}</div>
+                    {% if field.errors %}
+                    <ul class="form__errors">
+                        {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <p class="text-center">
+                    <button type="submit" class="form__submit">{% trans 'Save your RSVP status' %}</button>
+                </p>
+            </form>
+
+            <p>{% trans "Contact us with any questions you might have:" %} <a href="{% url 'public:contact' %}">{% trans 'Contact' %}</a></p>
         {% else %}
-            <h1>{% trans 'Confirm your attendance' %}</h1>
-            <h2>{% trans 'Coming soon' %}</h2>
-            {#            <p>{% blocktrans %}You should have received an invitation in your email. If not, contact us.{% endblocktrans %}</p>#}
-        {% endifequal %}
+            <h2>{% trans 'Check your email for the attendance confirmation email.' %}</h2>
+        {% endif %}
     </div>
 
 {% endblock content %}

@@ -22,6 +22,7 @@ public_patterns = [
     url(r'^song-wishlist/$', public_views.song_wishlist, name='song_wishlist'),
     url(r'^song-wishlist-thanks/$', public_views.song_wishlist_thanks, name='song_wishlist_thanks'),
     url(r'^rsvp/$', public_views.rsvp, name='rsvp'),
+    url(r'^rsvp-thanks/$', public_views.rsvp_thanks, name='rsvp_thanks'),
     url(r'^contact/$', public_views.contact, name='contact'),
     url(r'^change_language/(?P<lang_code>.*)/$', public_views.change_language, name='change_language'),
 ]

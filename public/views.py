@@ -9,8 +9,8 @@ from django.utils.translation import activate
 from django.views.generic import TemplateView, FormView, View
 
 from wedding import mixins
-from wedding.constants import CONFIRMED
-from wedding.forms import SongForm
+from wedding.constants import CONFIRMED, DECLINED
+from wedding.forms import SongForm, RsvpForm
 from wedding.models import Invitee
 
 
@@ -65,31 +65,70 @@ class SongSubmissionThanks(mixins.ViewNameMixin, TemplateView):
 song_wishlist_thanks = SongSubmissionThanks.as_view()
 
 
-class RSVPView(mixins.ViewNameMixin, TemplateView):
+class RSVPView(mixins.ViewNameMixin, FormView):
+    form_class = RsvpForm
     page_name = 'rsvp'
     template_name = 'public/rsvp.html'
+    success_url = reverse_lazy('public:rsvp_thanks')
 
     def dispatch(self, request, *args, **kwargs):
         if 'invitee' in request.GET.keys():
-            invitee_id = request.GET.get('invitee')
+            request.session['invitee'] = request.GET.get('invitee')
+            return redirect('public:rsvp')
+        return super(RSVPView, self).dispatch(request, *args, **kwargs)
+
+    def _get_invitee(self):
+        if 'invitee' in self.request.session.keys():
+            invitee_id = self.request.session['invitee']
             try:
-                invitee = Invitee.objects.get(id=int(invitee_id))
-                invitee.invitation_status = CONFIRMED
-                invitee.save()
-                request.session['invitee'] = str(invitee)
-                return redirect('public:rsvp')
+                return Invitee.objects.get(id=int(invitee_id))
             except ObjectDoesNotExist as e:
                 logging.info('Invitee with id `{}` does not exist'.format(invitee_id))
 
-        return super(RSVPView, self).dispatch(request, *args, **kwargs)
-
     def get_context_data(self, **kwargs):
         ctx = super(RSVPView, self).get_context_data(**kwargs)
-        if 'invitee' in self.request.session.keys():
-            ctx.update(status=CONFIRMED, invitee=self.request.session.get('invitee'))
+        ctx.update(invitee=self._get_invitee())
         return ctx
 
+    def get_form(self, form_class=None):
+        """
+        Returns an instance of the form to be used in this view.
+        """
+        form = super(RSVPView, self).get_form(form_class)
+        invitee = self._get_invitee()
+        if invitee:
+            form.initial.update(
+                are_you_coming=invitee.invitation_status == CONFIRMED,
+                bringing_plusone=invitee.has_plusone,
+                special_dietary_requirements=invitee.special_dietary_requirements
+            )
+        return form
+
+    def form_valid(self, form):
+        """
+        Update the invitee with the cleaned data.
+        """
+        invitee = self._get_invitee()
+        if invitee:
+            if form.cleaned_data.get('are_you_coming', False):
+                invitee.invitation_status = CONFIRMED
+            else:
+                invitee.invitation_status = DECLINED
+
+            invitee.has_plusone = form.cleaned_data.get('bringing_plusone', False)
+            invitee.special_dietary_requirements = form.cleaned_data.get('special_dietary_requirements')
+            invitee.save()
+
+        return super(RSVPView, self).form_valid(form)
+
 rsvp = RSVPView.as_view()
+
+
+class RsvpSubmissionThanks(mixins.ViewNameMixin, TemplateView):
+    page_name = 'song_wishlist'
+    template_name = 'public/rsvp-thanks.html'
+
+rsvp_thanks = RsvpSubmissionThanks.as_view()
 
 
 class ContactView(mixins.ViewNameMixin, TemplateView):

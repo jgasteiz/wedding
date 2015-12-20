@@ -22,6 +22,7 @@ class InviteeForm(forms.ModelForm):
             'invitation_status',
             'has_plusone',
             'inviter',
+            'special_dietary_requirements',
         )
         model = Invitee
 

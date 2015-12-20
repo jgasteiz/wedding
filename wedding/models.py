@@ -4,6 +4,7 @@ from django.conf import settings
 from django.template import loader, Context
 
 from .constants import (
+    CONFIRMED,
     NO_RSVP,
     INVITATION_STATUSES,
     INVITER_CHOICES,
@@ -44,6 +45,7 @@ class Invitee(models.Model):
     added = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     inviter = models.CharField(max_length=256, blank=True)
+    special_dietary_requirements = models.TextField(blank=True)
 
     has_plusone = models.NullBooleanField(default=False)
 
@@ -80,6 +82,12 @@ class Invitee(models.Model):
 
     def get_inviter(self):
         return dict(INVITER_CHOICES).get(self.inviter)
+
+    def has_rsvp(self):
+        return self.invitation_status != NO_RSVP
+
+    def has_confirmed(self):
+        return self.invitation_status == CONFIRMED
 
 
 def create_model(name, fields=None, app_label='', module='', options=None):
