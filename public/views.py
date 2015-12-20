@@ -116,8 +116,8 @@ class RSVPView(mixins.ViewNameMixin, FormView):
 
             invitee.has_plusone = form.cleaned_data.get('bringing_plusone', False)
             invitee.save()
-
-        return super(RSVPView, self).form_valid(form)
+            return super(RSVPView, self).form_valid(form)
+        return redirect(reverse('public:rsvp'))
 
 rsvp = RSVPView.as_view()
 
