@@ -51,6 +51,7 @@ class Invitee(models.Model):
     inviter = models.CharField(max_length=256, blank=True)
     token = models.CharField(max_length=256, blank=True)
 
+    has_flight = models.NullBooleanField(default=False)
     has_plusone = models.NullBooleanField(default=False)
 
     emails = models.CommaSeparatedIntegerField(max_length=512)

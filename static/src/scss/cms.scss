@@ -40,6 +40,18 @@ form {
     background-color: #54B8FF;
 }
 
+.has-plusone--yes,
+.has-flight--yes {
+    @extend %colour-label;
+    background-color: #8BC34A;
+}
+
+.has-plusone--no,
+.has-flight--no {
+    @extend %colour-label;
+    background-color: #B0BEC5;
+}
+
 .invitation-status--no_rsvp {
     @extend %colour-label;
     background-color: #B0BEC5;

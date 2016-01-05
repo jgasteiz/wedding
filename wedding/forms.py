@@ -22,6 +22,7 @@ class InviteeForm(forms.ModelForm):
             'email',
             'language',
             'invitation_status',
+            'has_flight',
             'emails',
             'has_plusone',
             'inviter',

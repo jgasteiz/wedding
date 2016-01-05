@@ -57,6 +57,10 @@
                         <a href="{% url 'cms:invitees' %}?order_by=invitation_status"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
                         <a href="{% url 'cms:invitees' %}?order_by=-invitation_status"><i class="glyphicon glyphicon-triangle-top"></i></a>
                     </th>
+                    <th>Has flight
+                        <a href="{% url 'cms:invitees' %}?order_by=has_flight"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                        <a href="{% url 'cms:invitees' %}?order_by=-has_flight"><i class="glyphicon glyphicon-triangle-top"></i></a>
+                    </th>
                     <th>Has +1
                         <a href="{% url 'cms:invitees' %}?order_by=has_plusone"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
                         <a href="{% url 'cms:invitees' %}?order_by=-has_plusone"><i class="glyphicon glyphicon-triangle-top"></i></a>
@@ -93,7 +97,16 @@
                         {% endfor %}
                     </td>
                     <td><span class="invitation-status--{{ invitee.invitation_status }}">{{ invitee.get_invitation_status }}</span></td>
-                    <td>{{ invitee.has_plusone|yesno:"Yes,No,Unknown" }}</td>
+                    <td>
+                        <span class="has-flight--{{ invitee.has_flight|yesno:"yes,no,no" }}">
+                            {{ invitee.has_flight|yesno:"Yes,No,Unknown" }}
+                        </span>
+                    </td>
+                    <td>
+                        <span class="has-plusone--{{ invitee.has_plusone|yesno:"yes,no,no" }}">
+                            {{ invitee.has_plusone|yesno:"Yes,No,Unknown" }}
+                        </span>
+                    </td>
                     <td>{{ invitee.token }}</td>
                     <td>{{ invitee.added }}</td>
                     <td>{{ invitee.updated }}</td>
