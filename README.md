@@ -6,5 +6,6 @@
 
 - create virtualenv and activate it: `virtualenv env && source ./env/bin/activate`
 - install dependencies: `./install_deps.py`
+- install bower and npm dependencies: `npm install && bower install`
 - running the project: `./manage.py runserver`
 - running the tests: `./run_tests.sh`

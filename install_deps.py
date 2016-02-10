@@ -89,13 +89,3 @@ if __name__ == "__main__":
     args = ["pip", "install", "-r", REQUIREMENTS_DEV_FILE, "-I", "--no-deps"]
     p = subprocess.Popen(args)
     p.wait()
-
-    print("Running bower install...")
-    args = ["bower", "install"]
-    p = subprocess.Popen(args)
-    p.wait()
-
-    print("Running npm install...")
-    args = ["npm", "install"]
-    p = subprocess.Popen(args)
-    p.wait()
