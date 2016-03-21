@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-21 14:12+0000\n"
+"POT-Creation-Date: 2016-03-21 15:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 
 #: templates/public/agenda.html:16
-msgid "Saturday 25th June"
+msgid "Saturday, 25th June"
 msgstr ""
 
 #: templates/public/agenda.html:18
@@ -207,10 +207,80 @@ msgid ""
 msgstr ""
 
 #: templates/public/agenda.html:108
+msgid "Sunday, 26th June"
+msgstr ""
+
+#: templates/public/agenda.html:110 templates/public/agenda.html.py:134
+msgid "Morning"
+msgstr ""
+
+#: templates/public/agenda.html:113
+msgid "Sleep, have some breakfast, walk around Przeworsk. Free time."
+msgstr ""
+
+#: templates/public/agenda.html:116
+msgid "15:00-N"
+msgstr ""
+
+#: templates/public/agenda.html:119
+msgid ""
+"Join us for our second day of wedding party! This day is mainly for the "
+"people who have come from abroad and the very close family and friends. "
+"Everyone who is coming from abroad is invited (and expected to be there)."
+msgstr ""
+
+#: templates/public/agenda.html:123
+msgid ""
+"The party will begin around 15:00 or 16:00 and it will take place in the "
+"Hotel 2, <a href=\"https://magdaandjavi.appspot.com/en/details/#hotels"
+"\">Hotel Restauracja Terapia</a>."
+msgstr ""
+
+#: templates/public/agenda.html:127
+msgid ""
+"No need to bring a formal outfit to this one, but of course, feel free to do "
+"so."
+msgstr ""
+
+#: templates/public/agenda.html:132
+msgid "Monday, 27th June"
+msgstr ""
+
+#: templates/public/agenda.html:136
+msgid ""
+"Congratultions, you've made it! The party is now over and you may return to "
+"your homes or keep travelling around Poland, it's up to you."
+msgstr ""
+
+#: templates/public/agenda.html:140
+msgid ""
+"You'll have to check out from your hotel around 12:00 – don't forget to pay! "
+"The prices are specified in <a href=\"https://magdaandjavi.appspot.com/en/"
+"details/#hotels\">the Trip Preparation page</a>."
+msgstr ""
+
+#: templates/public/agenda.html:143
+msgid "Afternoon"
+msgstr ""
+
+#: templates/public/agenda.html:146
+msgid ""
+"Magda, Javi and Javi's family will be taking a bus to Krakow to spend a few "
+"days visiting Krakow. The time hasn't be decided yet, but it will probably "
+"be around 14:00 or 15:00."
+msgstr ""
+
+#: templates/public/agenda.html:150
+msgid ""
+"Feel free to join the bus if you want to get to Krakow on Monday, but please "
+"let us know in advance so we can book the bus size accordingly."
+msgstr ""
+
+#: templates/public/agenda.html:156
 msgid "Interactive Map with useful spots"
 msgstr ""
 
-#: templates/public/agenda.html:110
+#: templates/public/agenda.html:158
 msgid "Open the map in a new tab"
 msgstr ""
 
