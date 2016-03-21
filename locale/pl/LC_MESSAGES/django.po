@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-20 13:27+0000\n"
+"POT-Creation-Date: 2016-03-21 14:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,176 +19,251 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: templates/public/base.html:42
-msgid "Home"
-msgstr "Strona Główna"
-
-#: templates/public/base.html:45
-msgid "Wedding Details"
-msgstr "O Weselu"
-
-#: templates/public/base.html:48 templates/public/song-wishlist.html:4
-msgid "Song wish list"
-msgstr "Wybierz Piosenkę"
-
-#: templates/public/base.html:51
-msgid "Confirm attendance"
-msgstr "Potwierdź Przybycie"
-
-#: templates/public/base.html:54 templates/public/contact.html:4
-#: templates/public/contact.html.py:9 templates/public/details.html:32
-#: templates/public/rsvp.html:43
-msgid "Contact"
-msgstr "Kontakt"
-
-#: templates/public/contact.html:10
-msgid "If you want to get in contact with us, drop us a line at"
+#: templates/public/agenda.html:4 templates/public/base.html:48
+msgid "Agenda"
 msgstr ""
 
-#: templates/public/details.html:4
-#, fuzzy
-#| msgid "Wedding Details"
-msgid "Wedding details"
-msgstr "O Weselu"
-
-#: templates/public/details.html:9
-msgid "Polish weddings, what to expect"
+#: templates/public/agenda.html:9
+msgid "Friday 24th June"
 msgstr ""
 
-#: templates/public/details.html:11
+#: templates/public/agenda.html:11
+msgid ""
+"You should arrive Przeworsk at some point during Friday and get a proper "
+"night sleep before Saturday. You will need it."
+msgstr ""
+
+#: templates/public/agenda.html:16
+msgid "Saturday 25th June"
+msgstr ""
+
+#: templates/public/agenda.html:18
+msgid "Morning, before 14:00"
+msgstr ""
+
+#: templates/public/agenda.html:20
+msgid ""
+"Do you need hairdressing / make-uping / nail-painting / tie-tying? Now it's "
+"the time."
+msgstr ""
+
+#: templates/public/agenda.html:23
+msgid ""
+"For your own good, whatever you do this morning, <strong>don't</strong> get "
+"drunk."
+msgstr ""
+
+#: templates/public/agenda.html:26
+msgid "14:00"
+msgstr ""
+
+#: templates/public/agenda.html:28
+msgid ""
+"Get to the church! The ceremony will begin at 14:00 and it will last around "
+"1 hour."
+msgstr ""
+
+#: templates/public/agenda.html:34
+msgid "15:00-15:30"
+msgstr ""
+
+#: templates/public/agenda.html:36
+msgid ""
+"A big bus and several cars will start going to the wedding venue, <a target="
+"\"_blank\" href=\"https://www.google.co.uk/maps/place/Ranczo.+Zajazd/"
+"@49.9687237,22.4157358,17z/data=!3m1!4b1!4m2!3m1!"
+"1s0x473c8e756201efad:0x969f4a0bbb080624\">Ranczo, in Łopuszka Mała</a>."
+msgstr ""
+
+#: templates/public/agenda.html:39
+msgid "15:30-16:30"
+msgstr ""
+
+#: templates/public/agenda.html:41
+msgid ""
+"Wedding reception. Magda and Javi will get to the venue and drink the "
+"inaugural <a target=\"_blank\" href=\"http://www.weddingbee.com/2010/05/05/"
+"polish-wedding-traditions-bread-and-salt/\">shots of vodka, bread and salt</"
+"a>."
+msgstr ""
+
+#: templates/public/agenda.html:44
+msgid "If there are any presents, they should be given now."
+msgstr ""
+
+#: templates/public/agenda.html:47
+msgid "16:30-00:00"
+msgstr ""
+
+#: templates/public/agenda.html:49
 msgid "Eat, Dance, Drink, Repeat (5 times)"
 msgstr ""
 
-#: templates/public/details.html:13
+#: templates/public/agenda.html:51
 msgid ""
-"The party starts with a traditional chicken soup and it's followed by a meat "
-"dish. That's the standard. After that, you should expect the First Dance and "
-"then the vodka will start flowing."
+"The party starts with a traditional chicken soup and it's followed by a main "
+"meat dish. After that, you should expect the First Dance and straight after "
+"the vodka will start flowing. Then, you should expect another meat/main dish "
+"every couple of hours and lots of dancing between food and drinks."
 msgstr ""
 
-#: templates/public/details.html:16
-msgid "What food will be served?"
-msgstr ""
-
-#: templates/public/details.html:18
-msgid ""
-"Traditionally, Polish weddings start with a chicken soup. Nowadays it's not "
-"necessary to have it, but I'm all up for traditions. After that, you should "
-"expect around 4 or 5 main dishes of meat and salads every couple of hours. "
-"These dishes will be served between 5pm and 2am, being the last one a "
-"delicious beetroot soup with dumplings – a very traditional one too."
-msgstr ""
-
-#: templates/public/details.html:23
+#: templates/public/agenda.html:56
 msgid "This is Zurek, a traditional Polish soup."
 msgstr ""
 
-#: templates/public/details.html:27
+#: templates/public/agenda.html:60
 msgid ""
 "This is Barszcz Czerwony, another traditional Polish soup with dumplings."
 msgstr ""
 
-#: templates/public/details.html:31
+#: templates/public/agenda.html:64
+msgid ""
+"Additionally, there will be a Polish \"village table\" with other popular "
+"Polish dishes such as pierogi, kiełbasa, smoked cheese, fish and a selection "
+"of moonshine – careful here, this vodka is usually stronger than the regular "
+"one. Most likely, there will be also a \"Spanish table\" with stuff such as "
+"chorizo, queso, salchichón, lomo and more."
+msgstr ""
+
+#: templates/public/agenda.html:67
 msgid ""
 "If you are vegetarian/vegan or have some kind of food intolerance, please "
-"get in touch with us and we'llsort something out."
+"get in touch with us and we'll try to sort something out"
 msgstr ""
 
-#: templates/public/details.html:35
-msgid "How much should I eat?"
+#: templates/public/agenda.html:68 templates/public/base.html:54
+#: templates/public/contact.html:4 templates/public/contact.html.py:9
+#: templates/public/rsvp.html:43
+msgid "Contact"
+msgstr "Kontakt"
+
+#: templates/public/agenda.html:71
+msgid "What kind of drinks will be served?"
 msgstr ""
 
-#: templates/public/details.html:37
+#: templates/public/agenda.html:74
+msgid "Mainly vodka. We've already got over 100 bottles of Pan Tadeusz."
+msgstr ""
+
+#: templates/public/agenda.html:77
 msgid ""
-"As much as you can! If you've been invited to this wedding is because you're "
-"our friend or family. And if that's the case, you must love food."
+"There will be a big selection of soft drinks that go well with vodka. Some "
+"people don't like straight vodka and prefer to mix it with coke or juices – "
+"it's perfectly fine."
 msgstr ""
 
-#: templates/public/details.html:40
-msgid "What drinks will be served?"
-msgstr ""
-
-#: templates/public/details.html:42
+#: templates/public/agenda.html:80
 msgid ""
-"If you're used to Spanish weddings, this one might seem a bit different. "
-"There might be some wine, but it won't be the main alcoholic drink of the "
-"wedding. Vodka will."
+"For the people who don't like vodka at all, there will be also plenty of "
+"beer."
 msgstr ""
 
-#: templates/public/details.html:45
-msgid ""
-"Of course, you can mix the vodka with anything you like, but you'll see the "
-"most of the locals drinking it in shots. And I encourage you to try the "
-"same. We're personally making sure we're getting one of the best – if not "
-"the best – Polish vodkas, so people can drink it without worrying too much "
-"about the next morning. Our only advice would be to take it easy if you're "
-"planning to drink other alcohols, everyone knows what happens when you mix "
-"too much right?"
+#: templates/public/agenda.html:83
+msgid "Dance, dance, dance"
 msgstr ""
 
-#: templates/public/details.html:48
-msgid ""
-"That said, there will be plenty of beer, juices, water and other soft drinks."
-msgstr ""
-
-#: templates/public/details.html:51
-msgid "How much should I dance?"
-msgstr ""
-
-#: templates/public/details.html:53
+#: templates/public/agenda.html:85
 msgid ""
 "As much as you can! Dancing is a very social and common thing to do in a "
 "Polish wedding, everyone must dance."
 msgstr ""
 
-#: templates/public/details.html:57
+#: templates/public/agenda.html:89
 msgid "Magda's sister wedding, September 2014."
 msgstr ""
 
-#: templates/public/details.html:59
+#: templates/public/agenda.html:91
 msgid "Some random invitee is insisting to drink with him, what should I do?"
 msgstr ""
 
-#: templates/public/details.html:61
+#: templates/public/agenda.html:93
 msgid ""
 "You won't offend (too much) anyone by not drinking when you're offered a "
-"toast, but it's always better if you accept."
+"toast, but it's always better if you accept. A good trick is to only drink "
+"half shots when you feel you've already drunk enough."
 msgstr ""
 
-#: templates/public/details.html:67
+#: templates/public/agenda.html:96
+msgid "00:00"
+msgstr ""
+
+#: templates/public/agenda.html:98
+msgid ""
+"There will be some activities and games for the singles. I promise they are "
+"fun. The last dish will be served after that, probably a beetroot soup with "
+"dumplings."
+msgstr ""
+
+#: templates/public/agenda.html:101
+msgid "01:00-N After party"
+msgstr ""
+
+#: templates/public/agenda.html:103
+msgid ""
+"Some people will start leaving after midnight, but that doesn't mean the "
+"party is over! The music band will probably stay until 2 and we'll have some "
+"backup music to play until 4-5-6. Buses and other transports will start "
+"coming and going between the venue and Przeworsk hotels."
+msgstr ""
+
+#: templates/public/agenda.html:108
+msgid "Interactive Map with useful spots"
+msgstr ""
+
+#: templates/public/agenda.html:110
+msgid "Open the map in a new tab"
+msgstr ""
+
+#: templates/public/base.html:42
+msgid "Home"
+msgstr "Strona Główna"
+
+#: templates/public/base.html:45 templates/public/details.html:4
+msgid "Trip preparation"
+msgstr ""
+
+#: templates/public/base.html:51 templates/public/song-wishlist.html:4
+msgid "Song wish list"
+msgstr "Wybierz Piosenkę"
+
+#: templates/public/contact.html:10
+msgid "If you want to get in contact with us, drop us a line at"
+msgstr ""
+
+#: templates/public/details.html:9
 msgid "Where is this happening?"
 msgstr ""
 
-#: templates/public/details.html:69
+#: templates/public/details.html:11
 msgid ""
 "The ceremony will take place in a town called Przeworsk (pronunced "
 "`Pseworsk`). It's around 50km away from Rzeszów, the main city in the region "
 "of Podkarpacie."
 msgstr ""
 
-#: templates/public/details.html:72
+#: templates/public/details.html:14
 msgid "A general map (click for zoom)"
 msgstr ""
 
-#: templates/public/details.html:74
+#: templates/public/details.html:16
 msgid ""
 "Here you can see the region of Podkarpacie in red, bordering with Ukraine in "
 "the East and Slovakia in the South."
 msgstr ""
 
-#: templates/public/details.html:82
+#: templates/public/details.html:24
 msgid "Zooming in Rzeszów"
 msgstr ""
 
-#: templates/public/details.html:91
+#: templates/public/details.html:33
 msgid "When is this happening?"
 msgstr ""
 
-#: templates/public/details.html:92
+#: templates/public/details.html:34
 msgid "Saturday, 25th June 2016"
 msgstr ""
 
-#: templates/public/details.html:94
+#: templates/public/details.html:36
 msgid ""
 "You should definitely try to be in Rzeszów or Przeworsk by Friday 24th June, "
 "although it's probably a good idea if you can be there by Thursday. I've "
@@ -196,92 +271,62 @@ msgid ""
 "wedding, so feel free to do the same."
 msgstr ""
 
-#: templates/public/details.html:99
-msgid "How to get here?"
+#: templates/public/details.html:41
+msgid "How to get to Przeworsk?"
 msgstr ""
 
-#: templates/public/details.html:102
+#: templates/public/details.html:43
+msgid "From Krakow"
+msgstr ""
+
+#: templates/public/details.html:46
 msgid ""
-"In an ideal world, you should be able to get by plane to Rzeszów. For the "
-"people coming from UK, it should be relatively easy. Unfortunately, coming "
-"from Spain might get a bit tricky."
+"We're arranging a bus between Krakow and Przeworsk on Friday 24th - time to "
+"be confirmed, but probably around midday. Please, let me know if you're "
+"interested in taking this bus."
 msgstr ""
 
-#: templates/public/details.html:105
-msgid "From UK"
+#: templates/public/details.html:49
+msgid "From Rzeszów"
 msgstr ""
 
-#: templates/public/details.html:107 templates/public/details.html.py:136
-msgid "London Stansted - Rzeszów with Ryanair"
-msgstr ""
-
-#: templates/public/details.html:108 templates/public/details.html.py:117
-#: templates/public/details.html:126 templates/public/details.html.py:137
-msgid "search flights in ryanair.com"
-msgstr ""
-
-#: templates/public/details.html:111
-msgid "From Spain"
-msgstr ""
-
-#: templates/public/details.html:114
-msgid "Option 1 - from Madrid"
-msgstr ""
-
-#: templates/public/details.html:116
-msgid "Madrid - Kraków with Ryanair"
-msgstr ""
-
-#: templates/public/details.html:118 templates/public/details.html.py:127
-msgid "After that, you'll need to take a bus from Krakow to Rzeszów"
-msgstr ""
-
-#: templates/public/details.html:119 templates/public/details.html.py:128
-msgid "Kraków bus station"
-msgstr ""
-
-#: templates/public/details.html:123
-msgid "Option 2 - from Barcelona"
-msgstr ""
-
-#: templates/public/details.html:125
-msgid "Barcelona - Kraków with Ryanair"
-msgstr ""
-
-#: templates/public/details.html:132
-msgid "Option 3 - from Bilbao via London"
-msgstr ""
-
-#: templates/public/details.html:134
-msgid "Bilbao - London with easyJet"
-msgstr ""
-
-#: templates/public/details.html:135
-msgid "search flights in easyjet.com"
-msgstr ""
-
-#: templates/public/details.html:140
+#: templates/public/details.html:52
 msgid ""
-"This last option might not be possible, it will all depend on what kind of "
-"flights easyjet will be offering for those dates."
+"We'll probably arrange a small bus and other sort of transports to get "
+"people between Rzeszów and Przeworsk."
 msgstr ""
 
-#: templates/public/details.html:143
-msgid "Option 4 - from Bilbao via Frankfurt"
+#: templates/public/details.html:57
+msgid "Where am I sleeping?"
 msgstr ""
 
-#: templates/public/details.html:145
-msgid "Bilbao - Rzeszów with Lufthansa"
-msgstr ""
-
-#: templates/public/details.html:146
-msgid "search flights in lufthansa.com"
-msgstr ""
-
-#: templates/public/details.html:149
+#: templates/public/details.html:59
 msgid ""
-"This is the most expensive option, but if you can't be bothered to go to "
-"Madrid or Barcelona, this might be the best pick."
+"We've booked two entire hotels in Przeworsk for Friday, Saturday and Sunday "
+"nights."
+msgstr ""
+
+#: templates/public/details.html:68
+msgid ""
+"This hotel is right in the centre of Przeworsk. This hotel can only host 20 "
+"people, so we've decided to leave it for Javi's family."
+msgstr ""
+
+#: templates/public/details.html:76
+msgid ""
+"This one is ten walking minutes away from the other one. It can host up to "
+"34 people and this is where most of the youngsters will stay. The breakfast "
+"is included."
+msgstr ""
+
+#: templates/public/details.html:81
+msgid ""
+"Both places have been booked already, but you'll just need to pay in the "
+"checkout - expect £10 per person, per night (around 50 złoty) in Teresy and "
+"£12 per person per night (around 60 złoty) in Terapia. See a small map below "
+"with both hotels marked. The marker on the right is the church where the "
+"ceremony will take place and the blue dot is Magda's parents' house – I'm "
+"there right now."
 msgstr ""
 
 #: templates/public/home.html:4
@@ -360,22 +405,33 @@ msgstr ""
 msgid "Log in"
 msgstr ""
 
-#: wedding/forms.py:33
+#: wedding/forms.py:34
 msgid "Song title"
 msgstr ""
 
-#: wedding/forms.py:34
+#: wedding/forms.py:35
 msgid "Artist name"
 msgstr ""
 
-#: wedding/forms.py:43
+#: wedding/forms.py:44
 msgid "Are you coming to our wedding?"
 msgstr ""
 
-#: wedding/forms.py:49
+#: wedding/forms.py:50
 msgid "Are you bringing a plus-one?"
 msgstr ""
 
-#: wedding/forms.py:58
+#: wedding/forms.py:59
 msgid "You can't bring a plus one if you're not coming."
 msgstr ""
+
+#~ msgid "Wedding Details"
+#~ msgstr "O Weselu"
+
+#~ msgid "Confirm attendance"
+#~ msgstr "Potwierdź Przybycie"
+
+#, fuzzy
+#~| msgid "Wedding Details"
+#~ msgid "Wedding details"
+#~ msgstr "O Weselu"
