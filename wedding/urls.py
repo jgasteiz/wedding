@@ -19,6 +19,7 @@ urlpatterns = [
 public_patterns = [
     url(r'^$', public_views.home, name='home'),
     url(r'^details/$', public_views.details, name='details'),
+    url(r'^agenda/$', public_views.agenda, name='agenda'),
     url(r'^song-wishlist/$', public_views.song_wishlist, name='song_wishlist'),
     url(r'^song-wishlist-thanks/$', public_views.song_wishlist_thanks, name='song_wishlist_thanks'),
     url(r'^rsvp/$', public_views.rsvp, name='rsvp'),

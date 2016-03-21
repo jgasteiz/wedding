@@ -1,0 +1,134 @@
+{% extends 'public/base.html' %}
+{% load static i18n %}
+
+{% block page_title %}{% trans "Agenda" %}{% endblock page_title %}
+
+{% block content %}
+
+    <section>
+        <h1 class="text-center">{% trans "Friday 24th June" %}</h1>
+        <p>
+            {% blocktrans %}
+                You should arrive Przeworsk at some point during Friday and get a proper night sleep before Saturday. You will need it.
+            {% endblocktrans %}
+        </p>
+    </section>
+
+    <section>
+        <h1 class="text-center">{% trans "Saturday 25th June" %}</h1>
+
+        <h2>{% trans "Morning, before 14:00" %}</h2>
+        <p>
+            {% blocktrans %}
+                Do you need hairdressing / make-uping / nail-painting / tie-tying? Now it's the time.
+            {% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans %}
+                For your own good, whatever you do this morning, <strong>don't</strong> get drunk.
+            {% endblocktrans %}
+        </p>
+
+        <h2>{% trans "14:00" %}</h2>
+        <p>
+            {% blocktrans %}
+                Get to the church! The ceremony will begin at 14:00 and it will last around 1 hour.
+            {% endblocktrans %}
+        </p>
+        <a href="#" class="js-open-modal" data-img="{% static 'img/maps/to-church@2x.jpg' %}">
+            {% include 'public/partials/picture.html' with src1='img/maps/to-church.jpg' src2='img/maps/to-church@2x.jpg' src1sm='img/maps/to-church.jpg' src2sm='img/maps/to-church@2x.jpg' alt='Przeworsk map' title='Przeworsk map' %}
+        </a>
+
+        <h2>{% trans "15:00-15:30" %}</h2>
+        <p>
+            {% blocktrans %}
+                A big bus and several cars will start going to the wedding venue, <a target="_blank" href="https://www.google.co.uk/maps/place/Ranczo.+Zajazd/@49.9687237,22.4157358,17z/data=!3m1!4b1!4m2!3m1!1s0x473c8e756201efad:0x969f4a0bbb080624">Ranczo, in Łopuszka Mała</a>.
+            {% endblocktrans %}
+        </p>
+
+        <h2>{% trans "15:30-16:30" %}</h2>
+        <p>
+            {% blocktrans %}
+                Wedding reception. Magda and Javi will get to the venue, drink the inaugural <a target="_blank" href="http://www.weddingbee.com/2010/05/05/polish-wedding-traditions-bread-and-salt/">shots of vodka, bread and salt</a>.
+            {% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans %}
+                If there are any presents, they should be given now.
+            {% endblocktrans %}
+        </p>
+
+        <h2>{% trans "16:30-00:00 Main feast" %}</h2>
+
+        <h3>{% trans "Eat, Dance, Drink, Repeat (5 times)" %}</h3>
+        <p>
+            {% blocktrans %}The party starts with a traditional chicken soup and it's followed by a main meat dish.
+                After that, you should expect the First Dance and straight after the vodka will start flowing. Then, you should expect another
+                meat/main dish every couple of hours and lots of dancing between food and drinks.{% endblocktrans %}
+        </p>
+        <div class="row">
+            <div class="one-half">
+                {% include 'public/partials/picture.html' with src1='img/food/zurek.jpg' src2='img/food/zurek@2x.jpg' src1sm='img/food/zurek.jpg' src2sm='img/food/zurek@2x.jpg' alt='Zurek' title='Zurek' %}
+                <span class="picture-description">{% trans "This is Zurek, a traditional Polish soup." %}</span>
+            </div><!--
+            --><div class="one-half">
+                {% include 'public/partials/picture.html' with src1='img/food/barszcz-czerwony.jpg' src2='img/food/barszcz-czerwony@2x.jpg' src1sm='img/food/barszcz-czerwony.jpg' src2sm='img/food/barszcz-czerwony@2x.jpg' alt='Barszcz Czerwony' title='Barszcz Czerwony' %}
+                <span class="picture-description">{% trans "This is Barszcz Czerwony, another traditional Polish soup with dumplings." %}</span>
+            </div>
+        </div>
+        <p>
+            {% blocktrans %}Additionally, there will be a Polish "village table" with other popular Polish dishes such as pierogi, kiełbasa, smoked cheese, fish and a selection of moonshine – careful here, this vodka is usually stronger than the regular one. Most likely, there will be also a "Spanish table" with stuff such as chorizo, queso, salchichón, lomo and more.{% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans %}If you are vegetarian/vegan or have some kind of food intolerance, please get in touch with us and we'll try to sort something out{% endblocktrans %}:
+            <a href="{% url 'public:contact' %}">{% trans "Contact" %}</a>
+        </p>
+
+        <h3>{% trans "What kind of drinks will be served?" %}</h3>
+
+        <p>
+            {% blocktrans %}Mainly vodka. We've already got over 100 bottles of Pan Tadeusz{% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans %}There will be a big selection of soft drinks that go well with vodka. Some people don't like straight vodka and prefer to mix it with coke or juices – it's perfectly fine.{% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans %}For the people who don't like vodka at all, there will be also plenty of beer.{% endblocktrans %}
+        </p>
+
+        <h3>{% trans "Dance, dance, dance" %}</h3>
+        <p>
+            {% blocktrans %}As much as you can! Dancing is a very social and common thing to do in a Polish wedding, everyone must dance.{% endblocktrans %}
+        </p>
+
+        {% include 'public/partials/picture.html' with src1='img/karolina-wedding-2.jpg' src2='img/karolina-wedding-2@2x.jpg' src1sm='img/karolina-wedding-2-sm.jpg' src2sm='img/karolina-wedding-2-sm@2x.jpg' alt="Karolina's wedding" title="Karolina's wedding" %}
+        <span class="picture-description">{% trans "Magda's sister wedding, September 2014." %}</span>
+
+        <h3>{% trans "Some random invitee is insisting to drink with him, what should I do?" %}</h3>
+        <p>
+            {% blocktrans %}You won't offend (too much) anyone by not drinking when you're offered a toast, but it's always better if you accept. A good trick is to only drink half shots when you feel you've already drunk enough.{% endblocktrans %}
+        </p>
+
+        <h2>{% trans "00:00" %}</h2>
+        <p>
+            {% blocktrans %}
+                There will be some activities and games for the singles. I promise they are fun. The last dish will be served after that, probably a beetroot soup with dumplings.
+            {% endblocktrans %}
+        </p>
+
+        <h2>{% trans "01:00-N After party" %}</h2>
+        <p>
+            {% blocktrans %}
+                Some people will start leaving after midnight, but that doesn't mean the party is over! The music band will probably stay until 2 and we'll have some backup music to play until 4-5-6. Buses and other transports will start coming and going between the venue and Przeworsk hotels.
+            {% endblocktrans %}
+        </p>
+    </section>
+
+    <section>
+        <h1 class="text-center">{% trans "Interactive Map with useful spots" %}</h1>
+
+        <a target="_blank" href="https://www.google.com/maps/d/viewer?mid=zwqj1lkdpevU.kXzF_XzIuqnw">{% trans "Open the map in a new tab" %}</a>
+        <iframe src="https://www.google.com/maps/d/embed?mid=zwqj1lkdpevU.kXzF_XzIuqnw" width="100%" height="480"></iframe>
+    </section>
+
+{% endblock content %}

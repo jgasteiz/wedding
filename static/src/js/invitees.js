@@ -1,6 +1,18 @@
 (function () {
     'use_strict';
 
+    function log () {
+        $('tr').each(function (idx, item) {
+            if (item.dataset.row) {
+                var name = $(item).find('td:nth-child(2)').text();
+                var lastName = $(item).find('td:nth-child(3)').text();
+                var status = $(item).find('td:nth-child(8)').text();
+                var hasPlusOne = $(item).find('td:nth-child(9)').text();
+                console.log(name + ' ' + lastName + ' - Status: ' + status + ' ; Has Plusone: ' + hasPlusOne);
+            }
+        });
+    }
+
     /**
      *  Invitees controller constructor.
      */

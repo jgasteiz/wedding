@@ -42,13 +42,13 @@
                     <a href="{% url 'public:home' %}">{% trans "Home" %}</a>
                 </li>
                 <li class="main-nav__item {% ifequal page_name 'details' %}main-nav__item--is-active{% endifequal %}">
-                    <a href="{% url 'public:details' %}">{% trans "Wedding Details" %}</a>
+                    <a href="{% url 'public:details' %}">{% trans "Trip preparation" %}</a>
+                </li>
+                <li class="main-nav__item {% ifequal page_name 'agenda' %}main-nav__item--is-active{% endifequal %}">
+                    <a href="{% url 'public:agenda' %}">{% trans "Agenda" %}</a>
                 </li>
                 <li class="main-nav__item {% ifequal page_name 'song_wishlist' %}main-nav__item--is-active{% endifequal %}">
                     <a href="{% url 'public:song_wishlist' %}">{% trans "Song wish list" %}</a>
-                </li>
-                <li class="main-nav__item {% ifequal page_name 'rsvp' %}main-nav__item--is-active{% endifequal %}">
-                    <a href="{% url 'public:rsvp' %}">{% trans "Confirm attendance" %}</a>
                 </li>
                 <li class="main-nav__item {% ifequal page_name 'contact' %}main-nav__item--is-active{% endifequal %}">
                     <a href="{% url 'public:contact' %}">{% trans "Contact" %}</a>

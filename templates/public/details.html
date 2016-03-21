@@ -1,67 +1,9 @@
 {% extends 'public/base.html' %}
 {% load static i18n %}
 
-{% block page_title %}{% trans "Wedding details" %}{% endblock page_title %}
+{% block page_title %}{% trans "Trip preparation" %}{% endblock page_title %}
 
 {% block content %}
-
-    <section>
-        <h1 class="text-center">{% trans "Polish weddings, what to expect" %}</h1>
-
-        <h2>{% trans "Eat, Dance, Drink, Repeat (5 times)" %}</h2>
-        <p>
-            {% blocktrans %}The party starts with a traditional chicken soup and it's followed by a meat dish. That's the standard. After that, you should expect the First Dance and then the vodka will start flowing.{% endblocktrans %}
-        </p>
-
-        <h2>{% trans "What food will be served?" %}</h2>
-        <p>
-            {% blocktrans %}Traditionally, Polish weddings start with a chicken soup. Nowadays it's not necessary to have it, but I'm all up for traditions. After that, you should expect around 4 or 5 main dishes of meat and salads every couple of hours. These dishes will be served between 5pm and 2am, being the last one a delicious beetroot soup with dumplings – a very traditional one too.{% endblocktrans %}
-        </p>
-        <div class="row">
-            <div class="one-half">
-                {% include 'public/partials/picture.html' with src1='img/food/zurek.jpg' src2='img/food/zurek@2x.jpg' src1sm='img/food/zurek.jpg' src2sm='img/food/zurek@2x.jpg' alt='Zurek' title='Zurek' %}
-                <span class="picture-description">{% trans "This is Zurek, a traditional Polish soup." %}</span>
-            </div><!--
-            --><div class="one-half">
-                {% include 'public/partials/picture.html' with src1='img/food/barszcz-czerwony.jpg' src2='img/food/barszcz-czerwony@2x.jpg' src1sm='img/food/barszcz-czerwony.jpg' src2sm='img/food/barszcz-czerwony@2x.jpg' alt='Barszcz Czerwony' title='Barszcz Czerwony' %}
-                <span class="picture-description">{% trans "This is Barszcz Czerwony, another traditional Polish soup with dumplings." %}</span>
-            </div>
-        </div>
-        <p>
-            {% blocktrans %}If you are vegetarian/vegan or have some kind of food intolerance, please get in touch with us and we'llsort something out.{% endblocktrans %}:
-            <a href="{% url 'public:contact' %}">{% trans "Contact" %}</a>
-        </p>
-
-        <h2>{% trans "How much should I eat?" %}</h2>
-        <p>
-            {% blocktrans %}As much as you can! If you've been invited to this wedding is because you're our friend or family. And if that's the case, you must love food.{% endblocktrans %}
-        </p>
-
-        <h2>{% trans "What drinks will be served?" %}</h2>
-        <p>
-            {% blocktrans %}If you're used to Spanish weddings, this one might seem a bit different. There might be some wine, but it won't be the main alcoholic drink of the wedding. Vodka will.{% endblocktrans %}
-        </p>
-        <p>
-            {% blocktrans %}Of course, you can mix the vodka with anything you like, but you'll see the most of the locals drinking it in shots. And I encourage you to try the same. We're personally making sure we're getting one of the best – if not the best – Polish vodkas, so people can drink it without worrying too much about the next morning. Our only advice would be to take it easy if you're planning to drink other alcohols, everyone knows what happens when you mix too much right?{% endblocktrans %}
-        </p>
-        <p>
-            {% blocktrans %}That said, there will be plenty of beer, juices, water and other soft drinks.{% endblocktrans %}
-        </p>
-
-        <h2>{% trans "How much should I dance?" %}</h2>
-        <p>
-            {% blocktrans %}As much as you can! Dancing is a very social and common thing to do in a Polish wedding, everyone must dance.{% endblocktrans %}
-        </p>
-
-        {% include 'public/partials/picture.html' with src1='img/karolina-wedding-2.jpg' src2='img/karolina-wedding-2@2x.jpg' src1sm='img/karolina-wedding-2-sm.jpg' src2sm='img/karolina-wedding-2-sm@2x.jpg' alt="Karolina's wedding" title="Karolina's wedding" %}
-        <span class="picture-description">{% trans "Magda's sister wedding, September 2014." %}</span>
-
-        <h2>{% trans "Some random invitee is insisting to drink with him, what should I do?" %}</h2>
-        <p>
-            {% blocktrans %}You won't offend (too much) anyone by not drinking when you're offered a toast, but it's always better if you accept.{% endblocktrans %}
-        </p>
-
-    </section>
 
     <section>
         <h1 class="text-center">{% trans "Where is this happening?" %}</h1>
@@ -96,61 +38,64 @@
     </section>
 
     <section>
-        <h1 class="text-center">{% trans "How to get here?" %}</h1>
+        <h1 class="text-center">{% trans "How to get to Przeworsk?" %}</h1>
+
+        <h2>{% trans "From Krakow" %}</h2>
 
         <p>
-            {% blocktrans %}In an ideal world, you should be able to get by plane to Rzeszów. For the people coming from UK, it should be relatively easy. Unfortunately, coming from Spain might get a bit tricky.{% endblocktrans %}
+            {% blocktrans %}
+                We're arranging a bus between Krakow and Przeworsk on Friday 24th - time to be confirmed, but probably around midday. Please, let me know if you're interested in taking this bus.
+            {% endblocktrans %}
         </p>
 
-        <h2>{% trans "From UK" %}</h2>
+        <h2>{% trans "From Rzeszów" %}</h2>
+
         <p>
-            {% trans "London Stansted - Rzeszów with Ryanair" %}:
-            <a target="_blank" href="https://www.ryanair.com/en/cheap-flights/london-stansted-to-rzeszow/?out-date=2016-06-20">{% trans "search flights in ryanair.com" %}</a>
+            {% blocktrans %}
+                We'll probably arrange a small bus and other sort of transports to get people between Rzeszów and Przeworsk.
+            {% endblocktrans %}
         </p>
+    </section>
 
-        <h2>{% trans "From Spain" %}</h2>
+    <section>
+        <h1 class="text-center">{% trans "Where am I sleeping?" %}</h1>
+        <p>
+            {% blocktrans %}
+                We've booked two entire hotels in Przeworsk for Friday, Saturday and Sunday nights.
+            {% endblocktrans %}
+        </p>
         <ul>
             <li>
-                <p><strong>{% trans "Option 1 - from Madrid" %}</strong></p>
+                <strong>Hotel Restauracja Terapia –
+                    <a target="_blank" href="https://www.google.co.uk/maps/place/Hotel+Restauracja+Terapia/@50.0567214,22.4943993,17z/data=!4m6!1m3!3m2!1s0x473c9155d3797773:0xc0b735777d5be8c5!2sHotel+Restauracja+Terapia!3m1!1s0x473c9155d3797773:0xc0b735777d5be8c5">Map</a>,
+                    <a target="_blank" href="https://www.facebook.com/restauracja.terapia">Facebook page</a>
+                </strong>
                 <p>
-                    {% trans "Madrid - Kraków with Ryanair" %}:
-                    <a target="_blank" href="https://www.ryanair.com/en/cheap-flights/madrid-to-krakow/?out-date=2016-06-20">{% trans "search flights in ryanair.com" %}</a><br>
-                    {% trans "After that, you'll need to take a bus from Krakow to Rzeszów" %}:
-                    <a target="_blank" href="http://www.inyourpocket.com/krakow/Krakow-Bus-Station_16992v">{% trans "Kraków bus station" %}</a>
+                    {% blocktrans %}
+                        This hotel is right in the centre of Przeworsk. This hotel can only host 20 people, so we've decided to leave it for Javi's family.
+                    {% endblocktrans %}
                 </p>
             </li>
             <li>
-                <p><strong>{% trans "Option 2 - from Barcelona" %}</strong></p>
-                <p>
-                    {% trans "Barcelona - Kraków with Ryanair" %}:
-                    <a target="_blank" href="http://www.ryanair.com/en/cheap-flights/barcelona-girona-to-krakow/?out-date=2016-06-20">{% trans "search flights in ryanair.com" %}</a><br>
-                    {% trans "After that, you'll need to take a bus from Krakow to Rzeszów" %}:
-                    <a target="_blank" href="http://www.inyourpocket.com/krakow/Krakow-Bus-Station_16992v">{% trans "Kraków bus station" %}</a>
-                </p>
-            </li>
-            <li>
-                <p><strong>{% trans "Option 3 - from Bilbao via London" %}</strong></p>
-                <p>
-                    {% trans "Bilbao - London with easyJet" %}:
-                    <a target="_blank" href="http://www.easyjet.com/">{% trans "search flights in easyjet.com" %}</a><br>
-                    {% trans "London Stansted - Rzeszów with Ryanair" %}:
-                    <a target="_blank" href="https://www.ryanair.com/en/cheap-flights/london-stansted-to-rzeszow/?out-date=2016-06-20">{% trans "search flights in ryanair.com" %}</a>
-                </p>
-                <p>
-                    {% trans "This last option might not be possible, it will all depend on what kind of flights easyjet will be offering for those dates." %}
-                </p>
-            </li><li>
-                <p><strong>{% trans "Option 4 - from Bilbao via Frankfurt" %}</strong></p>
-                <p>
-                    {% trans "Bilbao - Rzeszów with Lufthansa" %}:
-                    <a target="_blank" href="http://www.lufthansa.com/">{% trans "search flights in lufthansa.com" %}</a>
-                </p>
-                <p>
-                    {% blocktrans %}This is the most expensive option, but if you can't be bothered to go to Madrid or Barcelona, this might be the best pick.{% endblocktrans %}
-                </p>
+                <strong>U Teresy –
+                    <a target="_blank" href="https://www.google.co.uk/maps/place/U+Teresy/@50.0608511,22.4772817,15.33z/data=!4m2!3m1!1s0x473c9157d01bc275:0x28c02129a873844c">Map</a>,
+                    <a target="_blank" href="http://www.uteresy.pl">Website</a>
+                </strong>
+                {% blocktrans %}
+                    This one is ten walking minutes away from the other one. It can host up to 34 people and this is where most of the youngsters will stay. The breakfast is included.
+                {% endblocktrans %}
             </li>
         </ul>
 
+        <p>
+            {% blocktrans %}
+                Both places have been booked already, but you'll just need to pay in the checkout - expect £15 per person, per night (around 70-75 złoty). See a small map below with both hotels marked. The marker on the right is the church where the ceremony will take place and the blue dot is Magda's parents' house – I'm there right now.
+            {% endblocktrans %}
+        </p>
+
+        <a href="#" class="js-open-modal" data-img="{% static 'img/maps/przeworsk-map@2x.jpg' %}">
+            {% include 'public/partials/picture.html' with src1='img/maps/przeworsk-map.jpg' src2='img/maps/przeworsk-map@2x.jpg' src1sm='img/maps/przeworsk-map.jpg' src2sm='img/maps/przeworsk-map@2x.jpg' alt='Przeworsk map' title='Przeworsk map' %}
+        </a>
     </section>
 
 {% endblock content %}

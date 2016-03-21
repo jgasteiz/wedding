@@ -34,6 +34,13 @@ class WeddingDetailsView(mixins.ViewNameMixin, TemplateView):
 details = WeddingDetailsView.as_view()
 
 
+class AgendaView(mixins.ViewNameMixin, TemplateView):
+    page_name = 'agenda'
+    template_name = 'public/agenda.html'
+
+agenda = AgendaView.as_view()
+
+
 class SongWishlistView(mixins.ViewNameMixin, FormView):
     page_name = 'song_wishlist'
     template_name = 'public/song-wishlist.html'
