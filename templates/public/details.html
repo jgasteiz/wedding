@@ -38,23 +38,40 @@
     </section>
 
     <section>
-        <h1 class="text-center">{% trans "How to get to Przeworsk?" %}</h1>
+        <h1 class="text-center">{% trans "Traveling in Poland" %}</h1>
 
-        <h2>{% trans "From Krakow" %}</h2>
+        <h2>{% trans "Getting to to Przeworsk" %}</h2>
 
+        <strong>{% trans "From Krakow" %}</strong>
         <p>
-            {% blocktrans %}We're arranging a bus between Krakow and Przeworsk on Friday 24th - time to be confirmed, but probably around midday. Please, let me know if you're interested in taking this bus.{% endblocktrans %}
+            {% blocktrans %}We're arranging a bus between Krakow and Przeworsk on Friday 24th - time to be confirmed, but probably around 15:00 or 16:00.{% endblocktrans %}
         </p>
 
-        <h2>{% trans "From Rzeszów" %}</h2>
-
+        <strong>{% trans "From Rzeszów" %}</strong>
         <p>
-            {% blocktrans %}We'll probably arrange a small bus and other sort of transports to get people between Rzeszów and Przeworsk.{% endblocktrans %}
+            {% blocktrans %}We'll get some sort of transports to get people between Rzeszów and Przeworsk or precise instructions on how to take a bus or train.{% endblocktrans %}
+        </p>
+
+        <h2>{% trans "Getting back to the airport" %}</h2>
+
+        <strong>{% trans "To Krakow" %}</strong>
+        <p>
+            {% blocktrans %}We're arranging a bus between Przeworsk and Krakow on Monday 26th - time to be confirmed, but probably around midday.{% endblocktrans %}
+        </p>
+
+        <strong>{% trans "To Rzeszów" %}</strong>
+        <p>
+            {% blocktrans %}If you're flying anytime after lunch from Rzeszów, you can join the bus that is going to Krakow and we'll drop you off in Rzeszów.{% endblocktrans %}
+        </p>
+
+        <h2>{% trans "If you can't join any of the arranged transports, get a train" %}</h2>
+        <p>
+            {% blocktrans %}Trains in Poland are very cheap – compared to the ones in UK and Spain. You can use this website to buy your train tickets:{% endblocktrans %} <a target="_blank" href="http://www.intercity.pl/en/">www.intercity.pl</a>
         </p>
     </section>
 
     <section>
-        <h1 id="hotels" class="text-center">{% trans "Where am I sleeping?" %}</h1>
+        <h1 id="hotels" class="text-center">{% trans "The hotels" %}</h1>
         <p>
             {% blocktrans %}We've booked two entire hotels in Przeworsk for Friday, Saturday and Sunday nights.{% endblocktrans %}
         </p>
@@ -73,7 +90,18 @@
                     <a target="_blank" href="https://www.google.co.uk/maps/place/U+Teresy/@50.0608511,22.4772817,15.33z/data=!4m2!3m1!1s0x473c9157d01bc275:0x28c02129a873844c">Map</a>,
                     <a target="_blank" href="http://www.uteresy.pl">Website</a>
                 </strong>
-                {% blocktrans %}This one is ten walking minutes away from the other one. It can host up to 34 people and this is where most of the youngsters will stay. The breakfast is included.{% endblocktrans %}
+                <p>
+                    {% blocktrans %}This one is ten walking minutes away from the other one. It can host up to 34 people and this is where most of the youngsters will stay. The breakfast is included.{% endblocktrans %}
+                </p>
+            </li>
+            <li>
+                <strong>Patewnik –
+                    <a target="_blank" href="https://www.google.co.uk/maps/place/Pastewnik/@50.060847,22.4830911,15z/data=!4m2!3m1!1s0x0:0x14847673b957e12b?sa=X&ved=0ahUKEwi_nJuy9IHNAhWFB8AKHSthAoEQ_BIIhgEwEQ">Map</a>,
+                    <a target="_blank" href="http://www.pastewnik.pl">Website</a>
+                </strong>
+                <p>
+                    {% blocktrans %}This one is just near U Teresy. It's the emergency hotel and probably 2 or 4 people will need to stay here.{% endblocktrans %}
+                </p>
             </li>
         </ul>
 
@@ -84,6 +112,46 @@
         <a href="#" class="js-open-modal" data-img="{% static 'img/maps/przeworsk-map@2x.jpg' %}">
             {% include 'public/partials/picture.html' with src1='img/maps/przeworsk-map.jpg' src2='img/maps/przeworsk-map@2x.jpg' src1sm='img/maps/przeworsk-map.jpg' src2sm='img/maps/przeworsk-map@2x.jpg' alt='Przeworsk map' title='Przeworsk map' %}
         </a>
+    </section>
+
+    <section>
+        <h1 id="before-the-trip" class="text-center">{% trans "What do I need to take with me?" %}</h1>
+
+        <strong>{% trans "Passport or National ID" %}</strong>
+        <p>
+            {% blocktrans %}Poland is part of the EU, which means there's no need to take the passport with you, but I recommend you do it, if you have one. Everything will be faster for you in the airport and if you lose one of your ids, you still have a backup one.{% endblocktrans %}
+        </p>
+
+        <strong>{% trans "Money" %}</strong>
+        <p>
+            {% blocktrans %}Get around 100 or 200 złoty from your local bank, just to have some cash with you. You will need cash for paying buses, trains, taxis and beer in the bars. You won't be able to pay with card in many bars and restaurants.{% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans %}There will be <a target="_blank" href="https://www.google.co.uk/maps/place/Kantor+wymiany+walut/@50.05988,22.4947301,20.04z/data=!4m5!3m4!1s0x0000000000000000:0x3a05c1c25b6ed33c!8m2!3d50.0600356!4d22.4946993!6m1!1e1">a good money exchange office in Przeworsk</a> where you can easily exchange more pounds or euros into złoty. You can also take złoty directly from any ATM, which is what I do most of the times. Your bank might give you a worse exchange rate, but you won't have to carry a lot of money around.{% endblocktrans %}
+        </p>
+
+        <strong>{% trans "An unlocked phone" %}</strong>
+        <p>
+            {% blocktrans %}Many of you are going to stay in Poland for a few days before or after the wedding and sim cards are very cheap there. You can get a basic sim card for 5 złoty.{% endblocktrans %}
+        </p>
+
+        <strong>{% trans "Casual clothes for the 2nd day of wedding" %}</strong>
+        <p>
+            {% blocktrans %}The second day of wedding will be very relaxed, so I encourage you to wear something comfortable. Magda and I won't be wearing any suit/dress that day ;).{% endblocktrans %}
+        </p>
+
+        <strong>{% trans "The following phone numbers and addresses" %}</strong>
+        <ul>
+            <li>{% trans "Javi's Polish phone number: " %}<strong>+48 575 658 579</strong></li>
+            <li>{% trans "Javi's email (I reply very quickly): " %}<strong>javi.manzano.oller@gmail.com</strong></li>
+            <li>{% trans "U Teresy hotel address: " %}<strong>Łańcucka 4, 37-210 Przeworsk, Poland</strong></li>
+            <li>{% trans "Terapia hotel address: " %}<strong>Jana Kilińskiego 2, Przeworsk, Poland</strong></li>
+            <li>{% trans "Church where the wedding will take place (Parafia rzymskokatolicka Chrystusa Króla): " %}<strong>Misiągiewicza 42, Przeworsk, Poland</strong></li>
+        </ul>
+
+        <p>
+            {% blocktrans %}<strong>One more thing: </strong> English is not a widely spoken language in Poland outside of Krakow and Warsaw. The same way you shouldn't expect an old lady from a village in Albacete to understand English, don't expect an old lady from Przeworsk to understand English – or Spanish.{% endblocktrans %}
+        </p>
     </section>
 
 {% endblock content %}

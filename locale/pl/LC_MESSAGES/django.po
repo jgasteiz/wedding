@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-21 15:04+0000\n"
+"POT-Creation-Date: 2016-05-30 14:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -342,54 +342,97 @@ msgid ""
 msgstr ""
 
 #: templates/public/details.html:41
-msgid "How to get to Przeworsk?"
+msgid "Traveling in Poland"
 msgstr ""
 
 #: templates/public/details.html:43
+msgid "Getting to to Przeworsk"
+msgstr ""
+
+#: templates/public/details.html:45
 msgid "From Krakow"
 msgstr ""
 
-#: templates/public/details.html:46
+#: templates/public/details.html:47
 msgid ""
 "We're arranging a bus between Krakow and Przeworsk on Friday 24th - time to "
-"be confirmed, but probably around midday. Please, let me know if you're "
-"interested in taking this bus."
+"be confirmed, but probably around 15:00 or 16:00."
 msgstr ""
 
-#: templates/public/details.html:49
+#: templates/public/details.html:50
 msgid "From Rzeszów"
 msgstr ""
 
 #: templates/public/details.html:52
 msgid ""
-"We'll probably arrange a small bus and other sort of transports to get "
-"people between Rzeszów and Przeworsk."
+"We'll get some sort of transports to get people between Rzeszów and "
+"Przeworsk or precise instructions on how to take a bus or train."
+msgstr ""
+
+#: templates/public/details.html:55
+msgid "Getting back to the airport"
 msgstr ""
 
 #: templates/public/details.html:57
-msgid "Where am I sleeping?"
+msgid "To Krakow"
 msgstr ""
 
 #: templates/public/details.html:59
+msgid ""
+"We're arranging a bus between Przeworsk and Krakow on Monday 26th - time to "
+"be confirmed, but probably around midday."
+msgstr ""
+
+#: templates/public/details.html:62
+msgid "To Rzeszów"
+msgstr ""
+
+#: templates/public/details.html:64
+msgid ""
+"If you're flying anytime after lunch from Rzeszów, you can join the bus that "
+"is going to Krakow and we'll drop you off in Rzeszów."
+msgstr ""
+
+#: templates/public/details.html:67
+msgid "If you can't join any of the arranged transports, get a train"
+msgstr ""
+
+#: templates/public/details.html:69
+msgid ""
+"Trains in Poland are very cheap – compared to the ones in UK and Spain. You "
+"can use this website to buy your train tickets:"
+msgstr ""
+
+#: templates/public/details.html:74
+msgid "The hotels"
+msgstr ""
+
+#: templates/public/details.html:76
 msgid ""
 "We've booked two entire hotels in Przeworsk for Friday, Saturday and Sunday "
 "nights."
 msgstr ""
 
-#: templates/public/details.html:68
+#: templates/public/details.html:85
 msgid ""
 "This hotel is right in the centre of Przeworsk. This hotel can only host 20 "
 "people, so we've decided to leave it for Javi's family."
 msgstr ""
 
-#: templates/public/details.html:76
+#: templates/public/details.html:94
 msgid ""
 "This one is ten walking minutes away from the other one. It can host up to "
 "34 people and this is where most of the youngsters will stay. The breakfast "
 "is included."
 msgstr ""
 
-#: templates/public/details.html:81
+#: templates/public/details.html:103
+msgid ""
+"This one is just near U Teresy. It's the emergency hotel and probably 2 or 4 "
+"people will need to stay here."
+msgstr ""
+
+#: templates/public/details.html:109
 msgid ""
 "Both places have been booked already, but you'll just need to pay in the "
 "checkout - expect £10 per person, per night (around 50 złoty) in Teresy and "
@@ -397,6 +440,100 @@ msgid ""
 "with both hotels marked. The marker on the right is the church where the "
 "ceremony will take place and the blue dot is Magda's parents' house – I'm "
 "there right now."
+msgstr ""
+
+#: templates/public/details.html:118
+msgid "What do I need to take with me?"
+msgstr ""
+
+#: templates/public/details.html:120
+msgid "Passport or National ID"
+msgstr ""
+
+#: templates/public/details.html:122
+msgid ""
+"Poland is part of the EU, which means there's no need to take the passport "
+"with you, but I recommend you do it, if you have one. Everything will be "
+"faster for you in the airport and if you lose one of your ids, you still "
+"have a backup one."
+msgstr ""
+
+#: templates/public/details.html:125
+msgid "Money"
+msgstr ""
+
+#: templates/public/details.html:127
+msgid ""
+"Get around 100 or 200 złoty from your local bank, just to have some cash "
+"with you. You will need cash for paying buses, trains, taxis and beer in the "
+"bars. You won't be able to pay with card in many bars and restaurants."
+msgstr ""
+
+#: templates/public/details.html:130
+msgid ""
+"There will be <a target=\"_blank\" href=\"https://www.google.co.uk/maps/"
+"place/Kantor+wymiany+walut/@50.05988,22.4947301,20.04z/data=!4m5!3m4!"
+"1s0x0000000000000000:0x3a05c1c25b6ed33c!8m2!3d50.0600356!4d22.4946993!6m1!"
+"1e1\">a good money exchange office in Przeworsk</a> where you can easily "
+"exchange more pounds or euros into złoty. You can also take złoty directly "
+"from any ATM, which is what I do most of the times. Your bank might give you "
+"a worse exchange rate, but you won't have to carry a lot of money around."
+msgstr ""
+
+#: templates/public/details.html:133
+msgid "An unlocked phone"
+msgstr ""
+
+#: templates/public/details.html:135
+msgid ""
+"Many of you are going to stay in Poland for a few days before or after the "
+"wedding and sim cards are very cheap there. You can get a basic sim card for "
+"5 złoty."
+msgstr ""
+
+#: templates/public/details.html:138
+msgid "Casual clothes for the 2nd day of wedding"
+msgstr ""
+
+#: templates/public/details.html:140
+msgid ""
+"The second day of wedding will be very relaxed, so I encourage you to wear "
+"something comfortable. Magda and I won't be wearing any suit/dress that "
+"day ;)."
+msgstr ""
+
+#: templates/public/details.html:143
+msgid "The following phone numbers and addresses"
+msgstr ""
+
+#: templates/public/details.html:145
+msgid "Javi's Polish phone number: "
+msgstr ""
+
+#: templates/public/details.html:146
+msgid "Javi's email (I reply very quickly): "
+msgstr ""
+
+#: templates/public/details.html:147
+msgid "U Teresy hotel address: "
+msgstr ""
+
+#: templates/public/details.html:148
+msgid "Terapia hotel address: "
+msgstr ""
+
+#: templates/public/details.html:149
+msgid ""
+"Church where the wedding will take place (Parafia rzymskokatolicka Chrystusa "
+"Króla): "
+msgstr ""
+
+#: templates/public/details.html:153
+msgid ""
+"<strong>One more thing: </strong> English is not a widely spoken language in "
+"Poland outside of Krakow and Warsaw. The same way you shouldn't expect an "
+"old lady from a village in Albacete to understand English, don't expect an "
+"old lady from Przeworsk to understand English – or Spanish."
 msgstr ""
 
 #: templates/public/home.html:4
