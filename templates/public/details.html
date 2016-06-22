@@ -44,7 +44,7 @@
 
         <strong>{% trans "From Krakow" %}</strong>
         <p>
-            {% blocktrans %}We're arranging a bus between Krakow and Przeworsk on Friday 24th - time to be confirmed, but probably around 15:00 or 16:00.{% endblocktrans %}
+            {% blocktrans %}We're arranging a bus between Krakow and Przeworsk on Friday 24th: around 15:30, somewhere not far from the train station (10 min walk maximum). This will be confirmed once we know where we can park the bus.{% endblocktrans %}
         </p>
 
         <strong>{% trans "From Rzeszów" %}</strong>
@@ -66,12 +66,19 @@
 
         <h2>{% trans "If you can't join any of the arranged transports, get a train" %}</h2>
         <p>
-            {% blocktrans %}Trains in Poland are very cheap – compared to the ones in UK and Spain. You can use this website to buy your train tickets:{% endblocktrans %} <a target="_blank" href="http://www.intercity.pl/en/">www.intercity.pl</a>
+            <strong>IMPORTANT: If you need train tickets, buy them in advance guarantee yourself a seat in the train
+            or you might eventually lose your flight.</strong>
         </p>
-        <p><strong>Suggested itineraries:</strong></p>
+        <p>
+            If you need train tickets to go back to Rzeszów or Kraków, buy
+            them <a target="_blank" href="http://www.intercity.pl/en/">online from www.intercity.pl</a> during the weekend or go to the
+            <a target="_blank" href="https://www.google.co.uk/maps/place/Przeworsk/@50.066947,22.501273,16.43z/data=!4m8!1m2!2m1!1sprzeworsk+train+station!3m4!1s0x0000000000000000:0x42c2dcdcc0ccef0e!8m2!3d50.067216!4d22.5033568">Przeworsk train station</a>
+            and buy them on Saturday or Sunday morning.
+        </p>
+        <p><strong>Some itineraries for getting back to Kraków and Rzeszów</strong></p>
         <ul>
             <li>Przeworsk - Kraków Główny, Sunday 26th, 11:00. Buy tickets for 11:50. It will arrive around 14:30, on time for 20:00 flights.</li>
-            <li>Przeworsk - Kraków Rzeszów, Monday 27th, 7:00. Buy tickets for 7:30. It will arrive around 8:00, on time for the 10:40 flight.</li>
+            <li>Przeworsk - Rzeszów Główny, Monday 27th, 7:00. Buy tickets for 7:30. It will arrive around 8:00, on time for the 10:40 flight.</li>
             <li>Przeworsk - Kraków Główny, Monday 27th, 7:00. Buy tickets for 7:30. It will arrive around 10:00, on time for 12:00 and later flights.</li>
         </ul>
     </section>
@@ -100,15 +107,6 @@
                     {% blocktrans %}This one is ten walking minutes away from the other one. It can host up to 34 people and this is where most of the youngsters will stay. The breakfast is included.{% endblocktrans %}
                 </p>
             </li>
-            <li>
-                <strong>Patewnik –
-                    <a target="_blank" href="https://www.google.co.uk/maps/place/Pastewnik/@50.060847,22.4830911,15z/data=!4m2!3m1!1s0x0:0x14847673b957e12b?sa=X&ved=0ahUKEwi_nJuy9IHNAhWFB8AKHSthAoEQ_BIIhgEwEQ">Map</a>,
-                    <a target="_blank" href="http://www.pastewnik.pl">Website</a>
-                </strong>
-                <p>
-                    {% blocktrans %}This one is just near U Teresy. It's the emergency hotel and probably 2 or 4 people will need to stay here.{% endblocktrans %}
-                </p>
-            </li>
         </ul>
 
         <p>
@@ -118,6 +116,15 @@
         <a href="#" class="js-open-modal" data-img="{% static 'img/maps/przeworsk-map@2x.jpg' %}">
             {% include 'public/partials/picture.html' with src1='img/maps/przeworsk-map.jpg' src2='img/maps/przeworsk-map@2x.jpg' src1sm='img/maps/przeworsk-map.jpg' src2sm='img/maps/przeworsk-map@2x.jpg' alt='Przeworsk map' title='Przeworsk map' %}
         </a>
+
+        <ol>
+            <li>U Teresy: Łańcucka 4, 37-210 Przeworsk. 16 648 73 35</li>
+            <li>Terapia: Jana Kilińskiego 2, Przeworsk. 16 648 26 26. 2nd day of wedding will be there around 3pm.</li>
+            <li>Kantor (currency exchange), Rossman (drug store), Biedronka (supermarket).</li>
+            <li>Church: Parafia rzymskokatolicka Chrystusa Króla, Misiągiewicza 42, Przeworsk, Poland. Wedding will happen there on Saturday at 2pm.</li>
+            <li>Main square: Rico (good pizza and beer), Ratusz (good beer and nice terrace), Play (phone shop with sim cards)</li>
+        </ol>
+
     </section>
 
     <section>
