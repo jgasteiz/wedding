@@ -32,4 +32,4 @@ urlpatterns += i18n_patterns(
     url(r'', include(public_patterns, namespace='public')),
 )
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

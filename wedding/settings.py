@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'djangae.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -66,9 +67,15 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'csp.middleware.CSPMiddleware',
     'session_csrf.CsrfMiddleware',
-    'djangosecure.middleware.SecurityMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+SILENCED_SYSTEM_CHECKS = [
+    'security.W003', # We're using session_csrf version of CsrfMiddleware, so we can skip that check
+]
+from .boot import register_custom_checks
+register_custom_checks()
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -85,7 +92,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "public.context_processors.current_view_name",
     "public.context_processors.debug",
 )
-
 SECURE_CHECKS = [
     "djangosecure.check.sessions.check_session_cookie_secure",
     "djangosecure.check.sessions.check_session_cookie_httponly",
@@ -107,18 +113,14 @@ ROOT_URLCONF = 'wedding.urls'
 
 WSGI_APPLICATION = 'wedding.wsgi.application'
 
-STATIC_DIRS = (
-    join(BASE_DIR, 'static'),
-)
-
-TEMPLATE_DIRS = (
-    join(BASE_DIR, 'templates'),
-)
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
 LANGUAGE_CODE = 'en'
+TEMPLATE_DIRS = (
+    join(BASE_DIR, 'templates'),
+)
+
 
 LANGUAGES = (
     ('en', 'English'),
@@ -173,7 +175,6 @@ LOGGING = {
         }
     }
 }
-
 
 if DEBUG:
     CSP_STYLE_SRC = ("'self'", "'unsafe-inline'", "fonts.googleapis.com", "*.gstatic.com")
